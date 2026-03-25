@@ -223,5 +223,3 @@ From an engineering perspective, this repository demonstrates practical experien
 - Nav2 goal orchestration
 - simulation-first robotics development
 - debugging and packaging a reproducible demo for delivery
-
-For employers, the strongest signal in this work is not just that a navigation demo runs, but that the interaction layer was designed to be robust enough for real spoken input, structured enough for robot control, and packaged cleanly enough to be demonstrated, reviewed, and extended by others.

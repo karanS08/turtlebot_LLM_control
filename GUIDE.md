@@ -1,381 +1,294 @@
-# TurtleBot LLM Control Guide
+# TurtleBot LLM Control Demo Guide
 
-## 1. Scope
+## 1. Purpose
 
-This package provides:
+This package is now focused on one final demo:
 
-- speech-to-text input path
-- predefined command recognition
-- optional LLM-backed conversation with personality
-- behavior-tree-based action orchestration
-- Nav2 goal triggering
-- follow mode for a colored target
+- speech-to-text input
+- conversational LLM layer
+- wake / sleep / stop voice handling
+- navigation intent extraction
+- Nav2 goal execution in Gazebo
+- voice navigation to named pillar locations in the TurtleBot3 simulation world
 
-## 2. Core Features
+The main showcase is:
 
-- `speech_to_text_node`: microphone-to-text bridge, plus `/speech/mock_text` for testing
-- `speech_command_node`: converts user text into either `no_action` or a behavior-tree action
-- `bt_orchestrator_node`: runs the task logic and triggers ROS2 actions/topics
-- `follow_me_node`: follows a selected colored target
+- wake Pepper with voice
+- ask Pepper to go to a pillar
+- see the intent resolved
+- hear the spoken reply
+- watch the robot move in simulation
+
+## 2. Main Files
+
+Core runtime files:
+
+- `launch/sim_pillar_nav_demo.launch.py`
+- `launch/bringup.launch.py`
+- `turtlebot_llm_control/sim_initial_pose_node.py`
+- `turtlebot_llm_control/speech_to_text_node.py`
+- `turtlebot_llm_control/speech_command_node.py`
+- `turtlebot_llm_control/speech_response_node.py`
+- `turtlebot_llm_control/speech_debug_node.py`
+- `turtlebot_llm_control/bt_orchestrator_node.py`
+- `turtlebot_llm_control/llm_dialogue.py`
+- `turtlebot_llm_control/speech_parser.py`
+- `turtlebot_llm_control/wake_word.py`
+- `turtlebot_llm_control/llm_intent_test.py`
+
+Packaged demo assets:
+
+- `maps/demo/map.yaml`
+- `maps/demo/map.pgm`
+- `config/demo_nav2/burger.yaml`
+- `config/demo_nav2/waffle.yaml`
+- `config/demo_nav2/waffle_pi.yaml`
+- `rviz/tb3_navigation2.rviz`
 
 ## 3. Build
 
 ```bash
 cd /home/karan/ros2_ws
 source /opt/ros/humble/setup.bash
-colcon build --symlink-install
+colcon build --packages-select turtlebot_llm_control
 source install/setup.bash
-export TURTLEBOT3_MODEL=waffle_pi
 ```
 
-## 4. Main Launch Flags
-
-- `hardware:=false`
-  Use simulation. Gazebo starts where applicable. `use_sim_time=true`.
-
-- `hardware:=true`
-  Use the real robot. Gazebo is skipped. `use_sim_time=false`.
-
-- `enable_microphone:=true`
-  Enables microphone speech recognition in `speech_to_text_node`.
-
-- `enable_llm:=true`
-  Enables LLM-backed conversation in `speech_command_node`.
-
-- `llm_provider:=groq`
-  Selects the LLM provider. Current supported values: `groq`, `openai`.
-
-- `llm_model:=llama-3.3-70b-versatile`
-  Sets the model name used by the conversational layer.
-
-- `bin_tuning_mode:=true`
-  Opens OpenCV HSV tuning controls for the green bin detector.
-
-- `image_topic:=/camera/image_raw`
-  Overrides the camera topic.
-
-## 5. Runtime Requirements
-
-### Simulation
-
-- Gazebo
-- Cartographer or Nav2 launched through this package
-- no microphone required
-
-### Real Robot
-
-- TurtleBot base bringup already running
-- camera driver already running
-- TF tree available
-- Cartographer for mapping mode
-- Nav2 for remembered-bin navigation mode
-
-### LLM Mode
-
-- for Groq:
-  `GROQ_API_KEY` in the shell, or a local untracked `api.key` beside [api.key.example](/home/karan/ros2_ws/src/turtlebot_llm_control/turtlebot_llm_control/api.key.example)
-  Python `groq` package available
-
-- for OpenAI:
-  `OPENAI_API_KEY` in the shell
-  Python `openai` package available
-
-If the LLM client is unavailable, the package falls back to rule-based commands and simple canned conversation replies.
-
-## 6. Stage 1: Mapping And Bin Memory
-
-### Simulation
+Set the robot model before launching:
 
 ```bash
-cd /home/karan/ros2_ws
-source install/setup.bash
-export TURTLEBOT3_MODEL=waffle_pi
-ros2 launch turtlebot_llm_control autonomous_bin_mission.launch.py hardware:=false
+export TURTLEBOT3_MODEL=waffle
 ```
 
-### Real Robot
+`burger` also works if you want to use the burger Nav2 parameters instead.
+
+## 4. LLM Requirements
+
+For Groq:
+
+- install the SDK:
 
 ```bash
-cd /home/karan/ros2_ws
-source install/setup.bash
-export TURTLEBOT3_MODEL=waffle_pi
-ros2 launch turtlebot_llm_control autonomous_bin_mission.launch.py hardware:=true image_topic:=/camera/image_raw
+python3 -m pip install groq
 ```
 
-### Real Robot With Green Calibration
-
-```bash
-cd /home/karan/ros2_ws
-source install/setup.bash
-export TURTLEBOT3_MODEL=waffle_pi
-ros2 launch turtlebot_llm_control autonomous_bin_mission.launch.py hardware:=true image_topic:=/camera/image_raw bin_tuning_mode:=true
-```
-
-### What Starts
-
-- speech-to-text bridge
-- conversational command layer
-- reactive navigation
-- exploration manager
-- bin detector
-- bin memory
-- follow controller
-- behavior-tree orchestrator
-- Cartographer
-- Gazebo only when `hardware:=false`
-
-## 7. Speech Input Paths
-
-### Mock Speech
-
-Use this in simulation or testing:
-
-```bash
-ros2 topic pub --once /speech/mock_text std_msgs/msg/String "{data: 'start exploring'}"
-ros2 topic pub --once /speech/mock_text std_msgs/msg/String "{data: 'here is the bin'}"
-ros2 topic pub --once /speech/mock_text std_msgs/msg/String "{data: 'go to lab'}"
-ros2 topic pub --once /speech/mock_text std_msgs/msg/String "{data: 'stop navigation'}"
-```
-
-### Direct Text Injection
-
-```bash
-ros2 topic pub --once /speech/text std_msgs/msg/String "{data: 'follow me'}"
-ros2 topic pub --once /speech/text std_msgs/msg/String "{data: 'go to the red bin'}"
-```
-
-### Microphone Mode
+- either export the key:
 
 ```bash
 export GROQ_API_KEY=your_key_here
-ros2 launch turtlebot_llm_control autonomous_bin_mission.launch.py hardware:=true enable_microphone:=true enable_llm:=true llm_provider:=groq llm_model:=llama-3.3-70b-versatile
 ```
 
-If you create a local `api.key` beside [api.key.example](/home/karan/ros2_ws/src/turtlebot_llm_control/turtlebot_llm_control/api.key.example), the node can use that automatically.
+- or create a local untracked file beside `api.key.example`:
 
-### Standalone LLM Intent Test
+```bash
+cp src/turtlebot_llm_control/turtlebot_llm_control/api.key.example \
+   src/turtlebot_llm_control/turtlebot_llm_control/api.key
+```
 
-Purpose:
+Then paste your real key into `src/turtlebot_llm_control/turtlebot_llm_control/api.key`.
 
-- print only the resolved intent in the terminal
-- speak the assistant reply through local speakers
-- debug Groq intent classification without launching the full robot stack
+That file is ignored by Git.
 
-Command:
+## 5. Final Demo Launch
+
+Use this for the actual Gazebo showcase:
 
 ```bash
 cd /home/karan/ros2_ws
 source install/setup.bash
-ros2 run turtlebot_llm_control llm_intent_test --provider groq --model llama-3.3-70b-versatile
-```
-
-Optional flags:
-
-- `--microphone`
-- `--mute`
-- `--wake-timeout 45.0`
-- `--api-key-path /path/to/key`
-- `--key /path/to/key`
-- `--no-llm`
-
-Behavior:
-
-- terminal prints only the final intent such as `follow`, `navigate`, or `no_action`
-- assistant reply is spoken through `spd-say`, `espeak`, or `say` if available
-- in ROS launches, spoken replies are played from `/speech/response` by `speech_response_node`
-- in `--microphone` mode, Pepper wakes on `hey pepper`, `hi pepper`, or `hello pepper`
-- saying only the wake phrase wakes Pepper silently for 45 seconds by default
-- while awake, Pepper listens and replies normally without needing another wake phrase
-- each new utterance resets the timer, so Pepper sleeps only after 45 seconds of silence
-- saying `good night pepper` or `sleep pepper` sends `stop` and puts Pepper back to sleep
-- saying `emergency stop`, `stop stop`, or `stop now` sends an immediate global `stop`
-- the script can use a local untracked `api.key` beside [api.key.example](/home/karan/ros2_ws/src/turtlebot_llm_control/turtlebot_llm_control/api.key.example) automatically
-
-## 9. Command Behavior
-
-The conversational layer produces one of two outcomes:
-
-- `no_action`
-  General conversation only. The robot replies verbally and does nothing physically.
-
-- action intent
-  The robot replies verbally and triggers a behavior-tree action.
-
-## 10. Pillar Demo In Gazebo
-
-For a simple voice-navigation showcase in simulation, the TurtleBot3 world already includes pillar-like obstacles and the speech layer can map requests such as `go to pillar 1` or `go to pillar five` into Nav2 goals.
-
-Setup:
-
-```bash
-cd /home/karan/ros2_ws
-export TURTLEBOT3_MODEL=burger
-source install/setup.bash
+export TURTLEBOT3_MODEL=waffle
 ros2 launch turtlebot_llm_control sim_pillar_nav_demo.launch.py \
   enable_microphone:=true \
   enable_llm:=true \
   llm_provider:=groq \
   llm_model:=llama-3.3-70b-versatile \
   llm_api_key_path:=/home/karan/ros2_ws/src/turtlebot_llm_control/turtlebot_llm_control/api.key \
-  mute:=false
+  mute:=false \
+  enable_speech_debug:=true
 ```
 
-Example spoken commands:
+What this launch starts:
+
+- TurtleBot3 Gazebo world
+- Nav2 bringup
+- RViz
+- speech-to-text node
+- speech command node
+- speech response speaker node
+- speech debug node
+- behavior-tree orchestrator
+- follow node
+- initial pose publisher for the simulated robot
+
+## 6. Standalone Tester
+
+If you want to test speech / LLM behavior without Gazebo:
+
+```bash
+cd /home/karan/ros2_ws
+source install/setup.bash
+ros2 run turtlebot_llm_control llm_intent_test \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --key /home/karan/ros2_ws/src/turtlebot_llm_control/turtlebot_llm_control/api.key \
+  --microphone
+```
+
+Useful flags:
+
+- `--mute`
+- `--no-llm`
+- `--wake-timeout 45.0`
+
+## 7. Voice Behavior
+
+Wake phrases:
 
 - `hey pepper`
-- `go to pillar 1`
+- `hi pepper`
+- `hello pepper`
+- `pepper`
+
+After wake-up:
+
+- Pepper stays awake for 45 seconds of inactivity
+- each new utterance resets the timer
+- if you stay silent long enough, Pepper goes back to sleep
+
+Sleep commands:
+
+- `good night pepper`
+- `sleep pepper`
+- `pepper sleep`
+
+Emergency stop commands:
+
+- `stop`
+- `stop stop`
+- `stop now`
+- `emergency stop`
+
+These are intended to override whatever the robot is currently doing.
+
+## 8. Demo Commands
+
+Recommended spoken sequence:
+
+```text
+hey pepper
+go to pillar 1
+```
+
+Other supported forms:
+
 - `go to pillar 5`
 - `go to pillar five`
-- `stop`
+- `take me to pillar 3`
+- `take me to pillow one`
+- `take me to below 1`
+- `pepper go to pillar 9`
 
-Notes:
+If the pillar number is missing, Pepper should ask for clarification instead of creating a bad goal.
 
-- the demo world is the standard TurtleBot3 Gazebo world
-- Nav2 is launched against the packaged demo map and packaged Nav2 parameters in this repository
-- an initial pose is published automatically for the simulated robot spawn point
+## 9. Pillar Targets
 
-Supported action families include:
+The demo uses these internal navigation targets:
 
-- follow
-- is_alive
-- stop
-- stop navigation
-- navigate
-- go to remembered bin
-- start exploring
-- stop exploring
-- inspect bin
-- pause
-- resume
-- manual override on
-- manual override off
-- start tour
+- `pillar_1`
+- `pillar_2`
+- `pillar_3`
+- `pillar_4`
+- `pillar_5`
+- `pillar_6`
+- `pillar_7`
+- `pillar_8`
+- `pillar_9`
 
-## 10. Bin Workflow
+The speech pipeline normalizes natural variants like:
 
-The bin detector is guided, not always-on.
+- `pillar one`
+- `Pillar 1`
+- `pillow one`
+- `below 1`
 
-### Recommended Flow
+into the correct internal target.
 
-1. Move the robot near the green bin.
-2. Say `here is the bin`.
-3. Keep the bin steady in view.
-4. Wait for a stable confirmation.
-5. The bin is saved into memory.
+## 10. Speech And Debug Topics
 
-### Direct Detector Arming
+Main topics:
 
-```bash
-ros2 topic pub --once /bin_detector/control std_msgs/msg/String "{data: 'arm:green'}"
-```
-
-### Important Behavior
-
-- the detector waits for an explicit cue
-- the detector requires multiple stable frames before publishing `found=true`
-- this reduces hallucinated bin saves
-
-## 11. Follow Workflow
-
-### Start Following
-
-```bash
-ros2 topic pub --once /speech/text std_msgs/msg/String "{data: 'follow me'}"
-```
-
-### Direct Follow Control
-
-```bash
-ros2 topic pub --once /follow_me/control std_msgs/msg/String "{data: 'start:yellow'}"
-ros2 topic pub --once /follow_me/control std_msgs/msg/String "{data: 'stop'}"
-```
-
-## 12. Memory And Visualization
-
-### Persistent Memory File
-
-```bash
-~/.ros/turtlebot_llm_control/bin_memory.json
-```
-
-### RViz
-
-- add a `MarkerArray` display
-- set topic to `/bin_memory/markers`
-
-### Marker Meaning
-
-- colored spheres: remembered bins
-- text labels: names like `green_bin_01`
-- line strips: breadcrumb paths
-
-## 14. Key Topics
-
-- `/speech/mock_text`
 - `/speech/text`
 - `/speech/intent`
 - `/speech/response`
 - `/speech/debug`
 - `/speech_to_text/status`
 - `/tour/status`
-- `/reactive_nav/status`
-- `/exploration/status`
-- `/bin_detector/status`
-- `/bin_detector/detection`
-- `/bin_memory/state`
-- `/bin_memory/status`
-- `/bin_memory/markers`
-- `/follow_me/status`
 
-## 15. Debug Commands
+For clean speech-only debugging:
 
 ```bash
-ros2 topic echo /speech_to_text/status
 ros2 topic echo /speech/debug
+```
+
+This is the best topic to watch during the demo because it isolates:
+
+- STT status
+- recognized text
+- resolved intent
+- spoken response
+
+If you want to see only the spoken replies:
+
+```bash
 ros2 topic echo /speech/response
-ros2 topic echo /tour/status
-ros2 topic echo /reactive_nav/status
-ros2 topic echo /exploration/status
-ros2 topic echo /bin_detector/status
-ros2 topic echo /bin_detector/detection
-ros2 topic echo /bin_memory/status
-ros2 topic echo /follow_me/status
 ```
 
-## 16. Manual Override
+## 11. Notes On TTS
 
-### Enable
+The package uses local desktop TTS tools for audio playback.
+
+Supported commands:
+
+- `spd-say`
+- `espeak`
+- `say`
+
+If Pepper is not speaking, check:
 
 ```bash
-ros2 topic pub --once /speech/text std_msgs/msg/String "{data: 'manual override'}"
+which spd-say
+which espeak
 ```
 
-or
+## 12. Known Runtime Noise
 
-```bash
-ros2 topic pub --once /manual_override/control std_msgs/msg/String "{data: 'on'}"
+You may still see Nav2 / AMCL messages like:
+
+- `Message Filter dropping message`
+- TF cache timestamp warnings
+
+These usually happen during startup while Gazebo, TF, localization, and Nav2 are settling.
+
+For this demo, the more important thing is:
+
+- `/speech/debug` shows the right text and intent
+- Pepper speaks a response
+- the robot accepts the navigation goal and moves
+
+## 13. Quick Checklist
+
+Before the final demo:
+
+1. `colcon build --packages-select turtlebot_llm_control`
+2. `source install/setup.bash`
+3. `export TURTLEBOT3_MODEL=waffle`
+4. confirm your Groq key is available
+5. launch `sim_pillar_nav_demo.launch.py`
+6. wait for Gazebo and Nav2 to finish starting
+7. keep one terminal on `ros2 topic echo /speech/debug`
+
+## 14. One-Line Demo Reminder
+
+```text
+hey pepper -> go to pillar one -> Pepper answers -> intent resolves -> robot navigates
 ```
-
-### Disable
-
-```bash
-ros2 topic pub --once /speech/text std_msgs/msg/String "{data: 'resume autonomous'}"
-```
-
-or
-
-```bash
-ros2 topic pub --once /manual_override/control std_msgs/msg/String "{data: 'off'}"
-```
-
-## 17. Compliance Summary
-
-This package now includes:
-
-- speech-to-text integration
-- predefined command recognition
-- command-to-action mapping
-- ROS2 navigation goal triggering
-- verbal responses
-- basic behavior-tree control
-- general conversation with `no_action` or allowed actions

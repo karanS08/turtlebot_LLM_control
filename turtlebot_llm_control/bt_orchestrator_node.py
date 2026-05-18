@@ -1,8 +1,13 @@
+import csv
+import json
+import os
+import time
+from pathlib import Path
 from typing import Dict, List, Optional
 
 from action_msgs.msg import GoalStatus
 from geometry_msgs.msg import PoseStamped
-from nav2_msgs.action import NavigateToPose
+from nav2_msgs.action import FollowWaypoints, NavigateToPose
 from std_msgs.msg import String
 
 import rclpy
@@ -17,416 +22,547 @@ from turtlebot_llm_control.behavior_tree import (
     NodeStatus,
     SequenceNode,
 )
-from turtlebot_llm_control.models import ControllerStatus, DialogueMemory, IntentToken, TaskState
+from turtlebot_llm_control.models import (
+    ControllerStatus,
+    DialogueMemory,
+    IntentToken,
+    RobotExpression,
+    TaskState,
+)
+
+try:
+    from social_robot_interfaces.srv import Tours as ToursSrv
+    _TOURS_SRV_AVAILABLE = True
+except ImportError:
+    _TOURS_SRV_AVAILABLE = False
 
 
 class BehaviorTreeOrchestrator(Node):
     def __init__(self):
         super().__init__("bt_orchestrator_node")
+
         self.status = ControllerStatus()
         self.memory = DialogueMemory()
-        self.route_cache: Dict[str, List[dict]] = {}
-        self.bin_memory: Dict[str, dict] = {}
         self.pending_intent: Optional[IntentToken] = None
         self.pending_goal_location: str = ""
-        self.pending_goal_pose: Optional[tuple[float, float, str]] = None
+        self.pending_goal_pose: Optional[tuple] = None
         self.nav_goal_handle: Optional[ClientGoalHandle] = None
         self.nav_result_future = None
         self.nav_in_progress = False
         self.nav_request_token = 0
         self.localization_ok = True
-        self.tour_route_requested = False
 
-        self.intent_subscription = self.create_subscription(
-            String, "/speech/intent", self.handle_intent, 10
-        )
-        self.route_subscription = self.create_subscription(
-            String, "/route/data", self.handle_route_data, 10
-        )
-        self.bin_memory_subscription = self.create_subscription(
-            String, "/bin_memory/state", self.handle_bin_memory, 10
+        # Tour state
+        self._current_tour_name: str = ""
+        self._tour_descriptions: List[str] = []
+        self._tour_waypoint_index: int = 0
+        self._follow_wp_goal_handle = None
+
+        # Navigate failure tracking (resets on success)
+        self._nav_fail_count: int = 0
+
+        # Waypoint cache (avoids a service round-trip on every navigate intent)
+        self._wp_cache: List = []
+        self._wp_cache_time: float = 0.0
+        self._WP_CACHE_TTL: float = 30.0
+
+        # Parameters
+        self.tours_dir = str(
+            Path(
+                str(self.declare_parameter("tours_dir", "~/tours").value)
+            ).expanduser()
         )
 
-        self.response_publisher = self.create_publisher(String, "/speech/response", 10)
-        self.status_publisher = self.create_publisher(String, "/tour/status", 10)
-        self.route_record_publisher = self.create_publisher(String, "/route/record", 10)
-        self.route_replay_publisher = self.create_publisher(String, "/route/replay", 10)
-        self.exploration_control_publisher = self.create_publisher(String, "/exploration/control", 10)
-        self.reactive_nav_control_publisher = self.create_publisher(String, "/reactive_nav/control", 10)
-        self.manual_override_publisher = self.create_publisher(String, "/manual_override/control", 10)
-        self.follow_control_publisher = self.create_publisher(String, "/follow_me/control", 10)
-        self.bin_detector_control_publisher = self.create_publisher(String, "/bin_detector/control", 10)
+        # Subscriptions
+        self.create_subscription(String, "/speech/intent", self._on_intent, 10)
 
+        # Publishers
+        self.response_pub = self.create_publisher(String, "/speech/response", 10)
+        self.status_pub = self.create_publisher(String, "/tour/status", 10)
+        self.expression_pub = self.create_publisher(String, "/robot/expression", 10)
+        self.manual_override_pub = self.create_publisher(String, "/manual_override/control", 10)
+        self.follow_control_pub = self.create_publisher(String, "/follow_me/control", 10)
+
+        # Action clients
         self.nav_client = ActionClient(self, NavigateToPose, "/navigate_to_pose")
-        self.timer = self.create_timer(1.0, self.tick_tree)
-        self.behavior_tree = self.build_tree()
-        self.get_logger().info("Behavior-tree orchestrator ready.")
+        self.follow_wp_client = ActionClient(self, FollowWaypoints, "/follow_waypoints")
 
-    def build_tree(self):
-        return FallbackNode(
-            [
-                SequenceNode(
-                    [
-                        ConditionNode(lambda: not self.localization_ok),
-                        ActionNode(self.recover_localization),
-                    ]
-                ),
-                SequenceNode(
-                    [
-                        ConditionNode(self.has_interruption),
-                        ActionNode(self.pause_current_task),
-                        ActionNode(self.respond_to_user),
-                        ActionNode(self.resume_previous_task),
-                    ]
-                ),
-                SequenceNode(
-                    [
-                        ConditionNode(lambda: self.status.task_state == TaskState.EXPLORING),
-                        ActionNode(self.explore_stub),
-                    ]
-                ),
-                SequenceNode(
-                    [
-                        ConditionNode(lambda: self.status.task_state == TaskState.TOURING),
-                        ActionNode(self.replay_active_route),
-                        ActionNode(self.explain_current_stop),
-                        ActionNode(self.sync_gesture_stub),
-                    ]
-                ),
-                SequenceNode(
-                    [
-                        ConditionNode(lambda: self.status.task_state == TaskState.FOLLOWING),
-                        ActionNode(self.follow_user_stub),
-                    ]
-                ),
-                SequenceNode(
-                    [
-                        ConditionNode(lambda: self.status.task_state == TaskState.NAVIGATING),
-                        ActionNode(self.navigate_to_pending_goal),
-                    ]
-                ),
-            ]
-        )
+        # Service client for tour_retrieve (social_guide)
+        self.tour_retrieve_client = None
+        if _TOURS_SRV_AVAILABLE:
+            self.tour_retrieve_client = self.create_client(ToursSrv, "tour_retrieve")
+        else:
+            self.get_logger().warning(
+                "social_robot_interfaces not found — tour_retrieve service unavailable"
+            )
 
-    def handle_intent(self, msg: String) -> None:
+        # Behaviour tree + timer
+        self.behavior_tree = self._build_tree()
+        self.create_timer(1.0, self._tick)
+
+        self._set_expression(RobotExpression.IDLE)
+        self.get_logger().info("Behaviour-tree orchestrator ready.")
+
+    # ------------------------------------------------------------------
+    # Expression helper
+    # ------------------------------------------------------------------
+
+    def _set_expression(self, state: str):
+        self.expression_pub.publish(String(data=state))
+
+    # ------------------------------------------------------------------
+    # Behaviour tree
+    # ------------------------------------------------------------------
+
+    def _build_tree(self):
+        return FallbackNode([
+            SequenceNode([
+                ConditionNode(lambda: not self.localization_ok),
+                ActionNode(self._recover_localization),
+            ]),
+            SequenceNode([
+                ConditionNode(self._has_interruption),
+                ActionNode(self._pause_task),
+                ActionNode(self._respond_to_user),
+                ActionNode(self._resume_task),
+            ]),
+            SequenceNode([
+                ConditionNode(lambda: self.status.task_state == TaskState.TOURING),
+                ActionNode(self._explain_current_stop),
+                ActionNode(self._sync_gesture_stub),
+            ]),
+            SequenceNode([
+                ConditionNode(lambda: self.status.task_state == TaskState.FOLLOWING),
+                ActionNode(self._follow_user_stub),
+            ]),
+            SequenceNode([
+                ConditionNode(lambda: self.status.task_state == TaskState.NAVIGATING),
+                ActionNode(self._navigate_to_pending_goal),
+            ]),
+        ])
+
+    def _tick(self):
+        self.behavior_tree.tick()
+        self._publish_status()
+
+    # ------------------------------------------------------------------
+    # Intent handling
+    # ------------------------------------------------------------------
+
+    def _on_intent(self, msg: String):
         token = IntentToken.from_json(msg.data)
         self.pending_intent = token
-        self.apply_intent(token)
-        self.publish_status()
+        self._apply_intent(token)
+        self._publish_status()
 
-    def handle_route_data(self, msg: String) -> None:
-        import json
+    def _apply_intent(self, token: IntentToken):
+        intent = token.intent
 
-        payload = json.loads(msg.data)
-        self.route_cache[payload["label"]] = payload.get("waypoints", [])
-
-    def handle_bin_memory(self, msg: String) -> None:
-        import json
-
-        payload = json.loads(msg.data)
-        self.bin_memory = payload.get("bins", {})
-
-    def apply_intent(self, token: IntentToken) -> None:
-        if token.intent == "is_alive":
-            self.say(token.response)
+        if intent == "is_alive":
+            self._say(token.response)
             return
 
-        if token.intent == "no_action":
+        if intent == "no_action":
             self.status.task_state = TaskState.IDLE
-            self.say(token.response)
+            self._set_expression(RobotExpression.IDLE)
+            self._say(token.response)
             return
 
-        if token.intent == "follow":
+        if intent == "follow":
             self.status.task_state = TaskState.FOLLOWING
-            target_color = token.metadata.get("target_color", "yellow")
-            self.status.current_target = target_color
-            self.publish_exploration_control("stop")
-            self.publish_reactive_nav_control("stop")
-            self.publish_follow_control("start:{}".format(target_color))
-            self.say(token.response)
+            self._set_expression(RobotExpression.NAVIGATING)
+            self.follow_control_pub.publish(String(data="start:yellow"))
+            self._say(token.response)
             return
 
-        if token.intent == "inspect_bin":
-            target_color = token.metadata.get("bin_color", "green")
-            self.status.task_state = TaskState.IDLE
-            self.status.current_target = target_color
-            self.publish_follow_control("stop")
-            self.publish_exploration_control("stop")
-            self.publish_reactive_nav_control("stop")
-            self.publish_bin_detector_control("arm:{}".format(target_color))
-            self.say(token.response)
-            return
-
-        if token.intent == "stop":
+        if intent == "stop":
             self.memory.paused_task = self.status.task_state
             self.status.task_state = TaskState.IDLE
             self.status.is_paused = False
-            self.status.current_target = ""
-            self.cancel_navigation_goal()
-            self.publish_follow_control("stop")
-            self.publish_exploration_control("stop")
-            self.publish_reactive_nav_control("stop")
-            self.say(token.response)
+            self._cancel_nav_goal()
+            self._cancel_follow_waypoints()
+            self.follow_control_pub.publish(String(data="stop"))
+            self._set_expression(RobotExpression.IDLE)
+            self._say(token.response)
             return
 
-        if token.intent == "stop_navigation":
-            self.cancel_navigation_goal()
+        if intent == "stop_navigation":
+            self._cancel_nav_goal()
+            self._cancel_follow_waypoints()
             self.status.task_state = TaskState.IDLE
-            self.status.current_target = ""
-            self.say(token.response)
+            self._set_expression(RobotExpression.IDLE)
+            self._say(token.response)
             return
 
-        if token.intent == "pause":
+        if intent == "pause":
             self.memory.paused_task = self.status.task_state
             self.status.task_state = TaskState.PAUSED
             self.status.is_paused = True
-            self.publish_follow_control("stop")
-            self.publish_exploration_control("stop")
-            self.publish_reactive_nav_control("stop")
-            self.say(token.response)
+            self.follow_control_pub.publish(String(data="stop"))
+            self._set_expression(RobotExpression.IDLE)
+            self._say(token.response)
             return
 
-        if token.intent == "resume":
+        if intent == "resume":
             paused = self.memory.paused_task or TaskState.IDLE
             self.status.task_state = paused
             self.status.is_paused = False
             if paused == TaskState.FOLLOWING:
-                self.publish_follow_control("start:{}".format(self.status.current_target or "yellow"))
-            if paused == TaskState.EXPLORING:
-                self.publish_exploration_control("start")
-            self.say(token.response)
+                self.follow_control_pub.publish(String(data="start:yellow"))
+                self._set_expression(RobotExpression.NAVIGATING)
+            self._say(token.response)
             return
 
-        if token.intent == "navigate":
-            self.pending_goal_location = token.location
-            self.pending_goal_pose = None
-            self.status.current_location = token.location
-            self.status.task_state = TaskState.NAVIGATING
-            self.say(token.response)
+        if intent == "navigate":
+            label = (token.label or token.location or "").strip()
+            pose = self._resolve_waypoint(label)
+            if pose is not None:
+                self._nav_fail_count = 0
+                self.pending_goal_pose = (
+                    pose.pose.position.x, pose.pose.position.y, label
+                )
+                self.pending_goal_location = label
+                self.status.current_location = token.location
+                self.status.task_state = TaskState.NAVIGATING
+                self._set_expression(RobotExpression.NAVIGATING)
+                self._say(token.response)
+            else:
+                self._nav_fail_count += 1
+                self._say_location_not_found(label)
             return
 
-        if token.intent == "go_to_bin":
-            remembered_bin = self.resolve_bin_target(token)
-            if remembered_bin is None:
-                requested = token.label or "{} bin".format(token.metadata.get("bin_color", "that"))
-                self.say("I do not know the location of {} yet.".format(requested))
-                return
-
-            self.status.task_state = TaskState.NAVIGATING
-            self.status.current_target = remembered_bin["label"]
-            self.pending_goal_pose = (
-                float(remembered_bin["x"]),
-                float(remembered_bin["y"]),
-                remembered_bin["label"],
-            )
-            self.pending_goal_location = ""
-            self.say(token.response)
+        if intent in ("start_tour", "replay_route"):
+            self._handle_start_tour(token)
             return
 
-        if token.intent == "start_exploration":
-            self.status.task_state = TaskState.EXPLORING
-            self.publish_follow_control("stop")
-            self.publish_exploration_control("start")
-            self.say(token.response)
+        if intent == "save_waypoint":
+            self._say(token.response or "Saving current position as a waypoint.")
             return
 
-        if token.intent == "stop_exploration":
-            self.status.task_state = TaskState.IDLE
-            self.publish_exploration_control("stop")
-            self.say(token.response)
+        if intent == "dock":
+            self._say(token.response or "Returning to home base.")
             return
 
-        if token.intent == "manual_override_on":
+        if intent == "manual_override_on":
             self.status.task_state = TaskState.PAUSED
-            self.publish_follow_control("stop")
-            self.publish_manual_override("on")
-            self.say(token.response)
+            self.follow_control_pub.publish(String(data="stop"))
+            self.manual_override_pub.publish(String(data="on"))
+            self._say(token.response)
             return
 
-        if token.intent == "manual_override_off":
+        if intent == "manual_override_off":
             self.status.task_state = TaskState.IDLE
-            self.publish_manual_override("off")
-            self.say(token.response)
+            self.manual_override_pub.publish(String(data="off"))
+            self._say(token.response)
             return
 
-        if token.intent == "start_recording":
-            self.status.task_state = TaskState.RECORDING
-            self.status.is_recording = True
-            self.status.current_route = token.label
-            record_msg = String()
-            record_msg.data = "start:{}".format(token.label)
-            self.route_record_publisher.publish(record_msg)
-            self.say(token.response)
-            return
-
-        if token.intent == "stop_recording":
-            self.status.is_recording = False
-            self.status.task_state = TaskState.IDLE
-            stop_msg = String()
-            stop_msg.data = "stop"
-            self.route_record_publisher.publish(stop_msg)
-            self.say(token.response)
-            return
-
-        if token.intent == "save_route":
-            source = self.status.current_route or token.label
-            save_msg = String()
-            save_msg.data = "save:{}:{}".format(source, token.label)
-            self.route_record_publisher.publish(save_msg)
-            self.status.current_route = token.label
-            self.say(token.response)
-            return
-
-        if token.intent == "replay_route":
-            self.status.current_route = token.label
-            self.status.task_state = TaskState.TOURING
-            self.memory.active_route = token.label
-            self.memory.current_stop_index = 0
-            self.tour_route_requested = True
-            replay_msg = String()
-            replay_msg.data = token.label
-            self.route_replay_publisher.publish(replay_msg)
-            self.say(token.response)
-            return
-
-        if token.intent == "start_tour":
-            route_label = self.status.current_route or self.memory.active_route or "saved_route"
-            self.status.current_route = route_label
-            self.memory.active_route = route_label
-            self.status.task_state = TaskState.TOURING
-            self.memory.current_stop_index = 0
-            self.tour_route_requested = True
-            replay_msg = String()
-            replay_msg.data = route_label
-            self.route_replay_publisher.publish(replay_msg)
-            self.say(token.response)
-            return
-
-        if token.intent == "explain":
+        if intent == "explain":
             self.memory.last_question = token.utterance
-            self.memory.last_response = "{} is one of the key tour stops.".format(token.location)
-            self.say(self.memory.last_response)
+            location = token.location or self.status.current_location or "this area"
+            self.memory.last_response = token.response or f"{location} is one of the tour stops."
+            self._set_expression(RobotExpression.EXPLAINING)
+            self._say(self.memory.last_response)
             return
 
-        self.say(token.response)
+        # Fallback — say whatever the LLM produced
+        self._say(token.response)
 
-    def tick_tree(self) -> None:
-        self.behavior_tree.tick()
-        self.publish_status()
+    # ------------------------------------------------------------------
+    # Tour CSV loading + execution
+    # ------------------------------------------------------------------
 
-    def has_interruption(self) -> bool:
+    def _load_tour_csv(self, tour_name: str) -> tuple:
+        """Return (list[int], list[str]) of waypoint indices and descriptions."""
+        candidates = [
+            os.path.join(self.tours_dir, f"{tour_name}.csv"),
+            os.path.join(self.tours_dir, f"tour{tour_name}.csv"),
+        ]
+        for path in candidates:
+            if os.path.exists(path):
+                indices, descs = [], []
+                with open(path, newline="") as f:
+                    for row in csv.reader(f):
+                        if not row or str(row[0]).startswith("#"):
+                            continue
+                        try:
+                            indices.append(int(row[0].strip()))
+                            descs.append(row[1].strip() if len(row) > 1 else "")
+                        except (ValueError, IndexError):
+                            continue
+                self.get_logger().info(
+                    f"Loaded tour '{tour_name}' from {path}: {len(indices)} stops"
+                )
+                return indices, descs
+        self.get_logger().warning(
+            f"Tour CSV not found for '{tour_name}' in {self.tours_dir}"
+        )
+        return [], []
+
+    def _get_all_waypoints(self) -> list:
+        """Fetch all PoseStamped waypoints from social_guide's tour_retrieve service."""
+        if self.tour_retrieve_client is None:
+            return []
+        if not self.tour_retrieve_client.wait_for_service(timeout_sec=2.0):
+            self.get_logger().warning("tour_retrieve service not available")
+            return []
+        req = ToursSrv.Request()
+        req.idx = 0
+        future = self.tour_retrieve_client.call_async(req)
+        deadline = time.time() + 4.0
+        while not future.done() and time.time() < deadline:
+            rclpy.spin_once(self, timeout_sec=0.1)
+        if future.done():
+            return list(future.result().tour)
+        self.get_logger().warning("tour_retrieve timed out")
+        return []
+
+    def _handle_start_tour(self, token: IntentToken):
+        tour_name = token.label or "1"
+        self._current_tour_name = tour_name
+        indices, descriptions = self._load_tour_csv(tour_name)
+
+        if not indices:
+            self._say(
+                f"I couldn't find tour '{tour_name}'. "
+                "Please use the tour planner to create it first."
+            )
+            return
+
+        all_wps = self._get_all_waypoints()
+        if not all_wps:
+            self._say("I can't reach the waypoint database right now.")
+            return
+
+        selected_poses, selected_descs = [], []
+        for idx, desc in zip(indices, descriptions):
+            if 0 <= idx < len(all_wps):
+                selected_poses.append(all_wps[idx])
+                selected_descs.append(desc)
+            else:
+                self.get_logger().warning(f"Waypoint index {idx} out of range, skipping")
+
+        if not selected_poses:
+            self._say("No valid waypoints found for this tour.")
+            return
+
+        self.status.task_state = TaskState.TOURING
+        self.status.current_route = tour_name
+        self.memory.active_route = tour_name
+        self.memory.current_stop_index = 0
+        self._set_expression(RobotExpression.NAVIGATING)
+        self._say(
+            token.response
+            or f"Starting tour '{tour_name}' with {len(selected_poses)} stops. Let's go!"
+        )
+        self._send_follow_waypoints(selected_poses, selected_descs)
+
+    def _send_follow_waypoints(self, poses: list, descriptions: list):
+        self._tour_descriptions = descriptions
+        self._tour_waypoint_index = -1
+
+        if not self.follow_wp_client.wait_for_server(timeout_sec=3.0):
+            self.get_logger().warning("/follow_waypoints action not available")
+            return
+
+        goal = FollowWaypoints.Goal()
+        goal.poses = poses
+        future = self.follow_wp_client.send_goal_async(
+            goal, feedback_callback=self._fw_feedback
+        )
+        future.add_done_callback(self._fw_goal_response)
+
+    def _fw_goal_response(self, future):
+        handle = future.result()
+        if not handle.accepted:
+            self.get_logger().warning("follow_waypoints goal rejected")
+            self.status.task_state = TaskState.IDLE
+            return
+        self._follow_wp_goal_handle = handle
+        handle.get_result_async().add_done_callback(self._fw_result)
+
+    def _fw_feedback(self, feedback_msg):
+        idx = feedback_msg.feedback.current_waypoint
+        if idx == self._tour_waypoint_index:
+            return
+        self._tour_waypoint_index = idx
+        self.memory.current_stop_index = idx
+        desc = (
+            self._tour_descriptions[idx]
+            if idx < len(self._tour_descriptions)
+            else ""
+        )
+        if desc:
+            self._set_expression(RobotExpression.EXPLAINING)
+            self._say(desc)
+
+    def _fw_result(self, future):
+        result = future.result()
+        missed = getattr(result.result, "missed_waypoints", [])
+        self.get_logger().info(f"Tour complete. Missed: {missed}")
+        self.status.task_state = TaskState.IDLE
+        self._current_tour_name = ""
+        self._set_expression(RobotExpression.IDLE)
+        self._say("We have completed the tour. Thank you for joining me!")
+
+    def _cancel_follow_waypoints(self):
+        if self._follow_wp_goal_handle is not None:
+            self._follow_wp_goal_handle.cancel_goal_async()
+            self._follow_wp_goal_handle = None
+
+    # ------------------------------------------------------------------
+    # BT action stubs
+    # ------------------------------------------------------------------
+
+    def _has_interruption(self) -> bool:
         return self.status.task_state == TaskState.PAUSED
 
-    def pause_current_task(self) -> NodeStatus:
+    def _pause_task(self) -> NodeStatus:
         return NodeStatus.SUCCESS
 
-    def respond_to_user(self) -> NodeStatus:
+    def _respond_to_user(self) -> NodeStatus:
         return NodeStatus.SUCCESS
 
-    def resume_previous_task(self) -> NodeStatus:
+    def _resume_task(self) -> NodeStatus:
         return NodeStatus.SUCCESS
 
-    def replay_active_route(self) -> NodeStatus:
-        route = self.route_cache.get(self.memory.active_route, [])
-        if self.tour_route_requested and not route:
-            return NodeStatus.RUNNING
+    def _explain_current_stop(self) -> NodeStatus:
+        return NodeStatus.SUCCESS
 
-        if not route:
-            self.status.task_state = TaskState.IDLE
-            return NodeStatus.FAILURE
+    def _sync_gesture_stub(self) -> NodeStatus:
+        self.get_logger().debug("Gesture sync placeholder — wire Pepper gestures here.")
+        return NodeStatus.SUCCESS
 
-        if self.memory.current_stop_index >= len(route):
-            self.status.task_state = TaskState.IDLE
-            self.tour_route_requested = False
-            return NodeStatus.SUCCESS
-
-        waypoint = route[self.memory.current_stop_index]
-        self.pending_goal_pose = (
-            float(waypoint.get("x", 0.0)),
-            float(waypoint.get("y", 0.0)),
-            self.memory.active_route or "tour_waypoint",
-        )
-        self.status.task_state = TaskState.NAVIGATING
-        self.memory.current_stop_index += 1
-        self.tour_route_requested = False
+    def _follow_user_stub(self) -> NodeStatus:
+        self.get_logger().debug("Follow mode active.")
         return NodeStatus.RUNNING
 
-    def explain_current_stop(self) -> NodeStatus:
-        if self.status.task_state != TaskState.TOURING:
-            return NodeStatus.FAILURE
-        route_name = self.memory.active_route or "the route"
-        self.memory.last_response = (
-            "We are currently touring {}. Waypoint {} is an explanation stop.".format(
-                route_name,
-                self.memory.current_stop_index,
+    def _recover_localization(self) -> NodeStatus:
+        self.status.task_state = TaskState.RECOVERING
+        self._say("Localization confidence is low. Attempting recovery.")
+        self.localization_ok = True
+        self.status.task_state = TaskState.IDLE
+        return NodeStatus.SUCCESS
+
+    # ------------------------------------------------------------------
+    # Waypoint resolution helpers
+    # ------------------------------------------------------------------
+
+    def _get_cached_waypoints(self) -> list:
+        """Return waypoints from cache, refreshing if stale."""
+        now = time.time()
+        if self._wp_cache and (now - self._wp_cache_time) < self._WP_CACHE_TTL:
+            return self._wp_cache
+        wps = self._get_all_waypoints()
+        if wps:
+            self._wp_cache = wps
+            self._wp_cache_time = now
+        return self._wp_cache
+
+    def _resolve_waypoint(self, label: str):
+        """Try to resolve a label (numeric index or name) to a PoseStamped.
+
+        Returns PoseStamped on success, None if not found.
+        """
+        if not label:
+            return None
+        all_wps = self._get_cached_waypoints()
+        if not all_wps:
+            return None
+
+        # Numeric index: "3", "waypoint 3", "stop 3"
+        for token_part in label.replace("waypoint", "").replace("stop", "").split():
+            try:
+                idx = int(token_part.strip())
+                if 0 <= idx < len(all_wps):
+                    return all_wps[idx]
+            except ValueError:
+                continue
+
+        # Fuzzy word-to-number ("one"→1, "two"→2, …)
+        _WORDS = {
+            "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4,
+            "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9,
+        }
+        for word, num in _WORDS.items():
+            if word in label.lower() and 0 <= num < len(all_wps):
+                return all_wps[num]
+
+        return None
+
+    def _list_available_tours(self) -> List[str]:
+        """Return tour names (CSV basenames without extension) from tours_dir."""
+        try:
+            return sorted(
+                p.stem for p in Path(self.tours_dir).glob("*.csv")
             )
-        )
-        self.say(self.memory.last_response)
-        return NodeStatus.SUCCESS
+        except Exception:
+            return []
 
-    def sync_gesture_stub(self) -> NodeStatus:
-        self.get_logger().debug("Gesture sync placeholder triggered.")
-        return NodeStatus.SUCCESS
+    def _say_location_not_found(self, label: str):
+        """Tell the user the location wasn't found, listing what IS available."""
+        all_wps = self._get_cached_waypoints()
+        n = len(all_wps)
+        tours = self._list_available_tours()
 
-    def follow_user_stub(self) -> NodeStatus:
-        self.get_logger().debug("Follow mode active. Connect person tracking here.")
-        return NodeStatus.RUNNING
+        if n == 0:
+            self._say(
+                f"I couldn't find '{label}' and the waypoint database isn't available right now. "
+                "Please make sure the social guide nodes are running."
+            )
+            self.status.task_state = TaskState.IDLE
+            return
 
-    def explore_stub(self) -> NodeStatus:
-        self.get_logger().debug("Exploration mode active.")
-        return NodeStatus.RUNNING
+        # Base "not found" message
+        base = f"I couldn't find a place called '{label}'." if label else "I'm not sure where to go."
 
-    def navigate_to_pending_goal(self) -> NodeStatus:
+        if self._nav_fail_count >= 3:
+            # After 3+ failed attempts give concrete examples
+            example_indices = list(range(min(3, n)))
+            examples = ", ".join(f"waypoint {i}" for i in example_indices)
+            msg = (
+                f"{base} "
+                f"I have {n} saved waypoint{'s' if n != 1 else ''}, numbered 0 to {n - 1}. "
+                f"You can say things like 'take me to {examples}'. "
+            )
+            if tours:
+                msg += (
+                    f"I also know {'these tours' if len(tours) > 1 else 'this tour'}: "
+                    f"{', '.join(tours)}. "
+                    f"Just say 'start tour {tours[0]}' to begin."
+                )
+        else:
+            msg = (
+                f"{base} "
+                f"I know {n} waypoint{'s' if n != 1 else ''}, numbered 0 to {n - 1}. "
+                "Try asking by waypoint number — for example, 'go to waypoint 2'."
+            )
+
+        self.status.task_state = TaskState.IDLE
+        self._say(msg)
+
+    # ------------------------------------------------------------------
+    # Single-destination navigation (navigate intent)
+    # ------------------------------------------------------------------
+
+    def _navigate_to_pending_goal(self) -> NodeStatus:
         if self.nav_in_progress:
             return NodeStatus.RUNNING
 
         if self.pending_goal_pose is not None:
             x, y, label = self.pending_goal_pose
-            if self.send_navigation_goal(x, y, label):
+            if self._send_nav_goal(x, y, label):
                 self.pending_goal_pose = None
                 return NodeStatus.RUNNING
             return NodeStatus.FAILURE
 
-        if not self.pending_goal_location:
-            return NodeStatus.FAILURE
-
-        location_map = {
-            "lab": (1.0, 2.0),
-            "entrance": (0.0, 0.0),
-            "kitchen": (2.0, -1.0),
-            "pillar_1": (-1.6, -1.1),
-            "pillar_2": (-1.6, 0.0),
-            "pillar_3": (-1.6, 1.1),
-            "pillar_4": (-0.5, -1.1),
-            "pillar_5": (-0.5, 0.0),
-            "pillar_6": (-0.5, 1.1),
-            "pillar_7": (0.6, -1.1),
-            "pillar_8": (0.6, 0.0),
-            "pillar_9": (0.6, 1.1),
-        }
-        goal = location_map.get(self.pending_goal_location)
-        if goal is None:
-            self.say("I do not know where {} is yet.".format(self.pending_goal_location or "that place"))
-            self.status.task_state = TaskState.IDLE
-            self.pending_goal_location = ""
-            return NodeStatus.FAILURE
-        if self.send_navigation_goal(goal[0], goal[1], self.pending_goal_location):
-            self.pending_goal_location = ""
-            return NodeStatus.RUNNING
+        # No pose resolved — intent handler already notified the user
+        self.status.task_state = TaskState.IDLE
         return NodeStatus.FAILURE
 
-    def recover_localization(self) -> NodeStatus:
-        self.status.task_state = TaskState.RECOVERING
-        self.say("Localization confidence is low. Starting recovery routine.")
-        self.localization_ok = True
-        self.status.task_state = TaskState.IDLE
-        return NodeStatus.SUCCESS
-
-    def send_navigation_goal(self, x: float, y: float, target_label: str = "") -> bool:
+    def _send_nav_goal(self, x: float, y: float, label: str = "") -> bool:
         if not self.nav_client.server_is_ready():
-            self.get_logger().warning("Nav2 action server is not ready yet.")
+            self.get_logger().warning("Nav2 action server not ready.")
             return False
-
         goal = NavigateToPose.Goal()
         goal.pose = PoseStamped()
         goal.pose.header.frame_id = "map"
@@ -435,137 +571,97 @@ class BehaviorTreeOrchestrator(Node):
         goal.pose.pose.position.y = y
         goal.pose.pose.orientation.w = 1.0
         self.nav_request_token += 1
-        request_token = self.nav_request_token
+        token = self.nav_request_token
         self.nav_in_progress = True
         self.status.task_state = TaskState.NAVIGATING
-        self.status.current_target = target_label
-        send_future = self.nav_client.send_goal_async(goal)
-        send_future.add_done_callback(
-            lambda future, token=request_token: self.handle_navigation_goal_response(future, token)
+        self.status.current_target = label
+        self._set_expression(RobotExpression.NAVIGATING)
+        future = self.nav_client.send_goal_async(goal)
+        future.add_done_callback(
+            lambda f, t=token: self._nav_goal_response(f, t)
         )
-        self.say("Starting navigation to {}.".format(target_label or "the requested location"))
         return True
 
-    def handle_navigation_goal_response(self, future, request_token: int) -> None:
-        if request_token != self.nav_request_token or self.status.task_state != TaskState.NAVIGATING:
+    def _nav_goal_response(self, future, token: int):
+        if token != self.nav_request_token or self.status.task_state != TaskState.NAVIGATING:
             try:
-                goal_handle = future.result()
+                gh = future.result()
+                if gh and gh.accepted:
+                    gh.cancel_goal_async()
             except Exception:
-                return
-            if goal_handle is not None and getattr(goal_handle, "accepted", False):
-                goal_handle.cancel_goal_async()
+                pass
             return
-
-        goal_handle = future.result()
-        if goal_handle is None or not goal_handle.accepted:
-            self.nav_goal_handle = None
+        gh = future.result()
+        if gh is None or not gh.accepted:
             self.nav_in_progress = False
             self.status.task_state = TaskState.IDLE
-            self.say("Navigation goal was rejected.")
+            self._set_expression(RobotExpression.IDLE)
+            self._say("Navigation goal was rejected.")
             return
-
-        self.nav_goal_handle = goal_handle
-        self.nav_result_future = goal_handle.get_result_async()
+        self.nav_goal_handle = gh
+        self.nav_result_future = gh.get_result_async()
         self.nav_result_future.add_done_callback(
-            lambda future, token=request_token: self.handle_navigation_result(future, token)
+            lambda f, t=token: self._nav_result(f, t)
         )
 
-    def handle_navigation_result(self, future, request_token: int) -> None:
-        if request_token != self.nav_request_token:
+    def _nav_result(self, future, token: int):
+        if token != self.nav_request_token:
             return
         self.nav_in_progress = False
         self.nav_goal_handle = None
-        self.nav_result_future = None
         result = future.result()
         status = getattr(result, "status", None)
+        self._set_expression(RobotExpression.IDLE)
         if status == GoalStatus.STATUS_SUCCEEDED:
-            self.say("Navigation goal reached.")
+            self._nav_fail_count = 0
+            self._say("I've arrived at the destination.")
         elif status == GoalStatus.STATUS_CANCELED:
-            self.say("Navigation was canceled.")
-        elif status is not None:
-            self.say("Navigation finished with status {}.".format(status))
+            self._say("Navigation was canceled.")
+        else:
+            self._say("Navigation finished.")
         self.status.task_state = TaskState.IDLE
         self.status.current_target = ""
 
-    def cancel_navigation_goal(self) -> None:
+    def _cancel_nav_goal(self):
         self.nav_request_token += 1
-        if self.nav_goal_handle is None:
-            self.pending_goal_location = ""
-            self.pending_goal_pose = None
-            self.nav_result_future = None
-            self.nav_in_progress = False
-            return
-        self.nav_goal_handle.cancel_goal_async()
         self.pending_goal_location = ""
         self.pending_goal_pose = None
         self.nav_in_progress = False
-        self.nav_result_future = None
+        if self.nav_goal_handle is not None:
+            self.nav_goal_handle.cancel_goal_async()
+            self.nav_goal_handle = None
 
-    def resolve_bin_target(self, token: IntentToken) -> Optional[dict]:
-        if token.label and token.label in self.bin_memory:
-            remembered_bin = dict(self.bin_memory[token.label])
-            remembered_bin["label"] = token.label
-            return remembered_bin
+    # ------------------------------------------------------------------
+    # Utilities
+    # ------------------------------------------------------------------
 
-        bin_color = token.metadata.get("bin_color", "")
-        if bin_color:
-            matches = [
-                {"label": label, **entry}
-                for label, entry in sorted(self.bin_memory.items())
-                if entry.get("color") == bin_color
-            ]
-            if matches:
-                return matches[0]
-
-        if token.label.startswith("bin_"):
-            suffix = token.label.split("bin_", 1)[1]
-            for label, entry in sorted(self.bin_memory.items()):
-                if label.endswith("bin_{}".format(suffix)):
-                    return {"label": label, **entry}
-        return None
-
-    def publish_follow_control(self, command: str) -> None:
-        msg = String()
-        msg.data = command
-        self.follow_control_publisher.publish(msg)
-
-    def publish_exploration_control(self, command: str) -> None:
-        msg = String()
-        msg.data = command
-        self.exploration_control_publisher.publish(msg)
-
-    def publish_reactive_nav_control(self, command: str) -> None:
-        msg = String()
-        msg.data = command
-        self.reactive_nav_control_publisher.publish(msg)
-
-    def publish_manual_override(self, command: str) -> None:
-        msg = String()
-        msg.data = command
-        self.manual_override_publisher.publish(msg)
-
-    def publish_bin_detector_control(self, command: str) -> None:
-        msg = String()
-        msg.data = command
-        self.bin_detector_control_publisher.publish(msg)
-
-    def say(self, text: str) -> None:
+    def _say(self, text: str):
         if not text:
             return
-        response_msg = String()
-        response_msg.data = text
-        self.response_publisher.publish(response_msg)
-        self.get_logger().info(text)
+        self.response_pub.publish(String(data=text))
+        self._set_expression(RobotExpression.TALKING)
+        self.get_logger().info(f"[ARIA] {text}")
 
-    def publish_status(self) -> None:
-        status_msg = String()
-        status_msg.data = self.status.to_json()
-        self.status_publisher.publish(status_msg)
+    def _publish_status(self):
+        payload = json.loads(self.status.to_json())
+        payload["current_tour"] = self._current_tour_name
+        # Include DB summary so LLM knows what it can navigate to
+        n = len(self._wp_cache)
+        payload["available_waypoints"] = (
+            [f"waypoint {i}" for i in range(n)] if n > 0 else []
+        )
+        payload["available_tours"] = self._list_available_tours()
+        payload["waypoint_count"] = n
+        self.status_pub.publish(String(data=json.dumps(payload)))
 
 
 def main(args=None):
     rclpy.init(args=args)
     node = BehaviorTreeOrchestrator()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()

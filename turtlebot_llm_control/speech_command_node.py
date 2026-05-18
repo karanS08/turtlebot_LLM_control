@@ -1,59 +1,94 @@
-from std_msgs.msg import String
+import json
 
 import rclpy
 from rclpy.node import Node
+from std_msgs.msg import String
 
-from turtlebot_llm_control.llm_dialogue import LLMDialogueEngine
+from turtlebot_llm_control.llm_brain import RobotBrain
 
 
 class SpeechCommandNode(Node):
     def __init__(self):
         super().__init__("speech_command_node")
+
         self.enable_llm = self.declare_parameter("enable_llm", True).value
-        self.llm_provider = self.declare_parameter("llm_provider", "groq").value
-        self.llm_model = self.declare_parameter("llm_model", "llama-3.3-70b-versatile").value
-        self.llm_api_key_path = self.declare_parameter("llm_api_key_path", "").value
-        self.personality = self.declare_parameter(
-            "personality",
-            (
-                "You are Karan's TurtleBot assistant. "
-                "You feel like a warm, attentive personal companion in a live voice conversation. "
-                "You are friendly, present, lightly playful, emotionally intelligent, and concise. "
-                "For normal conversation, reply naturally and keep the exchange flowing. "
-                "Only choose an action if the user clearly requested robot behavior."
-            ),
-        ).value
+        self.ollama_model = str(self.declare_parameter("ollama_model", "qwen2.5").value)
+        self.ollama_url = str(
+            self.declare_parameter("ollama_url", "http://localhost:11434/api/chat").value
+        )
+        self.memory_file = str(
+            self.declare_parameter("memory_file", "~/.ros/robot_memory.json").value
+        )
 
-        self.intent_publisher = self.create_publisher(String, "/speech/intent", 10)
-        self.subscription = self.create_subscription(
-            String, "/speech/text", self.handle_speech_text, 10
-        )
-        self.dialogue = LLMDialogueEngine(
-            enable_llm=self.enable_llm,
-            llm_provider=str(self.llm_provider),
-            llm_model=str(self.llm_model),
-            llm_api_key_path=str(self.llm_api_key_path),
-            personality=str(self.personality),
-            warn=lambda message: self.get_logger().warning(message),
-        )
+        self.intent_pub = self.create_publisher(String, "/speech/intent", 10)
+        self.expression_pub = self.create_publisher(String, "/robot/expression", 10)
+
+        self.create_subscription(String, "/speech/text", self._on_speech, 10)
+        self.create_subscription(String, "/tour/status", self._on_tour_status, 10)
+
+        self._latest_context: dict = {}
+
+        if self.enable_llm:
+            self.brain = RobotBrain(
+                ollama_model=self.ollama_model,
+                ollama_url=self.ollama_url,
+                memory_file=self.memory_file,
+                warn=self.get_logger().warning,
+                info=self.get_logger().info,
+            )
+        else:
+            self.brain = RobotBrain(
+                ollama_model=self.ollama_model,
+                ollama_url="http://localhost:1",  # unreachable → rule-only mode
+                memory_file=self.memory_file,
+                warn=self.get_logger().warning,
+                info=self.get_logger().info,
+            )
+
         self.get_logger().info(
-            "Speech command node ready. enable_llm=%s provider=%s llm_client=%s"
-            % (self.enable_llm, self.llm_provider, self.dialogue.client is not None)
+            f"Speech command node ready. ollama_model={self.ollama_model}"
         )
 
-    def handle_speech_text(self, msg: String) -> None:
+    def _on_tour_status(self, msg: String):
+        try:
+            self._latest_context = json.loads(msg.data)
+        except Exception:
+            pass
+
+    def _pub_expression(self, state: str):
+        self.expression_pub.publish(String(data=state))
+
+    def _on_speech(self, msg: String):
         utterance = msg.data.strip()
-        token = self.dialogue.resolve_token(utterance)
+        if not utterance:
+            return
+
+        self._pub_expression("THINKING")
+
+        token = self.brain.think(utterance, self._latest_context)
 
         intent_msg = String()
         intent_msg.data = token.to_json()
-        self.intent_publisher.publish(intent_msg)
-        self.get_logger().info("Recognized intent=%s utterance='%s'" % (token.intent, token.utterance))
+        self.intent_pub.publish(intent_msg)
+
+        self._pub_expression("TALKING")
+        self.get_logger().info(f"intent={token.intent} utterance='{utterance}'")
+
+    def destroy_node(self):
+        try:
+            self.brain.summarize_and_save_session()
+        except Exception:
+            pass
+        super().destroy_node()
 
 
 def main(args=None):
     rclpy.init(args=args)
     node = SpeechCommandNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()

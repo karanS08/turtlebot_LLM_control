@@ -7,11 +7,19 @@ class TaskState(str, Enum):
     IDLE = "idle"
     FOLLOWING = "following"
     NAVIGATING = "navigating"
-    EXPLORING = "exploring"
     TOURING = "touring"
     RECORDING = "recording"
     PAUSED = "paused"
     RECOVERING = "recovering"
+
+
+class RobotExpression:
+    THINKING = "THINKING"
+    TALKING = "TALKING"
+    EXPLAINING = "EXPLAINING"
+    NAVIGATING = "NAVIGATING"
+    LISTENING = "LISTENING"
+    IDLE = "IDLE"
 
 
 @dataclass

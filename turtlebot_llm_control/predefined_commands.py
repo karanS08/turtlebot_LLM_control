@@ -1,23 +1,41 @@
+"""Whitelist of known commands used for fuzzy matching in speech_to_text_node."""
+
 PREDEFINED_COMMANDS = [
-    "follow me",
-    "follow the yellow bin",
+    # Wake
+    "hey aria",
+    "hey pepper",
+    # Navigation
+    "go to waypoint one",
+    "go to waypoint two",
+    "go to waypoint three",
+    "navigate to the entrance",
+    "take me there",
+    # Tours
+    "start tour one",
+    "start tour two",
+    "start tour three",
+    "begin the tour",
+    "start the guided tour",
+    # Waypoint recording
+    "save this waypoint",
+    "mark this location",
+    "save current position",
+    "save this spot",
+    # Control
     "stop",
     "stop navigation",
     "pause",
     "resume",
-    "start exploring",
-    "stop exploring",
-    "here is the bin",
-    "here is the green bin",
-    "look at the green bin",
-    "go to lab",
-    "go to entrance",
-    "go to kitchen",
-    "go to the red bin",
-    "go to the green bin",
-    "go to the blue bin",
-    "go to the yellow bin",
-    "navigate to bin 1",
-    "navigate to bin 2",
-    "start tour",
+    "continue",
+    "follow me",
+    "go home",
+    "return to dock",
+    # Information
+    "what is this",
+    "tell me about this place",
+    "explain this",
+    "describe this area",
+    # Status
+    "are you there",
+    "can you hear me",
 ]

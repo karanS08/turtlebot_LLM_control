@@ -1,3 +1,9 @@
+"""Rule-based fallback intent parser.
+
+Used by RobotBrain when Ollama is unreachable. Handles the most common
+social-guide commands without an LLM.
+"""
+
 from turtlebot_llm_control.models import IntentToken
 from turtlebot_llm_control.wake_word import (
     is_alive_request,
@@ -6,7 +12,6 @@ from turtlebot_llm_control.wake_word import (
 )
 
 
-COLOR_NAMES = ("red", "green", "blue", "yellow")
 NUMBER_WORDS = {
     "one": "1",
     "two": "2",
@@ -17,14 +22,12 @@ NUMBER_WORDS = {
     "seven": "7",
     "eight": "8",
     "nine": "9",
+    "ten": "10",
 }
-LOCATION_ALIASES = {
-    "pillow": "pillar",
-    "below": "pillar",
-    "pillar": "pillar",
-}
+
 COMMAND_PREFIXES = (
     "pepper ",
+    "aria ",
     "robot ",
     "please ",
     "can you ",
@@ -33,250 +36,153 @@ COMMAND_PREFIXES = (
 )
 
 
-def is_direct_command(text: str, *phrases: str) -> bool:
+def _cmd(text: str, *phrases: str) -> bool:
+    """Return True if text matches one of the phrases (with optional prefix)."""
     if text in phrases:
         return True
-    if any(text.startswith(phrase + " ") for phrase in phrases):
+    if any(text.startswith(p + " ") for p in phrases):
         return True
     for prefix in COMMAND_PREFIXES:
-        remainder = text[len(prefix) :] if text.startswith(prefix) else ""
-        if not remainder:
-            continue
-        if remainder in phrases:
-            return True
-        if any(remainder.startswith(phrase + " ") for phrase in phrases):
-            return True
+        if text.startswith(prefix):
+            remainder = text[len(prefix):]
+            if remainder in phrases or any(remainder.startswith(p + " ") for p in phrases):
+                return True
     return False
 
 
 def parse_utterance(text: str) -> IntentToken:
     raw = text.strip()
-    cleaned = normalize_text(raw)
+    t = normalize_text(raw)
 
-    if not cleaned:
-        return IntentToken(intent="unknown", utterance=raw, response="I did not catch that.")
+    if not t:
+        return IntentToken(intent="unknown", utterance=raw, response="I didn't catch that.")
 
-    if is_alive_request(cleaned):
+    if is_alive_request(t):
         return IntentToken(
             intent="is_alive",
             utterance=raw,
-            response="Yes, I am here, awake, and ready to help.",
+            response="Yes, I'm here and ready to help.",
         )
 
-    if is_emergency_stop_request(cleaned):
+    if is_emergency_stop_request(t):
         return IntentToken(
             intent="stop",
             utterance=raw,
-            response="Emergency stop. Stopping everything now.",
+            response="Emergency stop — stopping everything now.",
         )
 
-    if (("here is" in cleaned or "this is" in cleaned or "look at" in cleaned) and "bin" in cleaned):
-        color = extract_color(cleaned) or "green"
-        return IntentToken(
-            intent="inspect_bin",
-            utterance=raw,
-            response="Okay, I am looking for the {} bin now.".format(color),
-            metadata={"bin_color": color},
-        )
-
-    if is_direct_command(cleaned, "follow", "follow me", "come with me"):
-        color = extract_color(cleaned) or "yellow"
+    if _cmd(t, "follow", "follow me", "come with me"):
         return IntentToken(
             intent="follow",
             utterance=raw,
-            response="Starting follow mode for the {} target.".format(color),
-            metadata={"target_color": color},
+            response="Sure, I'll follow you.",
         )
 
-    if (
-        "manual override" in cleaned
-        or "manual control" in cleaned
-        or "enable teleop" in cleaned
-        or "take over" in cleaned
-    ):
-        return IntentToken(
-            intent="manual_override_on",
-            utterance=raw,
-            response="Manual override enabled. You can teleoperate now.",
-        )
+    if _cmd(t, "stop", "halt", "freeze", "stop stop", "stop now"):
+        return IntentToken(intent="stop", utterance=raw, response="Stopping now.")
 
-    if is_direct_command(cleaned, "stop navigation", "cancel navigation"):
+    if _cmd(t, "stop navigation", "cancel navigation"):
         return IntentToken(
             intent="stop_navigation",
             utterance=raw,
-            response="Stopping navigation now.",
+            response="Navigation canceled.",
         )
 
-    if (
-        "resume autonomous" in cleaned
-        or "resume exploration" in cleaned
-        or "disable manual override" in cleaned
-        or "return to autonomous" in cleaned
-    ):
+    if _cmd(t, "pause"):
+        return IntentToken(intent="pause", utterance=raw, response="Pausing.")
+
+    if _cmd(t, "resume", "continue"):
+        return IntentToken(intent="resume", utterance=raw, response="Resuming.")
+
+    # Tour commands — extract tour number/name
+    if "start tour" in t or "begin tour" in t or "run tour" in t:
+        label = _extract_tour_label(t)
+        return IntentToken(
+            intent="start_tour",
+            label=label,
+            utterance=raw,
+            response=f"Starting tour {label}.",
+        )
+
+    if "go home" in t or "return to dock" in t or "dock" in t:
+        return IntentToken(
+            intent="dock",
+            utterance=raw,
+            response="Heading back to the dock.",
+        )
+
+    if "save waypoint" in t or "mark this" in t or "save this location" in t or "save position" in t:
+        return IntentToken(
+            intent="save_waypoint",
+            utterance=raw,
+            response="Saving current position as a waypoint.",
+        )
+
+    if "manual override" in t or "take over" in t or "enable teleop" in t:
+        return IntentToken(
+            intent="manual_override_on",
+            utterance=raw,
+            response="Manual override enabled.",
+        )
+
+    if "resume autonomous" in t or "disable manual override" in t:
         return IntentToken(
             intent="manual_override_off",
             utterance=raw,
-            response="Manual override cleared. Autonomous behavior can resume.",
+            response="Autonomous mode restored.",
         )
 
-    if is_direct_command(cleaned, "start exploring", "explore", "search for bins"):
-        return IntentToken(
-            intent="start_exploration",
-            utterance=raw,
-            response="Starting autonomous exploration for colored bins.",
-        )
-
-    if is_direct_command(cleaned, "stop exploring", "stop exploration"):
-        return IntentToken(
-            intent="stop_exploration",
-            utterance=raw,
-            response="Stopping autonomous exploration.",
-        )
-
-    if is_direct_command(cleaned, "stop", "halt", "freeze", "stop stop", "stop now"):
-        return IntentToken(intent="stop", utterance=raw, response="Stopping the current activity.")
-
-    if is_direct_command(cleaned, "pause"):
-        return IntentToken(intent="pause", utterance=raw, response="Pausing for you now.")
-
-    if is_direct_command(cleaned, "resume"):
-        return IntentToken(intent="resume", utterance=raw, response="Resuming the previous task.")
-
-    if is_direct_command(cleaned, "start tour", "begin tour"):
-        return IntentToken(intent="start_tour", utterance=raw, response="Starting the tour.")
-
-    if is_direct_command(cleaned, "record route", "start recording"):
-        label = extract_label(cleaned, fallback="new_route")
-        return IntentToken(
-            intent="start_recording",
-            label=label,
-            utterance=raw,
-            response="Recording route {}.".format(label),
-        )
-
-    if is_direct_command(cleaned, "stop recording"):
-        return IntentToken(intent="stop_recording", utterance=raw, response="Route recording stopped.")
-
-    if is_direct_command(cleaned, "save route"):
-        label = extract_label(cleaned, fallback="saved_route")
-        return IntentToken(
-            intent="save_route",
-            label=label,
-            utterance=raw,
-            response="Saving route as {}.".format(label),
-        )
-
-    if is_direct_command(cleaned, "replay", "run route"):
-        label = extract_label(cleaned, fallback="saved_route")
-        return IntentToken(
-            intent="replay_route",
-            label=label,
-            utterance=raw,
-            response="Replaying route {}.".format(label),
-        )
-
-    if is_direct_command(cleaned, "go to", "navigate to", "take me to"):
-        bin_label, bin_color = extract_bin_label(cleaned)
-        if "bin" in cleaned:
-            return IntentToken(
-                intent="go_to_bin",
-                label=bin_label,
-                utterance=raw,
-                response="Navigating to remembered {}.".format(bin_label or "{} bin".format(bin_color)),
-                metadata={"bin_color": bin_color},
-            )
-        location = extract_location(cleaned)
-        normalized_full_text = normalize_location_name(cleaned)
-        if location == "unknown_location" and "pillar" in normalized_full_text:
-            return IntentToken(
-                intent="no_action",
-                utterance=raw,
-                response="I need a pillar number. Please say a pillar from 1 to 9.",
-            )
+    if _cmd(t, "go to", "navigate to", "take me to"):
+        location = _extract_location(t)
         return IntentToken(
             intent="navigate",
             location=location,
             utterance=raw,
-            response="Navigating to {}.".format(location),
+            response=f"Navigating to {location}.",
         )
 
-    if "explain" in cleaned or "tell me about" in cleaned:
-        location = extract_location(cleaned)
+    if "explain" in t or "tell me about" in t or "what is this" in t or "describe" in t:
+        location = _extract_location(t) or "this area"
         return IntentToken(
             intent="explain",
             location=location,
             utterance=raw,
-            response="Preparing an explanation for {}.".format(location),
+            response=f"Let me tell you about {location}.",
         )
 
     return IntentToken(
         intent="unknown",
         utterance=raw,
-        response="I understood speech, but I need a clearer command.",
+        response="I'm not sure what you'd like me to do. Could you rephrase that?",
     )
 
 
-def extract_label(text: str, fallback: str) -> str:
-    markers = ["as ", "route ", "called ", "named "]
-    for marker in markers:
-        if marker in text:
-            candidate = text.split(marker, 1)[1].strip().replace(" ", "_")
-            if candidate:
-                return candidate
-    return fallback
+def _extract_tour_label(text: str) -> str:
+    """Extract tour identifier from text like 'start tour one' → '1'."""
+    for word, digit in NUMBER_WORDS.items():
+        if word in text:
+            return digit
+    # Look for digits
+    parts = text.split()
+    for part in parts:
+        if part.isdigit():
+            return part
+    return "1"
 
 
-def extract_location(text: str) -> str:
+def _extract_location(text: str) -> str:
     markers = ["go to ", "navigate to ", "take me to ", "tell me about ", "explain "]
     for marker in markers:
         if marker in text:
-            candidate = normalize_location_name(text.split(marker, 1)[1].strip())
-            if candidate:
-                return candidate
+            raw_loc = text.split(marker, 1)[1].strip()
+            return _normalize_location(raw_loc)
     return "unknown_location"
 
 
-def normalize_location_name(text: str) -> str:
+def _normalize_location(text: str) -> str:
     words = text.split()
-    normalized_words = [
-        NUMBER_WORDS.get(LOCATION_ALIASES.get(word, word), LOCATION_ALIASES.get(word, word))
-        for word in words
-    ]
-    if normalized_words in (["pillar"], ["pillar", "number"]):
-        return ""
-    if len(normalized_words) >= 2 and normalized_words[0] == "pillar" and normalized_words[1].isdigit():
-        return "pillar_{}".format(normalized_words[1])
-    joined = "_".join(normalized_words)
-    if joined.startswith("pillar") and joined[6:].isdigit():
-        return "pillar_{}".format(joined[6:])
-    return joined
-
-
-def extract_bin_label(text: str) -> tuple[str, str]:
-    color = extract_color(text)
-    if "bin" not in text:
-        return "", color
-
-    digits = ""
-    start_collecting = False
-    for char in text:
-        if char.isdigit():
-            digits += char
-            start_collecting = True
-        elif start_collecting:
-            break
-
-    if color and digits:
-        return "{}_bin_{:02d}".format(color, int(digits)), color
-    if digits:
-        return "bin_{:02d}".format(int(digits)), color
-    if color:
-        return "", color
-    return "", ""
-
-
-def extract_color(text: str) -> str:
-    for color in COLOR_NAMES:
-        if color in text:
-            return color
-    return ""
+    normalized = []
+    for word in words:
+        word = NUMBER_WORDS.get(word, word)
+        normalized.append(word)
+    return "_".join(normalized) if normalized else "unknown_location"

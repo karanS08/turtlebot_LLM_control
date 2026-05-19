@@ -1,0 +1,1 @@
+/home/tom/in_ws/build/social_robot_interfaces/rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_introspection_cpp.hpp

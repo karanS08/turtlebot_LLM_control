@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from social_robot_interfaces/srv/Tours.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module social_robot_interfaces {
+  module srv {
+    struct Tours_Request {
+      int64 idx;
+    };
+    struct Tours_Response {
+      sequence<geometry_msgs::msg::PoseStamped> tour;
+    };
+  };
+};

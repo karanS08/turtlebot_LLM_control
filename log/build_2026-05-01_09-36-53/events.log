@@ -1,0 +1,339 @@
+[0.000000] (-) TimerEvent: {}
+[0.000661] (-) JobUnselected: {'identifier': 'robot_tour'}
+[0.000700] (-) JobUnselected: {'identifier': 'social_robot_interfaces'}
+[0.000723] (-) JobUnselected: {'identifier': 'speech_locomotion_interface'}
+[0.000744] (-) JobUnselected: {'identifier': 'tour_manager'}
+[0.000765] (turtlebot_llm_control) JobQueued: {'identifier': 'turtlebot_llm_control', 'dependencies': OrderedDict([('speech_locomotion_interface', '/home/tom/in_ws/install/speech_locomotion_interface')])}
+[0.000790] (turtlebot_llm_control) JobStarted: {'identifier': 'turtlebot_llm_control'}
+[0.099792] (-) TimerEvent: {}
+[0.200007] (-) TimerEvent: {}
+[0.300207] (-) TimerEvent: {}
+[0.400406] (-) TimerEvent: {}
+[0.500614] (-) TimerEvent: {}
+[0.600816] (-) TimerEvent: {}
+[0.701388] (-) TimerEvent: {}
+[0.801853] (-) TimerEvent: {}
+[0.902247] (-) TimerEvent: {}
+[1.002587] (-) TimerEvent: {}
+[1.102903] (-) TimerEvent: {}
+[1.203250] (-) TimerEvent: {}
+[1.303702] (-) TimerEvent: {}
+[1.404528] (-) TimerEvent: {}
+[1.504876] (-) TimerEvent: {}
+[1.605150] (-) TimerEvent: {}
+[1.705540] (-) TimerEvent: {}
+[1.806249] (-) TimerEvent: {}
+[1.906571] (-) TimerEvent: {}
+[2.006849] (-) TimerEvent: {}
+[2.107116] (-) TimerEvent: {}
+[2.207382] (-) TimerEvent: {}
+[2.307722] (-) TimerEvent: {}
+[2.408382] (-) TimerEvent: {}
+[2.508776] (-) TimerEvent: {}
+[2.609154] (-) TimerEvent: {}
+[2.709819] (-) TimerEvent: {}
+[2.810251] (-) TimerEvent: {}
+[2.911024] (-) TimerEvent: {}
+[3.011404] (-) TimerEvent: {}
+[3.112113] (-) TimerEvent: {}
+[3.212560] (-) TimerEvent: {}
+[3.312848] (-) TimerEvent: {}
+[3.413152] (-) TimerEvent: {}
+[3.513539] (-) TimerEvent: {}
+[3.613947] (-) TimerEvent: {}
+[3.714237] (-) TimerEvent: {}
+[3.814566] (-) TimerEvent: {}
+[3.914917] (-) TimerEvent: {}
+[4.015254] (-) TimerEvent: {}
+[4.115602] (-) TimerEvent: {}
+[4.215889] (-) TimerEvent: {}
+[4.316166] (-) TimerEvent: {}
+[4.416530] (-) TimerEvent: {}
+[4.516802] (-) TimerEvent: {}
+[4.617430] (-) TimerEvent: {}
+[4.717820] (-) TimerEvent: {}
+[4.818369] (-) TimerEvent: {}
+[4.919100] (-) TimerEvent: {}
+[5.019466] (-) TimerEvent: {}
+[5.119804] (-) TimerEvent: {}
+[5.220205] (-) TimerEvent: {}
+[5.320972] (-) TimerEvent: {}
+[5.421399] (-) TimerEvent: {}
+[5.521793] (-) TimerEvent: {}
+[5.622285] (-) TimerEvent: {}
+[5.722656] (-) TimerEvent: {}
+[5.823350] (-) TimerEvent: {}
+[5.923855] (-) TimerEvent: {}
+[6.024178] (-) TimerEvent: {}
+[6.124586] (-) TimerEvent: {}
+[6.224951] (-) TimerEvent: {}
+[6.325291] (-) TimerEvent: {}
+[6.425652] (-) TimerEvent: {}
+[6.526018] (-) TimerEvent: {}
+[6.626318] (-) TimerEvent: {}
+[6.726685] (-) TimerEvent: {}
+[6.826979] (-) TimerEvent: {}
+[6.927549] (-) TimerEvent: {}
+[7.028259] (-) TimerEvent: {}
+[7.128639] (-) TimerEvent: {}
+[7.229002] (-) TimerEvent: {}
+[7.329290] (-) TimerEvent: {}
+[7.429666] (-) TimerEvent: {}
+[7.530423] (-) TimerEvent: {}
+[7.630832] (-) TimerEvent: {}
+[7.731121] (-) TimerEvent: {}
+[7.831498] (-) TimerEvent: {}
+[7.931944] (-) TimerEvent: {}
+[8.032351] (-) TimerEvent: {}
+[8.132796] (-) TimerEvent: {}
+[8.233184] (-) TimerEvent: {}
+[8.333796] (-) TimerEvent: {}
+[8.434150] (-) TimerEvent: {}
+[8.534716] (-) TimerEvent: {}
+[8.635099] (-) TimerEvent: {}
+[8.735503] (-) TimerEvent: {}
+[8.835866] (-) TimerEvent: {}
+[8.936319] (-) TimerEvent: {}
+[9.036718] (-) TimerEvent: {}
+[9.137227] (-) TimerEvent: {}
+[9.237536] (-) TimerEvent: {}
+[9.338038] (-) TimerEvent: {}
+[9.438402] (-) TimerEvent: {}
+[9.538816] (-) TimerEvent: {}
+[9.639163] (-) TimerEvent: {}
+[9.739709] (-) TimerEvent: {}
+[9.840319] (-) TimerEvent: {}
+[9.940615] (-) TimerEvent: {}
+[10.040960] (-) TimerEvent: {}
+[10.141296] (-) TimerEvent: {}
+[10.241642] (-) TimerEvent: {}
+[10.342052] (-) TimerEvent: {}
+[10.442430] (-) TimerEvent: {}
+[10.542865] (-) TimerEvent: {}
+[10.643511] (-) TimerEvent: {}
+[10.744348] (-) TimerEvent: {}
+[10.844792] (-) TimerEvent: {}
+[10.945427] (-) TimerEvent: {}
+[11.046165] (-) TimerEvent: {}
+[11.146618] (-) TimerEvent: {}
+[11.247019] (-) TimerEvent: {}
+[11.347518] (-) TimerEvent: {}
+[11.447874] (-) TimerEvent: {}
+[11.548156] (-) TimerEvent: {}
+[11.648433] (-) TimerEvent: {}
+[11.748747] (-) TimerEvent: {}
+[11.849074] (-) TimerEvent: {}
+[11.949786] (-) TimerEvent: {}
+[12.050136] (-) TimerEvent: {}
+[12.150744] (-) TimerEvent: {}
+[12.251109] (-) TimerEvent: {}
+[12.351408] (-) TimerEvent: {}
+[12.452144] (-) TimerEvent: {}
+[12.552466] (-) TimerEvent: {}
+[12.652831] (-) TimerEvent: {}
+[12.753415] (-) TimerEvent: {}
+[12.853901] (-) TimerEvent: {}
+[12.954306] (-) TimerEvent: {}
+[13.054687] (-) TimerEvent: {}
+[13.155247] (-) TimerEvent: {}
+[13.255850] (-) TimerEvent: {}
+[13.356602] (-) TimerEvent: {}
+[13.456995] (-) TimerEvent: {}
+[13.557435] (-) TimerEvent: {}
+[13.657895] (-) TimerEvent: {}
+[13.758308] (-) TimerEvent: {}
+[13.858713] (-) TimerEvent: {}
+[13.959294] (-) TimerEvent: {}
+[14.059642] (-) TimerEvent: {}
+[14.160173] (-) TimerEvent: {}
+[14.260488] (-) TimerEvent: {}
+[14.360766] (-) TimerEvent: {}
+[14.461042] (-) TimerEvent: {}
+[14.561312] (-) TimerEvent: {}
+[14.661773] (-) TimerEvent: {}
+[14.762103] (-) TimerEvent: {}
+[14.862474] (-) TimerEvent: {}
+[14.962979] (-) TimerEvent: {}
+[15.063544] (-) TimerEvent: {}
+[15.163891] (-) TimerEvent: {}
+[15.264222] (-) TimerEvent: {}
+[15.364725] (-) TimerEvent: {}
+[15.465115] (-) TimerEvent: {}
+[15.565521] (-) TimerEvent: {}
+[15.666183] (-) TimerEvent: {}
+[15.766553] (-) TimerEvent: {}
+[15.866837] (-) TimerEvent: {}
+[15.967158] (-) TimerEvent: {}
+[16.067682] (-) TimerEvent: {}
+[16.168025] (-) TimerEvent: {}
+[16.268310] (-) TimerEvent: {}
+[16.368576] (-) TimerEvent: {}
+[16.468869] (-) TimerEvent: {}
+[16.569153] (-) TimerEvent: {}
+[16.669459] (-) TimerEvent: {}
+[16.769799] (-) TimerEvent: {}
+[16.870080] (-) TimerEvent: {}
+[16.970371] (-) TimerEvent: {}
+[17.070622] (-) TimerEvent: {}
+[17.170851] (-) TimerEvent: {}
+[17.271091] (-) TimerEvent: {}
+[17.371301] (-) TimerEvent: {}
+[17.471521] (-) TimerEvent: {}
+[17.571868] (-) TimerEvent: {}
+[17.672147] (-) TimerEvent: {}
+[17.772424] (-) TimerEvent: {}
+[17.872766] (-) TimerEvent: {}
+[17.973011] (-) TimerEvent: {}
+[18.073333] (-) TimerEvent: {}
+[18.173643] (-) TimerEvent: {}
+[18.273859] (-) TimerEvent: {}
+[18.374067] (-) TimerEvent: {}
+[18.474287] (-) TimerEvent: {}
+[18.574522] (-) TimerEvent: {}
+[18.674731] (-) TimerEvent: {}
+[18.775354] (-) TimerEvent: {}
+[18.875711] (-) TimerEvent: {}
+[18.975937] (-) TimerEvent: {}
+[19.076151] (-) TimerEvent: {}
+[19.176405] (-) TimerEvent: {}
+[19.276723] (-) TimerEvent: {}
+[19.377012] (-) TimerEvent: {}
+[19.477364] (-) TimerEvent: {}
+[19.577729] (-) TimerEvent: {}
+[19.677928] (-) TimerEvent: {}
+[19.778129] (-) TimerEvent: {}
+[19.878335] (-) TimerEvent: {}
+[19.978845] (-) TimerEvent: {}
+[20.079533] (-) TimerEvent: {}
+[20.179877] (-) TimerEvent: {}
+[20.280238] (-) TimerEvent: {}
+[20.380497] (-) TimerEvent: {}
+[20.480808] (-) TimerEvent: {}
+[20.581099] (-) TimerEvent: {}
+[20.681345] (-) TimerEvent: {}
+[20.781529] (-) TimerEvent: {}
+[20.881807] (-) TimerEvent: {}
+[20.982107] (-) TimerEvent: {}
+[21.082424] (-) TimerEvent: {}
+[21.182708] (-) TimerEvent: {}
+[21.282990] (-) TimerEvent: {}
+[21.383253] (-) TimerEvent: {}
+[21.483801] (-) TimerEvent: {}
+[21.584149] (-) TimerEvent: {}
+[21.684599] (-) TimerEvent: {}
+[21.784920] (-) TimerEvent: {}
+[21.885193] (-) TimerEvent: {}
+[21.985799] (-) TimerEvent: {}
+[22.086529] (-) TimerEvent: {}
+[22.187044] (-) TimerEvent: {}
+[22.287373] (-) TimerEvent: {}
+[22.387680] (-) TimerEvent: {}
+[22.488042] (-) TimerEvent: {}
+[22.588729] (-) TimerEvent: {}
+[22.689116] (-) TimerEvent: {}
+[22.789462] (-) TimerEvent: {}
+[22.889770] (-) TimerEvent: {}
+[22.990052] (-) TimerEvent: {}
+[23.090328] (-) TimerEvent: {}
+[23.190743] (-) TimerEvent: {}
+[23.291423] (-) TimerEvent: {}
+[23.391832] (-) TimerEvent: {}
+[23.492297] (-) TimerEvent: {}
+[23.592701] (-) TimerEvent: {}
+[23.693046] (-) TimerEvent: {}
+[23.793408] (-) TimerEvent: {}
+[23.893783] (-) TimerEvent: {}
+[23.994195] (-) TimerEvent: {}
+[24.094517] (-) TimerEvent: {}
+[24.195035] (-) TimerEvent: {}
+[24.295329] (-) TimerEvent: {}
+[24.395635] (-) TimerEvent: {}
+[24.495917] (-) TimerEvent: {}
+[24.596288] (-) TimerEvent: {}
+[24.697020] (-) TimerEvent: {}
+[24.797444] (-) TimerEvent: {}
+[24.897861] (-) TimerEvent: {}
+[24.998203] (-) TimerEvent: {}
+[25.098613] (-) TimerEvent: {}
+[25.198973] (-) TimerEvent: {}
+[25.299372] (-) TimerEvent: {}
+[25.399736] (-) TimerEvent: {}
+[25.500142] (-) TimerEvent: {}
+[25.600568] (-) TimerEvent: {}
+[25.700969] (-) TimerEvent: {}
+[25.801294] (-) TimerEvent: {}
+[25.901584] (-) TimerEvent: {}
+[26.002203] (-) TimerEvent: {}
+[26.102810] (-) TimerEvent: {}
+[26.203258] (-) TimerEvent: {}
+[26.303607] (-) TimerEvent: {}
+[26.404008] (-) TimerEvent: {}
+[26.504395] (-) TimerEvent: {}
+[26.604751] (-) TimerEvent: {}
+[26.705053] (-) TimerEvent: {}
+[26.805334] (-) TimerEvent: {}
+[26.905628] (-) TimerEvent: {}
+[27.005954] (-) TimerEvent: {}
+[27.106339] (-) TimerEvent: {}
+[27.206678] (-) TimerEvent: {}
+[27.307422] (-) TimerEvent: {}
+[27.408210] (-) TimerEvent: {}
+[27.508569] (-) TimerEvent: {}
+[27.608938] (-) TimerEvent: {}
+[27.709277] (-) TimerEvent: {}
+[27.809682] (-) TimerEvent: {}
+[27.910073] (-) TimerEvent: {}
+[28.010438] (-) TimerEvent: {}
+[28.110819] (-) TimerEvent: {}
+[28.211222] (-) TimerEvent: {}
+[28.311669] (-) TimerEvent: {}
+[28.411942] (-) TimerEvent: {}
+[28.512217] (-) TimerEvent: {}
+[28.612580] (-) TimerEvent: {}
+[28.712966] (-) TimerEvent: {}
+[28.813886] (-) TimerEvent: {}
+[28.914278] (-) TimerEvent: {}
+[29.014724] (-) TimerEvent: {}
+[29.115109] (-) TimerEvent: {}
+[29.215580] (-) TimerEvent: {}
+[29.315952] (-) TimerEvent: {}
+[29.416246] (-) TimerEvent: {}
+[29.516550] (-) TimerEvent: {}
+[29.616915] (-) TimerEvent: {}
+[29.717276] (-) TimerEvent: {}
+[29.817571] (-) TimerEvent: {}
+[29.917835] (-) TimerEvent: {}
+[30.006015] (turtlebot_llm_control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/tom/in_ws/build/turtlebot_llm_control/build', '--no-deps', 'symlink_data'], 'cwd': '/home/tom/in_ws/build/turtlebot_llm_control', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/tom', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'tom', 'LC_TIME': 'vi_VN', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'wayland', 'DEBUG': 'release', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/tom/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/tom/turtlebot3_ws/install/robot_tour/lib:/home/tom/turtlebot3_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib::/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'HOME': '/home/tom', 'CHROME_DESKTOP': 'code.desktop', 'OLDPWD': '/home/tom/Downloads', 'DESKTOP_SESSION': 'ubuntu', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-62bc3591-1.10-main.sock', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_MONETARY': 'vi_VN', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1749', 'IM_CONFIG_CHECK_ENV': '1', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'VSCODE_L10N_BUNDLE_LOCATION': '', 'COLCON_PREFIX_PATH': '/home/tom/turtlebot3_ws/install:/home/tom/in_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'tom', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'USERNAME': 'tom', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/models:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'ROS_LOCALHOST_ONLY': '0', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/home/tom/.local/bin:/home/tom/.local/bin:/home/tom/.codex/tmp/arg0/codex-arg0Bk9sM0:/opt/ros/humble/bin:/home/tom/anaconda3/bin:/home/tom/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/tom/.vscode/extensions/openai.chatgpt-26.422.71525-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/tom:@/tmp/.ICE-unix/1561,unix/tom:/tmp/.ICE-unix/1561', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'vi_VN', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9b4f4921_98f0_4046_a9b7_812726deaabc', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'vi_VN', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.BU9WO3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.158', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '30', 'AMENT_PREFIX_PATH': '/home/tom/in_ws/install/speech_locomotion_interface:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_simulations:/home/tom/turtlebot3_ws/install/turtlebot3_bringup:/home/tom/turtlebot3_ws/install/turtlebot3_node:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_fake_node:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/turtlebot3_msgs:/home/tom/turtlebot3_ws/install/turtlebot3_manipulation_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_description:/home/tom/turtlebot3_ws/install/turtlebot3_cartographer:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/home/tom/turtlebot3_ws/install/robot_tour:/home/tom/turtlebot3_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk_examples:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'vi_VN', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019de0b1-b720-7242-b206-92fa52d179f9', 'LC_MEASUREMENT': 'vi_VN', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11:', 'LC_IDENTIFICATION': 'vi_VN', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/tom/in_ws/build/turtlebot_llm_control', 'VSCODE_CLI': '1', 'TURTLEBOT3_MODEL': 'waffle_pi', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'VSCODE_CODE_CACHE_PATH': '/home/tom/.config/Code/CachedData/072586267e68ece9a47aa43f8c108e0dcbf44622', 'GAZEBO_PLUGIN_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/tom/in_ws/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/tom/in_ws/build/speech_locomotion_interface:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:/home/tom/in_ws/build/turtlebot_llm_control:/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/tom/turtlebot3_ws/build/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/home/tom/turtlebot3_ws/build/turtlebot3_example:/home/tom/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/home/tom/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/home/tom/turtlebot3_ws/build/tour_manager:/home/tom/turtlebot3_ws/install/tour_manager/lib/python3.10/site-packages:/home/tom/turtlebot3_ws/build/speech_locomotion_interface:/home/tom/turtlebot3_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:/home/tom/turtlebot3_ws/install/social_robot_interfaces/local/lib/python3.10/dist-packages:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:/home/tom/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'vi_VN', 'LC_PAPER': 'vi_VN', 'COLCON': '1', 'VTE_VERSION': '6800', 'ELECTRON_NO_ATTACH_CONSOLE': '1', 'CMAKE_PREFIX_PATH': '/home/tom/turtlebot3_ws/install/turtlebot3:/home/tom/turtlebot3_ws/install/turtlebot3_simulations:/home/tom/turtlebot3_ws/install/turtlebot3_bringup:/home/tom/turtlebot3_ws/install/turtlebot3_node:/home/tom/turtlebot3_ws/install/turtlebot3_fake_node:/home/tom/turtlebot3_ws/install/turtlebot3_msgs:/home/tom/turtlebot3_ws/install/turtlebot3_manipulation_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_description:/home/tom/turtlebot3_ws/install/turtlebot3_cartographer:/home/tom/turtlebot3_ws/install/robot_tour:/home/tom/turtlebot3_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk_examples:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk', 'VSCODE_PID': '110047'}, 'shell': False}
+[30.017948] (-) TimerEvent: {}
+[30.118188] (-) TimerEvent: {}
+[30.218503] (-) TimerEvent: {}
+[30.259918] (turtlebot_llm_control) StdoutLine: {'line': b'running develop\n'}
+[30.318632] (-) TimerEvent: {}
+[30.418897] (-) TimerEvent: {}
+[30.434485] (turtlebot_llm_control) StdoutLine: {'line': b'running egg_info\n'}
+[30.434876] (turtlebot_llm_control) StdoutLine: {'line': b'writing turtlebot_llm_control.egg-info/PKG-INFO\n'}
+[30.435072] (turtlebot_llm_control) StdoutLine: {'line': b'writing dependency_links to turtlebot_llm_control.egg-info/dependency_links.txt\n'}
+[30.435289] (turtlebot_llm_control) StdoutLine: {'line': b'writing entry points to turtlebot_llm_control.egg-info/entry_points.txt\n'}
+[30.435515] (turtlebot_llm_control) StdoutLine: {'line': b'writing requirements to turtlebot_llm_control.egg-info/requires.txt\n'}
+[30.435681] (turtlebot_llm_control) StdoutLine: {'line': b'writing top-level names to turtlebot_llm_control.egg-info/top_level.txt\n'}
+[30.437938] (turtlebot_llm_control) StdoutLine: {'line': b"reading manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'\n"}
+[30.439015] (turtlebot_llm_control) StdoutLine: {'line': b"writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'\n"}
+[30.440500] (turtlebot_llm_control) StdoutLine: {'line': b'running build_ext\n'}
+[30.440762] (turtlebot_llm_control) StdoutLine: {'line': b'Creating /home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot-llm-control.egg-link (link to .)\n'}
+[30.441607] (turtlebot_llm_control) StdoutLine: {'line': b'Installing bt_orchestrator_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.441810] (turtlebot_llm_control) StdoutLine: {'line': b'Installing follow_me_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442008] (turtlebot_llm_control) StdoutLine: {'line': b'Installing llm_intent_test script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442170] (turtlebot_llm_control) StdoutLine: {'line': b'Installing sim_initial_pose_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442330] (turtlebot_llm_control) StdoutLine: {'line': b'Installing speech_command_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442566] (turtlebot_llm_control) StdoutLine: {'line': b'Installing speech_debug_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442669] (turtlebot_llm_control) StdoutLine: {'line': b'Installing speech_response_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442850] (turtlebot_llm_control) StdoutLine: {'line': b'Installing speech_to_text_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.442951] (turtlebot_llm_control) StdoutLine: {'line': b'Installing tour_recording_manager script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.443114] (turtlebot_llm_control) StdoutLine: {'line': b'Installing tour_teleop_session script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control\n'}
+[30.443297] (turtlebot_llm_control) StdoutLine: {'line': b'\n'}
+[30.443388] (turtlebot_llm_control) StdoutLine: {'line': b'Installed /home/tom/in_ws/build/turtlebot_llm_control\n'}
+[30.443482] (turtlebot_llm_control) StdoutLine: {'line': b'running symlink_data\n'}
+[30.443654] (turtlebot_llm_control) StdoutLine: {'line': b'symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/launch/intent_only.launch.py -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch\n'}
+[30.485539] (turtlebot_llm_control) CommandEnded: {'returncode': 0}
+[30.497161] (turtlebot_llm_control) JobEnded: {'identifier': 'turtlebot_llm_control', 'rc': 0}
+[30.497673] (-) EventReactorShutdown: {}

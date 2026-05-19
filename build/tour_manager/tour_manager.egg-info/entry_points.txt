@@ -1,0 +1,4 @@
+[console_scripts]
+tour_manager = tour_manager.tour_manager_service:main
+tour_saver = tour_manager.tour_saver:main
+

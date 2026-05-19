@@ -1,0 +1,17 @@
+[0.852s] Invoking command in '/home/tom/in_ws/build/speech_locomotion_interface': PYTHONPATH=/home/tom/in_ws/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/speech_locomotion_interface/build --no-deps symlink_data
+[1.090s] running develop
+[1.244s] running egg_info
+[1.244s] writing speech_locomotion_interface.egg-info/PKG-INFO
+[1.244s] writing dependency_links to speech_locomotion_interface.egg-info/dependency_links.txt
+[1.244s] writing entry points to speech_locomotion_interface.egg-info/entry_points.txt
+[1.244s] writing requirements to speech_locomotion_interface.egg-info/requires.txt
+[1.245s] writing top-level names to speech_locomotion_interface.egg-info/top_level.txt
+[1.246s] reading manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.247s] writing manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.248s] running build_ext
+[1.248s] Creating /home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages/speech-locomotion-interface.egg-link (link to .)
+[1.249s] Installing listening script to /home/tom/in_ws/install/speech_locomotion_interface/lib/speech_locomotion_interface
+[1.249s] 
+[1.249s] Installed /home/tom/in_ws/build/speech_locomotion_interface
+[1.249s] running symlink_data
+[31.309s] Invoked command in '/home/tom/in_ws/build/speech_locomotion_interface' returned '0': PYTHONPATH=/home/tom/in_ws/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/speech_locomotion_interface/build --no-deps symlink_data

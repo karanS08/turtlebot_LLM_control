@@ -1,0 +1,18 @@
+[0.835s] Invoking command in '/home/tom/in_ws/build/tour_manager': PYTHONPATH=/home/tom/in_ws/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/tour_manager/build --no-deps symlink_data
+[1.069s] running develop
+[1.227s] running egg_info
+[1.227s] writing tour_manager.egg-info/PKG-INFO
+[1.227s] writing dependency_links to tour_manager.egg-info/dependency_links.txt
+[1.227s] writing entry points to tour_manager.egg-info/entry_points.txt
+[1.228s] writing requirements to tour_manager.egg-info/requires.txt
+[1.228s] writing top-level names to tour_manager.egg-info/top_level.txt
+[1.230s] reading manifest file 'tour_manager.egg-info/SOURCES.txt'
+[1.230s] writing manifest file 'tour_manager.egg-info/SOURCES.txt'
+[1.232s] running build_ext
+[1.232s] Creating /home/tom/in_ws/install/tour_manager/lib/python3.10/site-packages/tour-manager.egg-link (link to .)
+[1.233s] Installing tour_manager script to /home/tom/in_ws/install/tour_manager/lib/tour_manager
+[1.233s] Installing tour_saver script to /home/tom/in_ws/install/tour_manager/lib/tour_manager
+[1.233s] 
+[1.233s] Installed /home/tom/in_ws/build/tour_manager
+[1.233s] running symlink_data
+[1.262s] Invoked command in '/home/tom/in_ws/build/tour_manager' returned '0': PYTHONPATH=/home/tom/in_ws/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/tour_manager/build --no-deps symlink_data

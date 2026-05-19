@@ -1,0 +1,46 @@
+running develop
+running egg_info
+creating turtlebot_llm_control.egg-info
+writing turtlebot_llm_control.egg-info/PKG-INFO
+writing dependency_links to turtlebot_llm_control.egg-info/dependency_links.txt
+writing entry points to turtlebot_llm_control.egg-info/entry_points.txt
+writing requirements to turtlebot_llm_control.egg-info/requires.txt
+writing top-level names to turtlebot_llm_control.egg-info/top_level.txt
+writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+reading manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot-llm-control.egg-link (link to .)
+Installing bt_orchestrator_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing follow_me_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing llm_intent_test script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing sim_initial_pose_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing speech_command_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing speech_debug_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing speech_response_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing speech_to_text_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing tour_recording_manager script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+Installing tour_teleop_session script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+
+Installed /home/tom/in_ws/build/turtlebot_llm_control
+running symlink_data
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index/resource_index
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/resource/turtlebot_llm_control -> /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/package.xml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/GUIDE.md -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/launch/bringup.launch.py -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/launch/sim_pillar_nav_demo.launch.py -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/config/demo_nav2/burger.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/config/demo_nav2/waffle.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/config/demo_nav2/waffle_pi.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/maps/demo/map.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/maps/demo/map.pgm -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz
+symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/rviz/tb3_navigation2.rviz -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz

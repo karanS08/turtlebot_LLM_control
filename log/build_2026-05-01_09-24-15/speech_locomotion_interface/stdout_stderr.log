@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing speech_locomotion_interface.egg-info/PKG-INFO
+writing dependency_links to speech_locomotion_interface.egg-info/dependency_links.txt
+writing entry points to speech_locomotion_interface.egg-info/entry_points.txt
+writing requirements to speech_locomotion_interface.egg-info/requires.txt
+writing top-level names to speech_locomotion_interface.egg-info/top_level.txt
+reading manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+writing manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages/speech-locomotion-interface.egg-link (link to .)
+Installing listening script to /home/tom/in_ws/install/speech_locomotion_interface/lib/speech_locomotion_interface
+
+Installed /home/tom/in_ws/build/speech_locomotion_interface
+running symlink_data

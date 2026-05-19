@@ -1,0 +1,1 @@
+/home/tom/in_ws/src/turtlebot_LLM_control/GUIDE.md

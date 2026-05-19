@@ -1,0 +1,13 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.c.o"
+  "CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.c.o.d"
+  "libsocial_robot_interfaces__rosidl_typesupport_introspection_c.pdb"
+  "libsocial_robot_interfaces__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

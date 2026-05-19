@@ -1,0 +1,574 @@
+[0.108s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.109s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x721b3a5818a0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x721b3a581330>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x721b3a581330>>, mixin_verb=('build',))
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.271s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.271s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/tom/in_ws'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extensions ['ignore', 'ignore_ament_install']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extension 'ignore'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extension 'ignore_ament_install'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extensions ['colcon_pkg']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extension 'colcon_pkg'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extensions ['colcon_meta']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extension 'colcon_meta'
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extensions ['ros']
+[0.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_LLM_control) by extension 'ros'
+[0.297s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot_LLM_control' with type 'ros.ament_python' and name 'turtlebot_llm_control'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extensions ['ignore', 'ignore_ament_install']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'ignore'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'ignore_ament_install'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extensions ['colcon_pkg']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'colcon_pkg'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extensions ['colcon_meta']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'colcon_meta'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extensions ['ros']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'ros'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extensions ['cmake', 'python']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'cmake'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'python'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extensions ['python_setup_py']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide) by extension 'python_setup_py'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/build) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/build) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/build) ignored
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/install) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/install) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/install) ignored
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/log) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/log) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/log) ignored
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extensions ['ignore', 'ignore_ament_install']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'ignore'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'ignore_ament_install'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extensions ['colcon_pkg']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'colcon_pkg'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extensions ['colcon_meta']
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'colcon_meta'
+[0.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'ros'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extensions ['cmake', 'python']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'cmake'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'python'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extensions ['python_setup_py']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src) by extension 'python_setup_py'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extensions ['ignore', 'ignore_ament_install']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'ignore'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'ignore_ament_install'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extensions ['colcon_pkg']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'colcon_pkg'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extensions ['colcon_meta']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'colcon_meta'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extensions ['ros']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'ros'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extensions ['cmake', 'python']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'cmake'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'python'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extensions ['python_setup_py']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/DynamixelSDK) by extension 'python_setup_py'
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'ignore'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'ignore_ament_install'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['colcon_pkg']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'colcon_pkg'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['colcon_meta']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'colcon_meta'
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['ros']
+[0.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'ros'
+[0.300s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot_social_guide/src/speech_locomotion_interface' with type 'ros.ament_python' and name 'speech_locomotion_interface'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extensions ['ignore', 'ignore_ament_install']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'ignore'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'ignore_ament_install'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extensions ['colcon_pkg']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'colcon_pkg'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extensions ['colcon_meta']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'colcon_meta'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extensions ['ros']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'ros'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extensions ['cmake', 'python']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'cmake'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'python'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extensions ['python_setup_py']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3) by extension 'python_setup_py'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'ignore'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'ignore_ament_install'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extensions ['colcon_pkg']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'colcon_pkg'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extensions ['colcon_meta']
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'colcon_meta'
+[0.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extensions ['ros']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'ros'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extensions ['cmake', 'python']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'cmake'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'python'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extensions ['python_setup_py']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_msgs) by extension 'python_setup_py'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extensions ['ignore', 'ignore_ament_install']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'ignore'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'ignore_ament_install'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extensions ['colcon_pkg']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'colcon_pkg'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extensions ['colcon_meta']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'colcon_meta'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extensions ['ros']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'ros'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extensions ['cmake', 'python']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'cmake'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'python'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extensions ['python_setup_py']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide/src/turtlebot3_simulations) by extension 'python_setup_py'
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['ignore', 'ignore_ament_install']
+[0.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'ignore'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'ignore_ament_install'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['colcon_pkg']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'colcon_pkg'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['colcon_meta']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'colcon_meta'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['ros']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'ros'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['cmake', 'python']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'cmake'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'python'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['python_setup_py']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'python_setup_py'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/build) by extensions ['ignore', 'ignore_ament_install']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/build) by extension 'ignore'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/build) ignored
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/install) by extensions ['ignore', 'ignore_ament_install']
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/install) by extension 'ignore'
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/install) ignored
+[0.303s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/log) by extensions ['ignore', 'ignore_ament_install']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/log) by extension 'ignore'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/log) ignored
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['ignore', 'ignore_ament_install']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'ignore'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'ignore_ament_install'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['colcon_pkg']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'colcon_pkg'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['colcon_meta']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'colcon_meta'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['ros']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'ros'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['cmake', 'python']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'cmake'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'python'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['python_setup_py']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'python_setup_py'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extensions ['ignore', 'ignore_ament_install']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'ignore'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'ignore_ament_install'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extensions ['colcon_pkg']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'colcon_pkg'
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extensions ['colcon_meta']
+[0.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'colcon_meta'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extensions ['ros']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'ros'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extensions ['cmake', 'python']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'cmake'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'python'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extensions ['python_setup_py']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/DynamixelSDK) by extension 'python_setup_py'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['ignore', 'ignore_ament_install']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'ignore'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'ignore_ament_install'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['colcon_pkg']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'colcon_pkg'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['colcon_meta']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'colcon_meta'
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['ros']
+[0.305s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'ros'
+[0.306s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour' with type 'ros.ament_cmake' and name 'robot_tour'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'ignore'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'ignore_ament_install'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['colcon_pkg']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'colcon_pkg'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['colcon_meta']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'colcon_meta'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['ros']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'ros'
+[0.307s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces' with type 'ros.ament_cmake' and name 'social_robot_interfaces'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/speech_locomotion_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/speech_locomotion_interface) by extension 'ignore'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/speech_locomotion_interface) ignored
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['ignore', 'ignore_ament_install']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'ignore'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'ignore_ament_install'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['colcon_pkg']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'colcon_pkg'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['colcon_meta']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'colcon_meta'
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['ros']
+[0.307s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'ros'
+[0.308s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager' with type 'ros.ament_python' and name 'tour_manager'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extensions ['ignore', 'ignore_ament_install']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'ignore'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'ignore_ament_install'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extensions ['colcon_pkg']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'colcon_pkg'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extensions ['colcon_meta']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'colcon_meta'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extensions ['ros']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'ros'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extensions ['cmake', 'python']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'cmake'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'python'
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extensions ['python_setup_py']
+[0.308s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3) by extension 'python_setup_py'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'ignore'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'ignore_ament_install'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extensions ['colcon_pkg']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'colcon_pkg'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extensions ['colcon_meta']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'colcon_meta'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extensions ['ros']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'ros'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extensions ['cmake', 'python']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'cmake'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'python'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extensions ['python_setup_py']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_msgs) by extension 'python_setup_py'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extensions ['ignore', 'ignore_ament_install']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'ignore'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'ignore_ament_install'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extensions ['colcon_pkg']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'colcon_pkg'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extensions ['colcon_meta']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'colcon_meta'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extensions ['ros']
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'ros'
+[0.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extensions ['cmake', 'python']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'cmake'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'python'
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extensions ['python_setup_py']
+[0.310s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot_social_guide-dev-landmark_follower/src/turtlebot3_simulations) by extension 'python_setup_py'
+[0.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.310s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.327s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.327s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.330s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 20 installed packages in /home/tom/turtlebot3_ws/install
+[0.330s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/tom/in_ws/install
+[0.332s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 383 installed packages in /opt/ros/humble
+[0.334s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.373s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.373s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'social_robot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.374s] DEBUG:colcon.colcon_core.verb:Building package 'social_robot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tom/in_ws/build/social_robot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tom/in_ws/install/social_robot_interfaces', 'merge_install': False, 'path': '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces', 'symlink_install': True, 'test_result_base': None}
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'cmake_target' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'speech_locomotion_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.374s] DEBUG:colcon.colcon_core.verb:Building package 'speech_locomotion_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tom/in_ws/build/speech_locomotion_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tom/in_ws/install/speech_locomotion_interface', 'merge_install': False, 'path': '/home/tom/in_ws/src/turtlebot_social_guide/src/speech_locomotion_interface', 'symlink_install': True, 'test_result_base': None}
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'cmake_target' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'cmake_clean_cache' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'cmake_clean_first' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'cmake_force_configure' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'ament_cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'catkin_cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'tour_manager' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.375s] DEBUG:colcon.colcon_core.verb:Building package 'tour_manager' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tom/in_ws/build/tour_manager', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tom/in_ws/install/tour_manager', 'merge_install': False, 'path': '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager', 'symlink_install': True, 'test_result_base': None}
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'cmake_target' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'cmake_clean_cache' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'cmake_clean_first' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'cmake_force_configure' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'ament_cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'catkin_cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'robot_tour' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.375s] DEBUG:colcon.colcon_core.verb:Building package 'robot_tour' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tom/in_ws/build/robot_tour', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tom/in_ws/install/robot_tour', 'merge_install': False, 'path': '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour', 'symlink_install': True, 'test_result_base': None}
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'cmake_args' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'cmake_target' from command line to 'None'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.375s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.376s] Level 5:colcon.colcon_core.verb:set package 'turtlebot_llm_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.376s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot_llm_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/tom/in_ws/build/turtlebot_llm_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/tom/in_ws/install/turtlebot_llm_control', 'merge_install': False, 'path': '/home/tom/in_ws/src/turtlebot_LLM_control', 'symlink_install': True, 'test_result_base': None}
+[0.376s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.377s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.377s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces' with build type 'ament_cmake'
+[0.377s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces'
+[0.379s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.379s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.379s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.384s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/tom/in_ws/src/turtlebot_social_guide/src/speech_locomotion_interface' with build type 'ament_python'
+[0.385s] Level 1:colcon.colcon_core.shell:create_environment_hook('speech_locomotion_interface', 'ament_prefix_path')
+[0.385s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/ament_prefix_path.ps1'
+[0.386s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/ament_prefix_path.dsv'
+[0.386s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/ament_prefix_path.sh'
+[0.387s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.387s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.391s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager' with build type 'ament_python'
+[0.391s] Level 1:colcon.colcon_core.shell:create_environment_hook('tour_manager', 'ament_prefix_path')
+[0.391s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/tour_manager/share/tour_manager/hook/ament_prefix_path.ps1'
+[0.392s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/tour_manager/share/tour_manager/hook/ament_prefix_path.dsv'
+[0.392s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/tour_manager/share/tour_manager/hook/ament_prefix_path.sh'
+[0.392s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.392s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/social_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble /usr/bin/cmake --build /home/tom/in_ws/build/social_robot_interfaces -- -j12 -l12
+[0.649s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/tom/in_ws/src/turtlebot_social_guide/src/speech_locomotion_interface'
+[0.649s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.650s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.888s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager'
+[0.888s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.889s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.895s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/social_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble /usr/bin/cmake --build /home/tom/in_ws/build/social_robot_interfaces -- -j12 -l12
+[0.905s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/social_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble /usr/bin/cmake --install /home/tom/in_ws/build/social_robot_interfaces
+[0.973s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(social_robot_interfaces)
+[0.974s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/social_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble /usr/bin/cmake --install /home/tom/in_ws/build/social_robot_interfaces
+[0.976s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces' for CMake module files
+[0.977s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces' for CMake config files
+[0.977s] Level 1:colcon.colcon_core.shell:create_environment_hook('social_robot_interfaces', 'cmake_prefix_path')
+[0.977s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.ps1'
+[0.978s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.dsv'
+[0.978s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.sh'
+[0.979s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/lib'
+[0.979s] Level 1:colcon.colcon_core.shell:create_environment_hook('social_robot_interfaces', 'ld_library_path_lib')
+[0.979s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.ps1'
+[0.979s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.dsv'
+[0.980s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.sh'
+[0.980s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/bin'
+[0.980s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/lib/pkgconfig/social_robot_interfaces.pc'
+[0.980s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/lib/python3.10/site-packages'
+[0.980s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/bin'
+[0.981s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.ps1'
+[0.981s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.dsv'
+[0.982s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.sh'
+[0.982s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.bash'
+[0.983s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.zsh'
+[0.983s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/social_robot_interfaces/share/colcon-core/packages/social_robot_interfaces)
+[0.984s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(social_robot_interfaces)
+[0.984s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces' for CMake module files
+[0.985s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces' for CMake config files
+[0.985s] Level 1:colcon.colcon_core.shell:create_environment_hook('social_robot_interfaces', 'cmake_prefix_path')
+[0.985s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.ps1'
+[0.986s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.dsv'
+[0.986s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.sh'
+[0.986s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/lib'
+[0.986s] Level 1:colcon.colcon_core.shell:create_environment_hook('social_robot_interfaces', 'ld_library_path_lib')
+[0.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.ps1'
+[0.987s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.dsv'
+[0.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.sh'
+[0.987s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/bin'
+[0.987s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/lib/pkgconfig/social_robot_interfaces.pc'
+[0.988s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/lib/python3.10/site-packages'
+[0.988s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/social_robot_interfaces/bin'
+[0.988s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.ps1'
+[0.989s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.dsv'
+[0.989s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.sh'
+[0.989s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.bash'
+[0.990s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/social_robot_interfaces/share/social_robot_interfaces/package.zsh'
+[0.990s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/social_robot_interfaces/share/colcon-core/packages/social_robot_interfaces)
+[0.990s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour' with build type 'ament_cmake'
+[0.990s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour'
+[0.991s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.991s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.193s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/robot_tour': AMENT_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/turtlebot3:/home/tom/turtlebot3_ws/install/turtlebot3_simulations:/home/tom/turtlebot3_ws/install/turtlebot3_bringup:/home/tom/turtlebot3_ws/install/turtlebot3_node:/home/tom/turtlebot3_ws/install/turtlebot3_fake_node:/home/tom/turtlebot3_ws/install/turtlebot3_msgs:/home/tom/turtlebot3_ws/install/turtlebot3_manipulation_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_description:/home/tom/turtlebot3_ws/install/turtlebot3_cartographer:/home/tom/turtlebot3_ws/install/robot_tour:/home/tom/turtlebot3_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk_examples:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/tom/in_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/tom/turtlebot3_ws/install/robot_tour/lib:/home/tom/turtlebot3_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tom/in_ws/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tom/in_ws/build/robot_tour -- -j12 -l12
+[1.226s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/tour_manager': PYTHONPATH=/home/tom/in_ws/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/tour_manager/build --no-deps symlink_data
+[1.237s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/speech_locomotion_interface': PYTHONPATH=/home/tom/in_ws/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/speech_locomotion_interface/build --no-deps symlink_data
+[1.267s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/robot_tour' returned '0': AMENT_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/turtlebot3:/home/tom/turtlebot3_ws/install/turtlebot3_simulations:/home/tom/turtlebot3_ws/install/turtlebot3_bringup:/home/tom/turtlebot3_ws/install/turtlebot3_node:/home/tom/turtlebot3_ws/install/turtlebot3_fake_node:/home/tom/turtlebot3_ws/install/turtlebot3_msgs:/home/tom/turtlebot3_ws/install/turtlebot3_manipulation_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_description:/home/tom/turtlebot3_ws/install/turtlebot3_cartographer:/home/tom/turtlebot3_ws/install/robot_tour:/home/tom/turtlebot3_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk_examples:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/tom/in_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/tom/turtlebot3_ws/install/robot_tour/lib:/home/tom/turtlebot3_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tom/in_ws/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/tom/in_ws/build/robot_tour -- -j12 -l12
+[1.269s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/robot_tour': AMENT_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/turtlebot3:/home/tom/turtlebot3_ws/install/turtlebot3_simulations:/home/tom/turtlebot3_ws/install/turtlebot3_bringup:/home/tom/turtlebot3_ws/install/turtlebot3_node:/home/tom/turtlebot3_ws/install/turtlebot3_fake_node:/home/tom/turtlebot3_ws/install/turtlebot3_msgs:/home/tom/turtlebot3_ws/install/turtlebot3_manipulation_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_description:/home/tom/turtlebot3_ws/install/turtlebot3_cartographer:/home/tom/turtlebot3_ws/install/robot_tour:/home/tom/turtlebot3_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk_examples:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/tom/in_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/tom/turtlebot3_ws/install/robot_tour/lib:/home/tom/turtlebot3_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tom/in_ws/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/tom/in_ws/build/robot_tour
+[1.459s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_tour)
+[1.460s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour' for CMake module files
+[1.461s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/robot_tour' returned '0': AMENT_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/tom/in_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/turtlebot3:/home/tom/turtlebot3_ws/install/turtlebot3_simulations:/home/tom/turtlebot3_ws/install/turtlebot3_bringup:/home/tom/turtlebot3_ws/install/turtlebot3_node:/home/tom/turtlebot3_ws/install/turtlebot3_fake_node:/home/tom/turtlebot3_ws/install/turtlebot3_msgs:/home/tom/turtlebot3_ws/install/turtlebot3_manipulation_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_gazebo:/home/tom/turtlebot3_ws/install/turtlebot3_description:/home/tom/turtlebot3_ws/install/turtlebot3_cartographer:/home/tom/turtlebot3_ws/install/robot_tour:/home/tom/turtlebot3_ws/install/social_robot_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk_examples:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces:/home/tom/turtlebot3_ws/install/dynamixel_sdk:/home/tom/in_ws/install/turtlebot_llm_control:/home/tom/turtlebot3_ws/install/turtlebot3_teleop:/home/tom/turtlebot3_ws/install/turtlebot3_navigation2:/home/tom/turtlebot3_ws/install/turtlebot3_example:/home/tom/turtlebot3_ws/install/tour_manager:/home/tom/turtlebot3_ws/install/speech_locomotion_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/tom/in_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/tom/turtlebot3_ws/install/robot_tour/lib:/home/tom/turtlebot3_ws/install/social_robot_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/lib:/home/tom/turtlebot3_ws/install/dynamixel_sdk/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/tom/in_ws/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/tom/in_ws/build/robot_tour
+[1.461s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour' for CMake config files
+[1.461s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_tour', 'cmake_prefix_path')
+[1.461s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.ps1'
+[1.462s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.dsv'
+[1.462s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.sh'
+[1.462s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/lib'
+[1.463s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_tour', 'ld_library_path_lib')
+[1.463s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.ps1'
+[1.463s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.dsv'
+[1.463s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.sh'
+[1.464s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/bin'
+[1.464s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/lib/pkgconfig/robot_tour.pc'
+[1.464s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/lib/python3.10/site-packages'
+[1.464s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/bin'
+[1.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.ps1'
+[1.465s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.dsv'
+[1.465s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.sh'
+[1.465s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.bash'
+[1.466s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.zsh'
+[1.466s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/robot_tour/share/colcon-core/packages/robot_tour)
+[1.466s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_tour)
+[1.466s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour' for CMake module files
+[1.467s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour' for CMake config files
+[1.467s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_tour', 'cmake_prefix_path')
+[1.467s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.ps1'
+[1.470s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.dsv'
+[1.470s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.sh'
+[1.471s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/lib'
+[1.471s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_tour', 'ld_library_path_lib')
+[1.471s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.ps1'
+[1.471s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.dsv'
+[1.471s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.sh'
+[1.472s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/bin'
+[1.472s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/lib/pkgconfig/robot_tour.pc'
+[1.472s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/lib/python3.10/site-packages'
+[1.472s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/robot_tour/bin'
+[1.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.ps1'
+[1.473s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.dsv'
+[1.473s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.sh'
+[1.474s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.bash'
+[1.474s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/robot_tour/share/robot_tour/package.zsh'
+[1.474s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/robot_tour/share/colcon-core/packages/robot_tour)
+[1.653s] Level 1:colcon.colcon_core.shell:create_environment_hook('tour_manager', 'pythonpath_develop')
+[1.654s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/build/tour_manager/share/tour_manager/hook/pythonpath_develop.ps1'
+[1.654s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/tour_manager' returned '0': PYTHONPATH=/home/tom/in_ws/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/tour_manager/build --no-deps symlink_data
+[1.654s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/build/tour_manager/share/tour_manager/hook/pythonpath_develop.dsv'
+[1.655s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/build/tour_manager/share/tour_manager/hook/pythonpath_develop.sh'
+[1.655s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager' for CMake module files
+[1.656s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager' for CMake config files
+[1.656s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager/lib'
+[1.656s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager/bin'
+[1.656s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager/lib/pkgconfig/tour_manager.pc'
+[1.656s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager/lib/python3.10/site-packages'
+[1.656s] Level 1:colcon.colcon_core.shell:create_environment_hook('tour_manager', 'pythonpath')
+[1.657s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/tour_manager/share/tour_manager/hook/pythonpath.ps1'
+[1.657s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/tour_manager/share/tour_manager/hook/pythonpath.dsv'
+[1.657s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/tour_manager/share/tour_manager/hook/pythonpath.sh'
+[1.658s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/tour_manager/bin'
+[1.658s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tour_manager)
+[1.658s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/tour_manager/share/tour_manager/package.ps1'
+[1.659s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/tour_manager/share/tour_manager/package.dsv'
+[1.659s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/tour_manager/share/tour_manager/package.sh'
+[1.659s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/tour_manager/share/tour_manager/package.bash'
+[1.660s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/tour_manager/share/tour_manager/package.zsh'
+[1.660s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/tour_manager/share/colcon-core/packages/tour_manager)
+[31.692s] Level 1:colcon.colcon_core.shell:create_environment_hook('speech_locomotion_interface', 'pythonpath_develop')
+[31.693s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/build/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath_develop.ps1'
+[31.694s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/speech_locomotion_interface' returned '0': PYTHONPATH=/home/tom/in_ws/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/speech_locomotion_interface/build --no-deps symlink_data
+[31.694s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/build/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath_develop.dsv'
+[31.695s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/build/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath_develop.sh'
+[31.695s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface' for CMake module files
+[31.695s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface' for CMake config files
+[31.696s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface/lib'
+[31.696s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface/bin'
+[31.696s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface/lib/pkgconfig/speech_locomotion_interface.pc'
+[31.696s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages'
+[31.696s] Level 1:colcon.colcon_core.shell:create_environment_hook('speech_locomotion_interface', 'pythonpath')
+[31.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath.ps1'
+[31.697s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath.dsv'
+[31.697s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath.sh'
+[31.698s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/speech_locomotion_interface/bin'
+[31.698s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(speech_locomotion_interface)
+[31.698s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/package.ps1'
+[31.699s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/package.dsv'
+[31.699s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/package.sh'
+[31.699s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/package.bash'
+[31.700s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/speech_locomotion_interface/share/speech_locomotion_interface/package.zsh'
+[31.700s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/speech_locomotion_interface/share/colcon-core/packages/speech_locomotion_interface)
+[31.700s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/tom/in_ws/src/turtlebot_LLM_control' with build type 'ament_python'
+[31.700s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot_llm_control', 'ament_prefix_path')
+[31.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/ament_prefix_path.ps1'
+[31.701s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/ament_prefix_path.dsv'
+[31.701s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/ament_prefix_path.sh'
+[31.702s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[31.702s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[31.953s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/tom/in_ws/src/turtlebot_LLM_control'
+[31.954s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[31.954s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[32.286s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/tom/in_ws/build/turtlebot_llm_control': AMENT_PREFIX_PATH=/home/tom/in_ws/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/tom/in_ws/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/tom/in_ws/build/speech_locomotion_interface:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/turtlebot_llm_control/build --no-deps symlink_data
+[32.742s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot_llm_control', 'pythonpath_develop')
+[32.743s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/build/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath_develop.ps1'
+[32.744s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/tom/in_ws/build/turtlebot_llm_control' returned '0': AMENT_PREFIX_PATH=/home/tom/in_ws/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/tom/in_ws/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/tom/in_ws/build/speech_locomotion_interface:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/turtlebot_llm_control/build --no-deps symlink_data
+[32.744s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/build/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath_develop.dsv'
+[32.744s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/build/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath_develop.sh'
+[32.745s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control' for CMake module files
+[32.745s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control' for CMake config files
+[32.746s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control/lib'
+[32.746s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control/bin'
+[32.746s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control/lib/pkgconfig/turtlebot_llm_control.pc'
+[32.746s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages'
+[32.746s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot_llm_control', 'pythonpath')
+[32.746s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath.ps1'
+[32.747s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath.dsv'
+[32.747s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath.sh'
+[32.748s] Level 1:colcon.colcon_core.environment:checking '/home/tom/in_ws/install/turtlebot_llm_control/bin'
+[32.748s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot_llm_control)
+[32.748s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/package.ps1'
+[32.748s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/package.dsv'
+[32.749s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/package.sh'
+[32.749s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/package.bash'
+[32.750s] INFO:colcon.colcon_core.shell:Creating package script '/home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/package.zsh'
+[32.750s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/tom/in_ws/install/turtlebot_llm_control/share/colcon-core/packages/turtlebot_llm_control)
+[32.750s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[32.751s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[32.751s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[32.751s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[32.756s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[32.756s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[32.756s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[32.756s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.AccessDenied: Failed to connect to socket /run/user/1000/bus: Operation not permitted
+[32.757s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[32.757s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tom/in_ws/install/local_setup.ps1'
+[32.758s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tom/in_ws/install/_local_setup_util_ps1.py'
+[32.759s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tom/in_ws/install/setup.ps1'
+[32.761s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tom/in_ws/install/local_setup.sh'
+[32.761s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/tom/in_ws/install/_local_setup_util_sh.py'
+[32.761s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tom/in_ws/install/setup.sh'
+[32.763s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tom/in_ws/install/local_setup.bash'
+[32.763s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tom/in_ws/install/setup.bash'
+[32.764s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/tom/in_ws/install/local_setup.zsh'
+[32.765s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/tom/in_ws/install/setup.zsh'

@@ -1,0 +1,1 @@
+/home/tom/in_ws/build/social_robot_interfaces/rosidl_generator_py/social_robot_interfaces/srv/__init__.py

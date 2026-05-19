@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+launch/tour_manager_launch.py
+resource/tour_manager
+tour_manager/__init__.py
+tour_manager/tour_manager_service.py
+tour_manager/tour_saver.py
+tour_manager.egg-info/PKG-INFO
+tour_manager.egg-info/SOURCES.txt
+tour_manager.egg-info/dependency_links.txt
+tour_manager.egg-info/entry_points.txt
+tour_manager.egg-info/requires.txt
+tour_manager.egg-info/top_level.txt
+tour_manager.egg-info/zip-safe

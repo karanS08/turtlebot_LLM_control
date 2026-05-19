@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "social_robot_interfaces__py",
+		"source" : "/home/tom/in_ws/build/social_robot_interfaces/social_robot_interfaces__py"
+	}
+}

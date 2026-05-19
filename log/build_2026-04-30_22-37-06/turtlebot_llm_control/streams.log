@@ -1,0 +1,48 @@
+[0.623s] Invoking command in '/home/tom/in_ws/build/turtlebot_llm_control': AMENT_PREFIX_PATH=/home/tom/in_ws/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/tom/in_ws/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/tom/in_ws/build/speech_locomotion_interface:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/turtlebot_llm_control/build --no-deps symlink_data
+[0.888s] running develop
+[1.084s] running egg_info
+[1.085s] creating turtlebot_llm_control.egg-info
+[1.085s] writing turtlebot_llm_control.egg-info/PKG-INFO
+[1.085s] writing dependency_links to turtlebot_llm_control.egg-info/dependency_links.txt
+[1.085s] writing entry points to turtlebot_llm_control.egg-info/entry_points.txt
+[1.085s] writing requirements to turtlebot_llm_control.egg-info/requires.txt
+[1.086s] writing top-level names to turtlebot_llm_control.egg-info/top_level.txt
+[1.086s] writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.090s] reading manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.091s] writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.096s] running build_ext
+[1.096s] Creating /home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot-llm-control.egg-link (link to .)
+[1.096s] Installing bt_orchestrator_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.096s] Installing follow_me_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.097s] Installing llm_intent_test script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.098s] Installing sim_initial_pose_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.098s] Installing speech_command_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.099s] Installing speech_debug_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.099s] Installing speech_response_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.100s] Installing speech_to_text_node script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.100s] Installing tour_recording_manager script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.101s] Installing tour_teleop_session script to /home/tom/in_ws/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.102s] 
+[1.102s] Installed /home/tom/in_ws/build/turtlebot_llm_control
+[1.102s] running symlink_data
+[1.102s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index
+[1.102s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index/resource_index
+[1.102s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+[1.102s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/resource/turtlebot_llm_control -> /home/tom/in_ws/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+[1.102s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/package.xml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.102s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/GUIDE.md -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.102s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.102s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/launch/bringup.launch.py -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.102s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/launch/sim_pillar_nav_demo.launch.py -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.102s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config
+[1.102s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.102s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/config/demo_nav2/burger.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.103s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/config/demo_nav2/waffle.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.103s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/config/demo_nav2/waffle_pi.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.103s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps
+[1.107s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.108s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/maps/demo/map.yaml -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.108s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/maps/demo/map.pgm -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.108s] creating /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz
+[1.108s] symbolically linking /home/tom/in_ws/build/turtlebot_llm_control/rviz/tb3_navigation2.rviz -> /home/tom/in_ws/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz
+[1.162s] Invoked command in '/home/tom/in_ws/build/turtlebot_llm_control' returned '0': AMENT_PREFIX_PATH=/home/tom/in_ws/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/tom/in_ws/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/tom/in_ws/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/tom/in_ws/build/speech_locomotion_interface:/home/tom/in_ws/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/tom/in_ws/build/turtlebot_llm_control/build --no-deps symlink_data

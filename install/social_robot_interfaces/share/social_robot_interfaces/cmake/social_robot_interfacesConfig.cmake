@@ -1,0 +1,1 @@
+/home/tom/in_ws/build/social_robot_interfaces/ament_cmake_core/social_robot_interfacesConfig.cmake

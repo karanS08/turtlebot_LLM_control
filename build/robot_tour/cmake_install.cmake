@@ -1,8 +1,8 @@
-# Install script for directory: /home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour
+# Install script for directory: /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tom/in_ws/install/robot_tour")
+  set(CMAKE_INSTALL_PREFIX "/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/tom/in_ws/build/robot_tour/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tom/in_ws/build/robot_tour/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

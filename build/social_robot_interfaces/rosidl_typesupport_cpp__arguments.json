@@ -1,9 +1,9 @@
 {
   "package_name": "social_robot_interfaces",
-  "output_dir": "/home/tom/in_ws/build/social_robot_interfaces/rosidl_typesupport_cpp/social_robot_interfaces",
+  "output_dir": "/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_typesupport_cpp/social_robot_interfaces",
   "template_dir": "/opt/ros/humble/share/rosidl_typesupport_cpp/resource",
   "idl_tuples": [
-    "/home/tom/in_ws/build/social_robot_interfaces/rosidl_adapter/social_robot_interfaces:srv/Tours.idl"
+    "/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_adapter/social_robot_interfaces:srv/Tours.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -76,7 +76,7 @@
     "/opt/ros/humble/share/rosidl_typesupport_cpp/resource/idl__type_support.cpp.em",
     "/opt/ros/humble/share/rosidl_typesupport_cpp/resource/msg__type_support.cpp.em",
     "/opt/ros/humble/share/rosidl_typesupport_cpp/resource/srv__type_support.cpp.em",
-    "/home/tom/in_ws/build/social_robot_interfaces/rosidl_adapter/social_robot_interfaces/srv/Tours.idl",
+    "/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_adapter/social_robot_interfaces/srv/Tours.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",

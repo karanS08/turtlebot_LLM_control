@@ -32,8 +32,8 @@ def generate_launch_description():
         [
             DeclareLaunchArgument("enable_microphone", default_value="true"),
             DeclareLaunchArgument("enable_llm", default_value="true"),
-            DeclareLaunchArgument("llm_provider", default_value="groq"),
-            DeclareLaunchArgument("llm_model", default_value="llama-3.3-70b-versatile"),
+            DeclareLaunchArgument("llm_provider", default_value="ollama"),
+            DeclareLaunchArgument("llm_model", default_value="qwen2.5-coder:latest"),
             DeclareLaunchArgument("llm_api_key_path", default_value=""),
             DeclareLaunchArgument("intent_topic", default_value="/speech/intent"),
             DeclareLaunchArgument("enable_speech_debug", default_value="true"),

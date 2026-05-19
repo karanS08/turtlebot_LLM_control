@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces
+CMAKE_SOURCE_DIR = /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tom/in_ws/build/social_robot_interfaces
+CMAKE_BINARY_DIR = /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
 
 # Utility rule file for social_robot_interfaces_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/social_robot_interfaces_uninstall.dir/compiler_depend.make
 include CMakeFiles/social_robot_interfaces_uninstall.dir/progress.make
 
 CMakeFiles/social_robot_interfaces_uninstall:
-	/usr/bin/cmake -P /home/tom/in_ws/build/social_robot_interfaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 social_robot_interfaces_uninstall: CMakeFiles/social_robot_interfaces_uninstall
 social_robot_interfaces_uninstall: CMakeFiles/social_robot_interfaces_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/social_robot_interfaces_uninstall.dir/clean:
 .PHONY : CMakeFiles/social_robot_interfaces_uninstall.dir/clean
 
 CMakeFiles/social_robot_interfaces_uninstall.dir/depend:
-	cd /home/tom/in_ws/build/social_robot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces /home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces /home/tom/in_ws/build/social_robot_interfaces /home/tom/in_ws/build/social_robot_interfaces /home/tom/in_ws/build/social_robot_interfaces/CMakeFiles/social_robot_interfaces_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles/social_robot_interfaces_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/social_robot_interfaces_uninstall.dir/depend
 

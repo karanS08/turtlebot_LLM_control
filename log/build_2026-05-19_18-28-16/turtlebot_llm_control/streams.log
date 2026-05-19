@@ -1,0 +1,50 @@
+[0.642s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build --no-deps symlink_data
+[0.885s] running develop
+[1.069s] running egg_info
+[1.069s] creating turtlebot_llm_control.egg-info
+[1.069s] writing turtlebot_llm_control.egg-info/PKG-INFO
+[1.070s] writing dependency_links to turtlebot_llm_control.egg-info/dependency_links.txt
+[1.070s] writing entry points to turtlebot_llm_control.egg-info/entry_points.txt
+[1.070s] writing requirements to turtlebot_llm_control.egg-info/requires.txt
+[1.070s] writing top-level names to turtlebot_llm_control.egg-info/top_level.txt
+[1.070s] writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.072s] reading manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.073s] writing manifest file 'turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.074s] running build_ext
+[1.074s] Creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot-llm-control.egg-link (link to .)
+[1.074s] Installing bt_orchestrator_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing follow_me_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing llm_intent_test script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing sim_initial_pose_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing speech_command_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing speech_debug_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing speech_response_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing speech_to_text_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing tour_intent_bridge_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing tour_recording_manager script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] Installing tour_teleop_session script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.075s] 
+[1.076s] Installed /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control
+[1.076s] running symlink_data
+[1.076s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/ament_index
+[1.076s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/ament_index/resource_index
+[1.076s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+[1.076s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/resource/turtlebot_llm_control -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+[1.076s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/package.xml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.076s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/GUIDE.md -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.076s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.076s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/launch/bringup.launch.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.076s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/launch/intent_only.launch.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/launch/sim_pillar_nav_demo.launch.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.077s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config
+[1.077s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/config/demo_nav2/burger.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/config/demo_nav2/waffle.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/config/demo_nav2/waffle_pi.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.077s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/maps
+[1.077s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/maps/demo/map.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/maps/demo/map.pgm -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.077s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz
+[1.077s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/rviz/tb3_navigation2.rviz -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz
+[1.103s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build --no-deps symlink_data

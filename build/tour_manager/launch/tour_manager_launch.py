@@ -1,1 +1,1 @@
-/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager/launch/tour_manager_launch.py
+/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager/launch/tour_manager_launch.py

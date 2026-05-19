@@ -1,8 +1,8 @@
-# Install script for directory: /home/tom/in_ws/build/social_robot_interfaces/social_robot_interfaces__py
+# Install script for directory: /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/social_robot_interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tom/in_ws/install/social_robot_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

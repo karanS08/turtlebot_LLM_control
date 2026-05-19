@@ -1,0 +1,24 @@
+[0.806s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build --no-deps symlink_data
+[1.030s] running develop
+[1.211s] running egg_info
+[1.211s] creating speech_locomotion_interface.egg-info
+[1.211s] writing speech_locomotion_interface.egg-info/PKG-INFO
+[1.211s] writing dependency_links to speech_locomotion_interface.egg-info/dependency_links.txt
+[1.211s] writing entry points to speech_locomotion_interface.egg-info/entry_points.txt
+[1.211s] writing requirements to speech_locomotion_interface.egg-info/requires.txt
+[1.211s] writing top-level names to speech_locomotion_interface.egg-info/top_level.txt
+[1.212s] writing manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.213s] reading manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.213s] writing manifest file 'speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.214s] running build_ext
+[1.215s] Creating /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages/speech-locomotion-interface.egg-link (link to .)
+[1.215s] Installing listening script to /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/speech_locomotion_interface
+[1.215s] 
+[1.215s] Installed /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface
+[1.216s] running symlink_data
+[1.216s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/ament_index
+[1.216s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/ament_index/resource_index
+[1.216s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/ament_index/resource_index/packages
+[1.216s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/resource/speech_locomotion_interface -> /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/ament_index/resource_index/packages
+[1.216s] symbolically linking /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/package.xml -> /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface
+[1.254s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface' returned '0': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build --no-deps symlink_data

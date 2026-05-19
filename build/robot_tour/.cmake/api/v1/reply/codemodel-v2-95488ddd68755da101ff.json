@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-262f7e7ab170fe8907b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "robot_tour",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_tour_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_tour_uninstall-492724a26a4948f7e2a8.json",
+					"name" : "robot_tour_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tour_guide::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tour_guide-7aedcf89c8bf87685679.json",
+					"name" : "tour_guide",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tour_guide_start::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tour_guide_start-3893bd4873ec2315724d.json",
+					"name" : "tour_guide_start",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-b38418a96608c4321960.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour",
+		"source" : "/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

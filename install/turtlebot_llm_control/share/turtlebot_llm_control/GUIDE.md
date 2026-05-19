@@ -1,1 +1,1 @@
-/home/tom/in_ws/build/turtlebot_llm_control/GUIDE.md
+/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/GUIDE.md

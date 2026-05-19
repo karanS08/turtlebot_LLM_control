@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour/src/tour_guide.cpp" "CMakeFiles/tour_guide.dir/src/tour_guide.cpp.o" "gcc" "CMakeFiles/tour_guide.dir/src/tour_guide.cpp.o.d"
+  "/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour/src/tour_guide.cpp" "CMakeFiles/tour_guide.dir/src/tour_guide.cpp.o" "gcc" "CMakeFiles/tour_guide.dir/src/tour_guide.cpp.o.d"
   )
 
 # Targets to which this target links.

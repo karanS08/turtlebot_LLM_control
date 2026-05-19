@@ -1,6 +1,6 @@
 {
   "package_name": "social_robot_interfaces",
   "non_idl_tuples": [
-    "/home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces:srv/Tours.srv"
+    "/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces:srv/Tours.srv"
   ]
 }

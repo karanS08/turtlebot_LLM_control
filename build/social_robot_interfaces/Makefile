@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tom/in_ws/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces
+CMAKE_SOURCE_DIR = /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tom/in_ws/build/social_robot_interfaces
+CMAKE_BINARY_DIR = /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/in_ws/build/social_robot_interfaces/CMakeFiles /home/tom/in_ws/build/social_robot_interfaces//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/in_ws/build/social_robot_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -404,19 +404,6 @@ social_robot_interfaces__py: cmake_check_build_system
 social_robot_interfaces__py/fast:
 	$(MAKE) $(MAKESILENT) -f social_robot_interfaces__py/CMakeFiles/social_robot_interfaces__py.dir/build.make social_robot_interfaces__py/CMakeFiles/social_robot_interfaces__py.dir/build
 .PHONY : social_robot_interfaces__py/fast
-
-#=============================================================================
-# Target rules for targets named social_robot_interfaces__rs
-
-# Build rule for target.
-social_robot_interfaces__rs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 social_robot_interfaces__rs
-.PHONY : social_robot_interfaces__rs
-
-# fast build rule for target.
-social_robot_interfaces__rs/fast:
-	$(MAKE) $(MAKESILENT) -f social_robot_interfaces__rs/CMakeFiles/social_robot_interfaces__rs.dir/build.make social_robot_interfaces__rs/CMakeFiles/social_robot_interfaces__rs.dir/build
-.PHONY : social_robot_interfaces__rs/fast
 
 rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.o: rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.c.o
 .PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.o
@@ -700,7 +687,6 @@ help:
 	@echo "... social_robot_interfaces"
 	@echo "... social_robot_interfaces__cpp"
 	@echo "... social_robot_interfaces__py"
-	@echo "... social_robot_interfaces__rs"
 	@echo "... social_robot_interfaces_uninstall"
 	@echo "... uninstall"
 	@echo "... social_robot_interfaces__rosidl_generator_c"

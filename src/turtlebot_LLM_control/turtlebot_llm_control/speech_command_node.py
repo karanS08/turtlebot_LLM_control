@@ -10,8 +10,8 @@ class SpeechCommandNode(Node):
     def __init__(self):
         super().__init__("speech_command_node")
         self.enable_llm = self.declare_parameter("enable_llm", True).value
-        self.llm_provider = self.declare_parameter("llm_provider", "groq").value
-        self.llm_model = self.declare_parameter("llm_model", "llama-3.3-70b-versatile").value
+        self.llm_provider = self.declare_parameter("llm_provider", "ollama").value
+        self.llm_model = self.declare_parameter("llm_model", "qwen2.5-coder:latest").value
         self.llm_api_key_path = self.declare_parameter("llm_api_key_path", "").value
         self.personality = self.declare_parameter(
             "personality",

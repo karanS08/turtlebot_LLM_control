@@ -1,1 +1,1 @@
-/home/tom/in_ws/build/tour_manager/launch/tour_manager_launch.py
+/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/launch/tour_manager_launch.py

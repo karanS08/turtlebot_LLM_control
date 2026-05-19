@@ -4,5 +4,3 @@ social_robot_interfaces.egg-info/PKG-INFO
 social_robot_interfaces.egg-info/SOURCES.txt
 social_robot_interfaces.egg-info/dependency_links.txt
 social_robot_interfaces.egg-info/top_level.txt
-social_robot_interfaces/srv/__init__.py
-social_robot_interfaces/srv/_tours.py

@@ -30,8 +30,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="LLM intent tester. Prints only the resolved intent and speaks the reply."
     )
-    parser.add_argument("--provider", default="groq", choices=["groq", "openai"])
-    parser.add_argument("--model", default="llama-3.3-70b-versatile")
+    parser.add_argument("--provider", default="ollama", choices=["groq", "openai", "ollama"])
+    parser.add_argument("--model", default="qwen2.5-coder:latest")
     parser.add_argument("--api-key-path", "--key", dest="api_key_path", default="")
     parser.add_argument("--no-llm", action="store_true")
     parser.add_argument("--microphone", action="store_true")

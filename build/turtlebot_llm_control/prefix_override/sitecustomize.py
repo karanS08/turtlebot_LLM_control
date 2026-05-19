@@ -1,4 +1,4 @@
 import sys
 if sys.prefix == '/usr':
     sys.real_prefix = sys.prefix
-    sys.prefix = sys.exec_prefix = '/home/tom/in_ws/install/turtlebot_llm_control'
+    sys.prefix = sys.exec_prefix = '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control'

@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 from typing import Callable, List, Optional
 
@@ -13,8 +14,8 @@ class LLMDialogueEngine:
         self,
         *,
         enable_llm: bool = True,
-        llm_provider: str = "groq",
-        llm_model: str = "llama-3.3-70b-versatile",
+        llm_provider: str = "ollama",
+        llm_model: str = "qwen2.5-coder:latest",
         llm_api_key_path: str = "",
         personality: str = "",
         warn: Optional[Callable[[str], None]] = None,
@@ -46,6 +47,11 @@ class LLMDialogueEngine:
 
                 return Groq(api_key=api_key)
 
+            if self.provider == "ollama":
+                from openai import OpenAI
+
+                return OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+
             from openai import OpenAI
 
             return OpenAI(api_key=api_key)
@@ -62,6 +68,9 @@ class LLMDialogueEngine:
             return None
 
     def resolve_api_key(self) -> str:
+        if self.provider == "ollama":
+            return "ollama"
+
         env_name = "GROQ_API_KEY" if self.provider == "groq" else "OPENAI_API_KEY"
         env_value = os.environ.get(env_name, "").strip()
         if env_value:
@@ -186,7 +195,15 @@ class LLMDialogueEngine:
                 temperature=0.5,
                 response_format={"type": "json_object"},
             )
-            payload = json.loads(self.extract_message_content(completion))
+            raw = self.extract_message_content(completion)
+            try:
+                payload = json.loads(raw)
+            except json.JSONDecodeError:
+                # Ollama may wrap JSON in markdown fences — extract first {...} block
+                match = re.search(r"\{.*\}", raw, re.DOTALL)
+                if not match:
+                    raise
+                payload = json.loads(match.group())
             metadata = self.normalize_metadata(payload.get("metadata"))
             token = IntentToken(
                 intent=str(payload.get("intent", "no_action")),

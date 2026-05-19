@@ -1,1 +1,1 @@
-/home/tom/in_ws/build/social_robot_interfaces/ament_cmake_environment_hooks/pythonpath.sh
+/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/ament_cmake_environment_hooks/pythonpath.sh

@@ -1,1 +1,0 @@
-/home/tom/in_ws/build/social_robot_interfaces/rosidl_generator_rs/social_robot_interfaces/rust/src/lib.rs

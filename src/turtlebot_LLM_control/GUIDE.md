@@ -68,30 +68,35 @@ export TURTLEBOT3_MODEL=waffle
 
 ## 4. LLM Requirements
 
-For Groq:
+The default provider is now **Ollama** running locally — no API key required.
 
-- install the SDK:
-
-```bash
-python3 -m pip install groq
-```
-
-- either export the key:
+Install Ollama and pull the model:
 
 ```bash
-export GROQ_API_KEY=your_key_here
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull qwen2.5-coder
 ```
 
-- or create a local untracked file beside `api.key.example`:
+Start Ollama if it is not already running as a system service:
 
 ```bash
-cp src/turtlebot_LLM_control/turtlebot_llm_control/api.key.example \
-   src/turtlebot_LLM_control/turtlebot_llm_control/api.key
+ollama serve
 ```
 
-Then paste your real key into `src/turtlebot_LLM_control/turtlebot_llm_control/api.key`.
+Verify it is reachable:
 
-That file is ignored by Git.
+```bash
+curl http://localhost:11434/api/tags
+```
+
+The `openai` Python package is required as the HTTP client:
+
+```bash
+python3 -m pip install openai
+```
+
+To use Groq or OpenAI instead, install the relevant SDK and pass the provider
+flags at launch time (see sections 5 and 6).
 
 ## 5. Final Demo Launch
 
@@ -104,9 +109,8 @@ export TURTLEBOT3_MODEL=waffle
 ros2 launch turtlebot_llm_control sim_pillar_nav_demo.launch.py \
   enable_microphone:=true \
   enable_llm:=true \
-  llm_provider:=groq \
-  llm_model:=llama-3.3-70b-versatile \
-  llm_api_key_path:=/home/tom/in_ws/src/turtlebot_LLM_control/turtlebot_llm_control/api.key \
+  llm_provider:=ollama \
+  llm_model:=qwen2.5-coder:latest \
   mute:=false \
   enable_speech_debug:=true
 ```
@@ -167,9 +171,8 @@ source install/setup.bash
 ros2 launch turtlebot_llm_control intent_only.launch.py \
   enable_microphone:=true \
   enable_llm:=true \
-  llm_provider:=groq \
-  llm_model:=llama-3.3-70b-versatile \
-  llm_api_key_path:=/home/tom/in_ws/src/turtlebot_LLM_control/turtlebot_llm_control/api.key \
+  llm_provider:=ollama \
+  llm_model:=qwen2.5-coder:latest \
   intent_topic:=/speech/intent \
   enable_speech_debug:=true \
   enable_speech_response:=true \
@@ -212,9 +215,8 @@ If you want to test speech / LLM behavior without Gazebo:
 cd /home/tom/in_ws
 source install/setup.bash
 ros2 run turtlebot_llm_control llm_intent_test \
-  --provider groq \
-  --model llama-3.3-70b-versatile \
-  --key /home/tom/in_ws/src/turtlebot_LLM_control/turtlebot_llm_control/api.key \
+  --provider ollama \
+  --model qwen2.5-coder:latest \
   --microphone
 ```
 
@@ -238,9 +240,8 @@ Then run the tester with the matching device index:
 
 ```bash
 ros2 run turtlebot_llm_control llm_intent_test \
-  --provider groq \
-  --model llama-3.3-70b-versatile \
-  --key /home/tom/in_ws/src/turtlebot_LLM_control/turtlebot_llm_control/api.key \
+  --provider ollama \
+  --model qwen2.5-coder:latest \
   --microphone \
   --mic-device 0
 ```
@@ -249,9 +250,8 @@ If the room is quiet but speech is still not detected, try a lower threshold:
 
 ```bash
 ros2 run turtlebot_llm_control llm_intent_test \
-  --provider groq \
-  --model llama-3.3-70b-versatile \
-  --key /home/tom/in_ws/src/turtlebot_LLM_control/turtlebot_llm_control/api.key \
+  --provider ollama \
+  --model qwen2.5-coder:latest \
   --microphone \
   --mic-device 0 \
   --energy-threshold 150
@@ -414,7 +414,7 @@ Before the final demo:
 1. `colcon build --packages-select turtlebot_llm_control speech_locomotion_interface`
 2. `source install/setup.bash`
 3. `export TURTLEBOT3_MODEL=waffle`
-4. confirm your Groq key is available
+4. confirm Ollama is running (`curl http://localhost:11434/api/tags`)
 5. launch `sim_pillar_nav_demo.launch.py`
 6. wait for Gazebo and Nav2 to finish starting
 7. keep one terminal on `ros2 topic echo /speech/debug`

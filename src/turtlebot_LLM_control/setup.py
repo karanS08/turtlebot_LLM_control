@@ -59,6 +59,7 @@ setup(
             "tour_intent_bridge_node = turtlebot_llm_control.tour_intent_bridge_node:main",
             "tour_recording_manager = turtlebot_llm_control.tour_recording_manager:main",
             "tour_teleop_session = turtlebot_llm_control.tour_teleop_session:main",
+            "tsp_gui = turtlebot_llm_control.tsp_gui_node:main",
         ],
     },
 )

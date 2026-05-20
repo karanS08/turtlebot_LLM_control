@@ -2,23 +2,23 @@
 
 ## 1. Purpose
 
-This package is now focused on one final demo:
+This package is the speech and LLM layer for the social guide robot. It handles:
 
-- speech-to-text input
-- conversational LLM layer
+- speech-to-text input (offline, via faster-whisper)
+- conversational LLM layer (Ollama local or Groq/OpenAI cloud)
 - wake / sleep / stop voice handling
 - navigation intent extraction
 - coordinated route recording and playback
-- Nav2 goal execution in Gazebo
-- voice navigation to named pillar locations in the TurtleBot3 simulation world
+- Nav2 goal execution
+- voice navigation to named locations
 
 The main showcase is:
 
 - wake Pepper with voice
-- ask Pepper to go to a pillar
-- see the intent resolved
+- ask Pepper to go somewhere, start a tour, or choose stops
+- see the intent resolved and published
 - hear the spoken reply
-- watch the robot move in simulation
+- watch the robot move
 
 ## 2. Main Files
 
@@ -26,6 +26,7 @@ Core runtime files:
 
 - `launch/sim_pillar_nav_demo.launch.py`
 - `launch/bringup.launch.py`
+- `launch/intent_only.launch.py`
 - `turtlebot_llm_control/sim_initial_pose_node.py`
 - `turtlebot_llm_control/speech_to_text_node.py`
 - `turtlebot_llm_control/speech_command_node.py`
@@ -39,6 +40,7 @@ Core runtime files:
 - `turtlebot_llm_control/wake_word.py`
 - `turtlebot_llm_control/llm_intent_test.py`
 - `speech_locomotion_interface/speech_locomotion_interface/speech_listener.py`
+- `speech_locomotion_interface/speech_locomotion_interface/tsp_gui_node.py`
 
 Packaged demo assets:
 
@@ -52,8 +54,9 @@ Packaged demo assets:
 ## 3. Build
 
 ```bash
-cd /home/tom/in_ws
+cd /home/karan/Development/robot_gpt/llm_ws_1
 source /opt/ros/humble/setup.bash
+pip install faster-whisper
 colcon build --packages-select turtlebot_llm_control speech_locomotion_interface
 source install/setup.bash
 ```
@@ -64,11 +67,9 @@ Set the robot model before launching:
 export TURTLEBOT3_MODEL=waffle
 ```
 
-`burger` also works if you want to use the burger Nav2 parameters instead.
-
 ## 4. LLM Requirements
 
-The default provider is now **Ollama** running locally — no API key required.
+The default provider is **Ollama** running locally — no API key required.
 
 Install Ollama and pull the model:
 
@@ -92,7 +93,7 @@ curl http://localhost:11434/api/tags
 The `openai` Python package is required as the HTTP client:
 
 ```bash
-python3 -m pip install openai
+pip install openai
 ```
 
 To use Groq or OpenAI instead, install the relevant SDK and pass the provider
@@ -100,10 +101,10 @@ flags at launch time (see sections 5 and 6).
 
 ## 5. Final Demo Launch
 
-Use this for the actual Gazebo showcase:
+Use this for the Gazebo showcase:
 
 ```bash
-cd /home/tom/in_ws
+cd /home/karan/Development/robot_gpt/llm_ws_1
 source install/setup.bash
 export TURTLEBOT3_MODEL=waffle
 ros2 launch turtlebot_llm_control sim_pillar_nav_demo.launch.py \
@@ -120,7 +121,7 @@ What this launch starts:
 - TurtleBot3 Gazebo world
 - Nav2 bringup
 - RViz
-- speech-to-text node
+- speech-to-text node (faster-whisper)
 - speech command node
 - speech response speaker node
 - speech debug node
@@ -133,40 +134,29 @@ Optional direct locomotion mode:
 
 - pass `enable_direct_locomotion_interface:=true` to also launch the
   `speech_locomotion_interface` package
-- that node listens to the shared `/speech/intent` JSON and drives the
-  pillar navigation targets directly
 
 Recording flow:
 
 - saying `start recording` enters recording mode
-- the recorder opens a separate teleop terminal when a GUI terminal is available
 - use `w`, `a`, `s`, `d` to move the robot during the recording session
-- press `r` then `Enter` in the teleop terminal to publish the current route label to `/save_tour_command`
-- press `esc` in the teleop terminal to stop teleop, end recording, and return the system to autonomy
+- press `r` then `Enter` in the teleop terminal to publish the current route label
+- press `esc` to stop teleop and return to autonomy
 
 ## 6. Intent-Only Launch
 
-Use this when another workspace owns robot execution, tour playback, waypoint
-saving, and locomotion. This launch only runs:
+Use this when the robot workspace (`turtlebot_social_guide`) owns navigation, touring, and docking. This launch provides:
 
-- `speech_to_text_node`
-- `speech_command_node`
+- `speech_to_text_node` (faster-whisper, offline)
+- `speech_command_node` (LLM intent resolver)
 - optional `speech_debug_node`
 - optional `speech_response_node`
-- optional tour teleop trigger
 
-It publishes resolved intent JSON to `/speech/intent` by default. It also
-publishes the same spoken reply as the standalone tester to `/speech/response`;
-set `enable_speech_response:=false` if you want intent publishing only.
-With `enable_tour_teleop_trigger:=true`, a `start_recording` intent opens
-`tour_teleop_session`. This workspace does not save waypoints; it only starts
-teleop, and `tour_teleop_session` publishes the route label on
-`/save_tour_command` when you press `r`.
+It publishes resolved intent JSON to `/speech/intent`.
 
 ```bash
-cd /home/tom/in_ws
+cd /home/karan/Development/robot_gpt/llm_ws_1
 source /opt/ros/humble/setup.bash
-source /home/tom/turtlebot3_ws/install/setup.bash
+source /home/karan/Development/robot_gpt/turtlebot_social_guide/install/setup.bash
 source install/setup.bash
 ros2 launch turtlebot_llm_control intent_only.launch.py \
   enable_microphone:=true \
@@ -176,13 +166,10 @@ ros2 launch turtlebot_llm_control intent_only.launch.py \
   intent_topic:=/speech/intent \
   enable_speech_debug:=true \
   enable_speech_response:=true \
-  enable_tour_teleop_trigger:=true \
-  energy_threshold:=150 \
-  dynamic_energy_threshold:=false \
-  calibrate_ambient_noise:=false
+  enable_tour_teleop_trigger:=true
 ```
 
-To test it without the microphone, launch with mock input:
+To test without the microphone:
 
 ```bash
 ros2 launch turtlebot_llm_control intent_only.launch.py \
@@ -190,29 +177,25 @@ ros2 launch turtlebot_llm_control intent_only.launch.py \
   intent_topic:=/speech/intent
 ```
 
-Then publish text:
+Then inject text:
 
 ```bash
-ros2 topic pub --once /speech/mock_text std_msgs/msg/String "{data: 'hey pepper go to pillar 3'}"
+ros2 topic pub --once /speech/mock_text std_msgs/msg/String "{data: 'hey pepper start the tour'}"
 ```
 
-Useful checks:
+Useful echo targets:
 
 ```bash
 ros2 topic echo /speech/intent
 ros2 topic echo /speech/response
+ros2 topic echo /speech_to_text/status
 ros2 topic echo /speech/debug
-ros2 topic echo /save_tour_command
 ```
-
-If a downstream package expects `/intent`, pass `intent_topic:=/intent` instead.
 
 ## 7. Standalone Tester
 
-If you want to test speech / LLM behavior without Gazebo:
-
 ```bash
-cd /home/tom/in_ws
+cd /home/karan/Development/robot_gpt/llm_ws_1
 source install/setup.bash
 ros2 run turtlebot_llm_control llm_intent_test \
   --provider ollama \
@@ -229,14 +212,13 @@ Useful flags:
 - `--mic-device 0`
 - `--energy-threshold 150`
 
-If the tester prints `Listening...` but never hears you, first list the
-microphones that Python can see:
+If the tester never hears you, first list available microphones:
 
 ```bash
 ros2 run turtlebot_llm_control llm_intent_test --list-microphones
 ```
 
-Then run the tester with the matching device index:
+Then run with the matching device index:
 
 ```bash
 ros2 run turtlebot_llm_control llm_intent_test \
@@ -246,21 +228,48 @@ ros2 run turtlebot_llm_control llm_intent_test \
   --mic-device 0
 ```
 
-If the room is quiet but speech is still not detected, try a lower threshold:
+## 8. Speech-to-Text Configuration
+
+The STT node uses **faster-whisper** — a local, offline Whisper implementation. No internet connection is required.
+
+### Why faster-whisper
+
+- Runs fully offline (no Google API, no rate limits)
+- Built-in Silero VAD (`vad_filter=True`) — accurate voice activity detection, no word clipping from energy thresholds
+- `initial_prompt` biases recognition towards robot vocabulary (`stop`, `navigate`, `pillar`, `waypoint`, etc.)
+- Base model is ~145 MB and fast enough for real-time on CPU
+
+### Model download
+
+On first run the node downloads the model (~145 MB) from Hugging Face into `~/.cache/huggingface/`. Subsequent starts load from cache.
+
+### ROS2 parameters
+
+| Parameter | Default | Meaning |
+| --- | --- | --- |
+| `enable_microphone` | `false` | Enable live microphone input |
+| `mic_device_index` | `-1` | Microphone device index (`-1` = system default) |
+| `phrase_time_limit` | `5.0` | Max seconds of audio captured per phrase |
+| `energy_threshold` | `300` | Minimum audio energy to start capture (used before VAD) |
+| `dynamic_energy_threshold` | `true` | Automatically adjust energy threshold |
+| `calibrate_ambient_noise` | `true` | Calibrate for background noise on startup |
+| `require_wake_word` | `true` | Ignore speech until a wake phrase is heard |
+| `wake_command_window_seconds` | `45.0` | Seconds Pepper stays awake after wake phrase |
+| `tts_cooldown_seconds` | `1.0` | Seconds to pause STT after TTS finishes |
+| `whisper_model_size` | `"base"` | Whisper model: `tiny`, `base`, `small`, `medium` |
+| `whisper_device` | `"cpu"` | Compute device: `cpu` or `cuda` |
+
+To use a more accurate model (slower to load, better recognition):
 
 ```bash
-ros2 run turtlebot_llm_control llm_intent_test \
-  --provider ollama \
-  --model qwen2.5-coder:latest \
-  --microphone \
-  --mic-device 0 \
-  --energy-threshold 150
+ros2 launch turtlebot_llm_control intent_only.launch.py \
+  enable_microphone:=true \
+  whisper_model_size:=small
 ```
 
-When `--microphone` is enabled, typed terminal text is ignored. To type test
-phrases instead, omit `--microphone`.
+If `faster-whisper` is not installed the node falls back to Google STT automatically and logs a warning.
 
-## 8. Voice Behavior
+## 9. Voice Behavior
 
 Wake phrases:
 
@@ -273,7 +282,7 @@ After wake-up:
 
 - Pepper stays awake for 45 seconds of inactivity
 - each new utterance resets the timer
-- if you stay silent long enough, Pepper goes back to sleep
+- silence long enough sends Pepper back to sleep
 
 Sleep commands:
 
@@ -281,16 +290,35 @@ Sleep commands:
 - `sleep pepper`
 - `pepper sleep`
 
-Emergency stop commands:
+Emergency stop commands (bypass wake gate):
 
 - `stop`
 - `stop stop`
 - `stop now`
 - `emergency stop`
 
-These are intended to override whatever the robot is currently doing.
+## 10. Intent Reference
 
-## 9. Demo Commands
+The speech parser handles these intents directly (no LLM needed):
+
+| Intent | Example phrases |
+| --- | --- |
+| `navigate` | "go to pillar 3", "take me to the lab", "lead me to waypoint 2" |
+| `start_tour` | "start tour", "full tour", "show me everything", "tour please" |
+| `tsp` | "short tour", "show me around", "let me choose", "my own tour", "pick some stops" |
+| `dock` | "go home", "go charge", "recharge", "return to base", "go plug in" |
+| `stop` | "stop", "halt", "abort", "never mind", "hold on", "that's enough" |
+| `stop_navigation` | "stop navigation", "cancel navigation" |
+| `pause` | "pause" |
+| `resume` | "resume" |
+| `explain` | "tell me about", "what is this room", "describe", "what can I see here" |
+| `is_alive` | "hey pepper", "are you awake", "are you there" |
+| `manual_override_on` | "manual override", "take over", "enable teleop" |
+| `manual_override_off` | "return to autonomous", "disable manual override" |
+
+Unrecognized commands fall through to the LLM which also handles casual conversation (`no_action`).
+
+## 11. Demo Commands
 
 Recommended spoken sequence:
 
@@ -305,94 +333,73 @@ Other supported forms:
 - `go to pillar five`
 - `take me to pillar 3`
 - `take me to pillow one`
-- `take me to below 1`
 - `pepper go to pillar 9`
+- `start the tour`
+- `show me around` (opens TSP GUI for custom stop selection)
+- `go home` (docking)
 
-If the pillar number is missing, Pepper should ask for clarification instead of creating a bad goal.
+If the pillar number is missing, Pepper asks for clarification instead of creating a bad goal.
 
-## 10. Pillar Targets
+## 12. TSP GUI
 
-The demo uses these internal navigation targets:
+When a `tsp` intent is received the system opens a waypoint selection window.
 
-- `pillar_1`
-- `pillar_2`
-- `pillar_3`
-- `pillar_4`
-- `pillar_5`
-- `pillar_6`
-- `pillar_7`
-- `pillar_8`
-- `pillar_9`
+- the GUI is a persistent ROS2 node started by the launch file — it does not re-launch each time
+- it is triggered to show via the `/tsp_gui/show` topic
+- click waypoints in the order you want to visit them — numbers show the visit sequence
+- orange lines connect your chosen stops
+- press **Start** to send the tour and hide the window
+- press **Clear** to reset the selection
 
-The speech pipeline normalizes natural variants like:
+To trigger it manually for testing:
 
-- `pillar one`
-- `Pillar 1`
-- `pillow one`
-- `below 1`
+```bash
+ros2 topic pub --once /tsp_gui/show std_msgs/msg/String "{data: show}"
+```
 
-into the correct internal target.
-
-## 11. Speech And Debug Topics
+## 13. Speech And Debug Topics
 
 Main topics:
 
-- `/speech/text`
-- `/speech/intent`
-- `/speech/response`
-- `/speech/debug`
-- `/speech_to_text/status`
-- `/tour/status`
-- `/route/record`
-- `/route/data`
-- `/save_tour_command`
-- `/manual_override/control`
+- `/speech/text` — raw STT transcript
+- `/speech/intent` — resolved intent JSON
+- `/speech/response` — robot spoken reply text
+- `/speech/debug` — combined debug stream
+- `/speech_to_text/status` — STT node status (model load, recognition events)
+- `/tsp_gui/show` — trigger TSP GUI to appear
 
-For clean speech-only debugging:
+For clean speech debugging:
 
 ```bash
 ros2 topic echo /speech/debug
 ```
 
-This is the best topic to watch during the demo because it isolates:
+This is the best topic to watch during the demo — it shows STT status, recognized text, resolved intent, and spoken response in one stream.
 
-- STT status
-- recognized text
-- resolved intent
-- spoken response
-
-If you want to see only the spoken replies:
+Watch STT recognition quality:
 
 ```bash
-ros2 topic echo /speech/response
+ros2 topic echo /speech_to_text/status
 ```
 
-For tour capture and save debugging:
-
-```bash
-ros2 topic echo /route/record
-ros2 topic echo /route/data
-ros2 topic echo /save_tour_command
-```
-
-## 12. Notes On TTS
+## 14. Notes On TTS
 
 The package uses local desktop TTS tools for audio playback.
 
-Supported commands:
+Supported commands (checked in order):
 
 - `spd-say`
 - `espeak`
 - `say`
 
-If Pepper is not speaking, check:
+If Pepper is not speaking:
 
 ```bash
 which spd-say
 which espeak
 ```
 
-## 13. Known Runtime Noise
+## 15. Known Runtime Noise
 
 You may still see Nav2 / AMCL messages like:
 
@@ -401,26 +408,27 @@ You may still see Nav2 / AMCL messages like:
 
 These usually happen during startup while Gazebo, TF, localization, and Nav2 are settling.
 
-For this demo, the more important thing is:
+What matters for the demo:
 
 - `/speech/debug` shows the right text and intent
 - Pepper speaks a response
 - the robot accepts the navigation goal and moves
 
-## 14. Quick Checklist
+## 16. Quick Checklist
 
-Before the final demo:
+Before the demo:
 
-1. `colcon build --packages-select turtlebot_llm_control speech_locomotion_interface`
-2. `source install/setup.bash`
-3. `export TURTLEBOT3_MODEL=waffle`
-4. confirm Ollama is running (`curl http://localhost:11434/api/tags`)
-5. launch `sim_pillar_nav_demo.launch.py`
-6. wait for Gazebo and Nav2 to finish starting
-7. keep one terminal on `ros2 topic echo /speech/debug`
+1. `pip install faster-whisper` (one-time)
+2. `colcon build --packages-select turtlebot_llm_control speech_locomotion_interface`
+3. `source install/setup.bash`
+4. `export TURTLEBOT3_MODEL=waffle`
+5. confirm Ollama is running: `curl http://localhost:11434/api/tags`
+6. launch `sim_pillar_nav_demo.launch.py` (Gazebo) or `intent_only.launch.py` (social guide mode)
+7. watch `ros2 topic echo /speech_to_text/status` — look for `Loaded faster-whisper 'base' model`
+8. watch `ros2 topic echo /speech/debug` during the demo
 
-## 15. One-Line Demo Reminder
+## 17. One-Line Demo Reminder
 
 ```text
-hey pepper -> go to pillar one -> Pepper answers -> intent resolves -> robot navigates
+hey pepper → go to pillar one → Pepper answers → intent resolves → robot navigates
 ```

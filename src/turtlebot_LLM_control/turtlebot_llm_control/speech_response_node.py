@@ -1,4 +1,5 @@
 from std_msgs.msg import String
+from std_msgs.msg import Bool
 
 import rclpy
 from rclpy.node import Node
@@ -10,6 +11,7 @@ class SpeechResponseNode(Node):
     def __init__(self):
         super().__init__("speech_response_node")
         self.mute = bool(self.declare_parameter("mute", False).value)
+        self.tts_state_publisher = self.create_publisher(Bool, "/speech/tts_active", 10)
         self.subscription = self.create_subscription(
             String, "/speech/response", self.handle_response, 10
         )
@@ -19,10 +21,19 @@ class SpeechResponseNode(Node):
         text = msg.data.strip()
         if self.mute or not text:
             return
-        if not speak_text(text):
-            self.get_logger().warning(
-                "No local TTS command available. Install spd-say, espeak, or say to hear responses."
-            )
+        self.publish_tts_state(True)
+        try:
+            if not speak_text(text):
+                self.get_logger().warning(
+                    "No local TTS command available. Install spd-say, espeak, or say to hear responses."
+                )
+        finally:
+            self.publish_tts_state(False)
+
+    def publish_tts_state(self, active: bool) -> None:
+        msg = Bool()
+        msg.data = bool(active)
+        self.tts_state_publisher.publish(msg)
 
 
 def main(args=None):

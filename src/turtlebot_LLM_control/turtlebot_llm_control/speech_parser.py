@@ -24,11 +24,16 @@ LOCATION_ALIASES = {
 }
 COMMAND_PREFIXES = (
     "pepper ",
+    "hey pepper ",
+    "ok pepper ",
     "robot ",
+    "hey robot ",
     "please ",
     "can you ",
     "could you ",
     "will you ",
+    "i want you to ",
+    "i need you to ",
 )
 
 
@@ -81,11 +86,22 @@ def parse_utterance(text: str) -> IntentToken:
             response="Manual override enabled. You can teleoperate now.",
         )
 
-    if is_direct_command(cleaned, "stop navigation", "cancel navigation"):
+    if is_direct_command(cleaned, "stop navigation", "cancel navigation", "stop going", "cancel the navigation"):
         return IntentToken(
             intent="stop_navigation",
             utterance=raw,
             response="Stopping navigation now.",
+        )
+
+    if is_direct_command(
+        cleaned, "dock", "go to dock", "go dock", "go home", "go charge", "charge",
+        "return to base", "go back home", "go plug in", "need to charge", "recharge",
+        "go to charging station", "charging station",
+    ):
+        return IntentToken(
+            intent="dock",
+            utterance=raw,
+            response="Heading to the dock now.",
         )
 
     if (
@@ -99,7 +115,9 @@ def parse_utterance(text: str) -> IntentToken:
             response="Manual override cleared. Autonomous behavior can resume.",
         )
 
-    if is_direct_command(cleaned, "stop", "halt", "freeze", "stop stop", "stop now"):
+    if is_direct_command(cleaned, "stop", "halt", "freeze", "stop stop", "stop now",
+                          "abort", "wait", "hold on", "stop that", "never mind",
+                          "that's enough", "cancel", "enough"):
         return IntentToken(intent="stop", utterance=raw, response="Stopping the current activity.")
 
     if is_direct_command(cleaned, "pause"):
@@ -108,8 +126,43 @@ def parse_utterance(text: str) -> IntentToken:
     if is_direct_command(cleaned, "resume"):
         return IntentToken(intent="resume", utterance=raw, response="Resuming the previous task.")
 
-    if is_direct_command(cleaned, "start tour", "begin tour"):
+    if is_direct_command(cleaned, "start tour", "begin tour", "full tour", "do the tour",
+                          "do the whole tour", "show me everything", "tour please",
+                          "take me on the tour", "let's start the tour", "start the full tour"):
         return IntentToken(intent="start_tour", utterance=raw, response="Starting the tour.")
+
+    if any(
+        phrase in cleaned
+        for phrase in (
+            "small tour",
+            "give a tour",
+            "give me a tour",
+            "custom tour",
+            "short tour",
+            "mini tour",
+            "pick waypoints",
+            "select waypoints",
+            "choose waypoints",
+            "show me around",
+            "take me on a little tour",
+            "let me choose",
+            "select some spots",
+            "pick some places",
+            "few stops",
+            "my own tour",
+            "i want to choose",
+            "choose the stops",
+            "select the stops",
+            "pick the stops",
+            "pick some stops",
+            "choose some stops",
+        )
+    ):
+        return IntentToken(
+            intent="tsp",
+            utterance=raw,
+            response="Opening waypoint selector. Pick your stops and hit Start.",
+        )
 
     if is_direct_command(cleaned, "record route", "start recording", "start recording now"):
         label = extract_label(cleaned, fallback="new_route")
@@ -141,7 +194,9 @@ def parse_utterance(text: str) -> IntentToken:
             response="Replaying route {}.".format(label),
         )
 
-    if is_direct_command(cleaned, "go to", "navigate to", "take me to"):
+    if is_direct_command(cleaned, "go to", "navigate to", "take me to", "lead me to",
+                          "bring me to", "show me", "i want to see", "i want to go to",
+                          "head to", "i'd like to visit", "let's go to", "let's visit"):
         location = extract_location(cleaned)
         normalized_full_text = normalize_location_name(cleaned)
         if location == "unknown_location" and "pillar" in normalized_full_text:
@@ -157,7 +212,11 @@ def parse_utterance(text: str) -> IntentToken:
             response="Navigating to {}.".format(location),
         )
 
-    if "explain" in cleaned or "tell me about" in cleaned:
+    if any(phrase in cleaned for phrase in (
+        "explain", "tell me about", "what is", "what's here", "describe",
+        "tell me more about", "what can i see", "what can i see here",
+        "what's in", "what is in", "info about", "information about",
+    )):
         location = extract_location(cleaned)
         return IntentToken(
             intent="explain",
@@ -184,7 +243,13 @@ def extract_label(text: str, fallback: str) -> str:
 
 
 def extract_location(text: str) -> str:
-    markers = ["go to ", "navigate to ", "take me to ", "tell me about ", "explain "]
+    markers = [
+        "go to ", "navigate to ", "take me to ", "lead me to ", "bring me to ",
+        "show me ", "i want to see ", "i want to go to ", "head to ",
+        "i'd like to visit ", "let's go to ", "let's visit ",
+        "tell me about ", "tell me more about ", "explain ",
+        "what is ", "describe ", "info about ", "information about ",
+    ]
     for marker in markers:
         if marker in text:
             candidate = normalize_location_name(text.split(marker, 1)[1].strip())

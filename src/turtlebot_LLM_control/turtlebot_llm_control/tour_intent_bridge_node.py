@@ -20,7 +20,7 @@ class TourIntentBridgeNode(Node):
         self.teleop_process: Optional[subprocess.Popen] = None
 
         self.create_subscription(String, "/speech/intent", self.handle_intent, 10)
-        self.get_logger().info("Tour intent bridge ready. Waiting for start_recording intents.")
+        self.get_logger().info("Tour intent bridge ready. Waiting for intents.")
 
     def handle_intent(self, msg: String) -> None:
         try:

@@ -95,10 +95,6 @@ class LLMDialogueEngine:
     def resolve_token(self, utterance: str) -> IntentToken:
         parsed = parse_utterance(utterance)
         if parsed.intent != "unknown":
-            if self.client is not None:
-                response = self.generate_personalized_response(parsed)
-                if response:
-                    parsed.response = response
             self.append_turn(utterance, parsed.response)
             return parsed
 
@@ -162,6 +158,8 @@ class LLMDialogueEngine:
             "save_route",
             "replay_route",
             "explain",
+            "tsp",
+            "dock",
         ]
         messages = [
             {
@@ -181,6 +179,28 @@ class LLMDialogueEngine:
                     "For intent no_action, write a friendly, natural spoken reply like a personal companion. "
                     "Be warm, alive, and conversational in one to three short sentences. "
                     "Do not invent robot actions unless explicitly asked. "
+                    "Intent guide with examples — match intent even when phrasing varies:\n"
+                    "- navigate: go to a named place. "
+                    "Examples: 'take me to the lab', 'I want to see the entrance', "
+                    "'where is the gallery', 'lead me to waypoint 2', 'show me the garden', "
+                    "'bring me to the control room', 'head to the robotics area'.\n"
+                    "- start_tour: see ALL waypoints in sequence. "
+                    "Examples: 'start the full tour', 'show me everything', "
+                    "'let us do the whole tour', 'tour please', 'take me on the tour'.\n"
+                    "- tsp: user picks a CUSTOM SUBSET of stops, not all. "
+                    "Examples: 'give me a short tour', 'show me around a bit', "
+                    "'let me choose a few spots', 'small tour', 'I just want to see two things', "
+                    "'pick some places', 'my own tour', 'select the stops I want'.\n"
+                    "- dock: go to charging station. "
+                    "Examples: 'go home', 'go charge', 'plug yourself in', "
+                    "'return to base', 'go to the dock', 'recharge', 'I need you to charge'.\n"
+                    "- stop: stop all motion immediately. "
+                    "Examples: 'stop', 'halt', 'wait here', 'abort', 'cancel', "
+                    "'hold on', 'that is enough', 'never mind', 'freeze'.\n"
+                    "- explain: describe a location or area. "
+                    "Examples: 'what is this room', 'tell me about the lab', "
+                    "'describe this area', 'what can I see here', 'what is in the gallery'.\n"
+                    "- no_action: chatting, greetings, or questions not requiring robot motion.\n"
                     "Return strict JSON with keys: intent, label, location, response, metadata. "
                     f"Allowed intents: {', '.join(allowed_intents)}."
                 ),
@@ -193,6 +213,7 @@ class LLMDialogueEngine:
                 model=self.llm_model,
                 messages=messages,
                 temperature=0.5,
+                max_tokens=150,
                 response_format={"type": "json_object"},
             )
             raw = self.extract_message_content(completion)

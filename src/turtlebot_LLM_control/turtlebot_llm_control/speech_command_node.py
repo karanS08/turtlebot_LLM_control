@@ -1,9 +1,12 @@
+from time import monotonic
+
 from std_msgs.msg import String
 
 import rclpy
 from rclpy.node import Node
 
 from turtlebot_llm_control.llm_dialogue import LLMDialogueEngine
+from turtlebot_llm_control.wake_word import normalize_text
 
 
 class SpeechCommandNode(Node):
@@ -26,9 +29,16 @@ class SpeechCommandNode(Node):
 
         self.intent_publisher = self.create_publisher(String, "/speech/intent", 10)
         self.response_publisher = self.create_publisher(String, "/speech/response", 10)
+        self.tsp_gui_pub = self.create_publisher(String, "/tsp_gui/show", 10)
         self.subscription = self.create_subscription(
             String, "/speech/text", self.handle_speech_text, 10
         )
+        self._last_utterance_key: str = ""
+        self._last_utterance_time: float = 0.0
+        self._dedup_window: float = 3.0
+        self._last_tsp_key: str = ""
+        self._last_tsp_time: float = 0.0
+        self._tsp_dedup_window: float = 5.0
         self.dialogue = LLMDialogueEngine(
             enable_llm=self.enable_llm,
             llm_provider=str(self.llm_provider),
@@ -44,7 +54,38 @@ class SpeechCommandNode(Node):
 
     def handle_speech_text(self, msg: String) -> None:
         utterance = msg.data.strip()
+        utterance_key = normalize_text(utterance)
+        now = monotonic()
+        if (
+            utterance_key
+            and utterance_key == self._last_utterance_key
+            and now - self._last_utterance_time < self._dedup_window
+        ):
+            self.get_logger().info("Command cooldown active, dropped: '%s'" % utterance)
+            return
+
         token = self.dialogue.resolve_token(utterance)
+
+        if token.intent == "tsp":
+            if (
+                utterance_key
+                and utterance_key == self._last_tsp_key
+                and now - self._last_tsp_time < self._tsp_dedup_window
+            ):
+                self.get_logger().info("TSP trigger cooldown active, dropped: '%s'" % utterance)
+                return
+            self._last_utterance_key = utterance_key
+            self._last_utterance_time = now
+            self._last_tsp_key = utterance_key
+            self._last_tsp_time = now
+            trigger = String()
+            trigger.data = utterance
+            self.tsp_gui_pub.publish(trigger)
+            response_msg = String()
+            response_msg.data = token.response
+            self.response_publisher.publish(response_msg)
+            self.get_logger().info("TSP intent: opening GUI, holding intent until waypoints are selected")
+            return
 
         intent_msg = String()
         intent_msg.data = token.to_json()
@@ -53,6 +94,8 @@ class SpeechCommandNode(Node):
         response_msg = String()
         response_msg.data = token.response
         self.response_publisher.publish(response_msg)
+        self._last_utterance_key = utterance_key
+        self._last_utterance_time = now
         self.get_logger().info("Recognized intent=%s utterance='%s'" % (token.intent, token.utterance))
 
 

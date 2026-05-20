@@ -60,6 +60,7 @@ setup(
             "tour_recording_manager = turtlebot_llm_control.tour_recording_manager:main",
             "tour_teleop_session = turtlebot_llm_control.tour_teleop_session:main",
             "tsp_gui = turtlebot_llm_control.tsp_gui_node:main",
+            "emotion_node = turtlebot_llm_control.emotion_node:main",
         ],
     },
 )

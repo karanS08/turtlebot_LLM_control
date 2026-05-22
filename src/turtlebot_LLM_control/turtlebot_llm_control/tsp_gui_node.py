@@ -184,9 +184,42 @@ class TspGuiNode(Node):
         self.get_logger().info("TSP GUI node ready — listening on /tsp_gui/show")
 
     def _on_show_trigger(self, msg):
-        if self._window is not None and not self._window.isVisible():
-            # Message data is the original utterance (or "show" for manual triggers)
-            self._pending_utterance = msg.data if msg.data != "show" else ""
+        if self._window is None:
+            return
+
+        # Message data is the original utterance (or "show" for manual triggers)
+        self._pending_utterance = msg.data if msg.data != "show" else ""
+        self.refresh_waypoints_then_show()
+
+    def refresh_waypoints_then_show(self):
+        if not self.cli.wait_for_service(timeout_sec=0.5):
+            self.get_logger().warning(
+                "tour_retrieve service is not available; showing existing waypoint list"
+            )
+            self._window.request_show()
+            return
+
+        req = Tours.Request()
+        req.idx = 0
+        future = self.cli.call_async(req)
+        future.add_done_callback(self._on_waypoints_refreshed)
+
+    def _on_waypoints_refreshed(self, future):
+        try:
+            result = future.result()
+        except Exception as e:
+            self.get_logger().warning(
+                f"tour_retrieve refresh failed; showing existing waypoint list: {e}"
+            )
+            result = None
+
+        if result is not None:
+            self.waypoints = list(result.tour)
+            self.get_logger().info(
+                f"Refreshed {len(self.waypoints)} waypoints from tour_retrieve"
+            )
+
+        if self._window is not None:
             self._window.request_show()
 
     def publish_tsp(self, indices):

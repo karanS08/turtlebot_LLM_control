@@ -17,6 +17,7 @@ def generate_launch_description():
     enable_tour_teleop_trigger = LaunchConfiguration("enable_tour_teleop_trigger")
     enable_tsp_gui = LaunchConfiguration("enable_tsp_gui")
     enable_emotion = LaunchConfiguration("enable_emotion")
+    enable_waypoint_speaker = LaunchConfiguration("enable_waypoint_speaker")
     default_route_label = LaunchConfiguration("default_route_label")
     mute = LaunchConfiguration("mute")
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -43,6 +44,7 @@ def generate_launch_description():
             DeclareLaunchArgument("enable_tour_teleop_trigger", default_value="true"),
             DeclareLaunchArgument("enable_tsp_gui", default_value="true"),
             DeclareLaunchArgument("enable_emotion", default_value="true"),
+            DeclareLaunchArgument("enable_waypoint_speaker", default_value="true"),
             DeclareLaunchArgument("default_route_label", default_value="saved_route"),
             DeclareLaunchArgument("mute", default_value="false"),
             DeclareLaunchArgument("use_sim_time", default_value="false"),
@@ -138,6 +140,14 @@ def generate_launch_description():
                 name="emotion_node",
                 output="screen",
                 condition=IfCondition(enable_emotion),
+                parameters=[{"use_sim_time": use_sim_time}],
+            ),
+            Node(
+                package="turtlebot_llm_control",
+                executable="waypoint_speaker",
+                name="waypoint_speaker_node",
+                output="screen",
+                condition=IfCondition(enable_waypoint_speaker),
                 parameters=[{"use_sim_time": use_sim_time}],
             ),
         ]

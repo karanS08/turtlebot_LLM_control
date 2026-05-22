@@ -12,6 +12,7 @@ class SpeechResponseNode(Node):
         super().__init__("speech_response_node")
         self.mute = bool(self.declare_parameter("mute", False).value)
         self.tts_state_publisher = self.create_publisher(Bool, "/speech/tts_active", 10)
+        self.pepper_speech_publisher = self.create_publisher(String, "/pepper_speech", 10)
         self.subscription = self.create_subscription(
             String, "/speech/response", self.handle_response, 10
         )
@@ -19,7 +20,12 @@ class SpeechResponseNode(Node):
 
     def handle_response(self, msg: String) -> None:
         text = msg.data.strip()
-        if self.mute or not text:
+        if not text:
+            return
+        pepper_msg = String()
+        pepper_msg.data = text
+        self.pepper_speech_publisher.publish(pepper_msg)
+        if self.mute:
             return
         self.publish_tts_state(True)
         try:

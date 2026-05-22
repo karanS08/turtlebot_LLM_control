@@ -1,1 +1,1 @@
-/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control/launch/sim_pillar_nav_demo.launch.py
+/home/tom/llm_ws/turtlebot_LLM_control/src/turtlebot_LLM_control/launch/sim_pillar_nav_demo.launch.py

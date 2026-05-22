@@ -1,1 +1,1 @@
-from social_robot_interfaces.msg._tsp_command import TspCommand  # noqa: F401
+/home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces/rosidl_generator_py/social_robot_interfaces/msg/__init__.py

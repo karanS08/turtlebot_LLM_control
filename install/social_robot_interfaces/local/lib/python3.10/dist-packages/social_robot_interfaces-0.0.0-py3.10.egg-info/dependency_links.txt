@@ -1,1 +1,0 @@
-/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/ament_cmake_python/social_robot_interfaces/social_robot_interfaces.egg-info/dependency_links.txt

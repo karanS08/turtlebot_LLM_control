@@ -1,3 +1,1 @@
-int64 idx
----
-geometry_msgs/PoseStamped[] tour
+/home/tom/llm_ws/turtlebot_LLM_control/src/social_robot_interfaces/srv/Tours.srv

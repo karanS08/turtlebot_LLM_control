@@ -18,7 +18,6 @@ def generate_launch_description():
     enable_tsp_gui = LaunchConfiguration("enable_tsp_gui")
     enable_emotion = LaunchConfiguration("enable_emotion")
     enable_waypoint_speaker = LaunchConfiguration("enable_waypoint_speaker")
-    waypoint_db_path = LaunchConfiguration("waypoint_db_path")
     default_route_label = LaunchConfiguration("default_route_label")
     mute = LaunchConfiguration("mute")
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -46,11 +45,6 @@ def generate_launch_description():
             DeclareLaunchArgument("enable_tsp_gui", default_value="true"),
             DeclareLaunchArgument("enable_emotion", default_value="true"),
             DeclareLaunchArgument("enable_waypoint_speaker", default_value="true"),
-            DeclareLaunchArgument(
-                "waypoint_db_path",
-                default_value="tours.db",
-                description="Path to the SQLite waypoint database",
-            ),
             DeclareLaunchArgument("default_route_label", default_value="saved_route"),
             DeclareLaunchArgument("mute", default_value="false"),
             DeclareLaunchArgument("use_sim_time", default_value="false"),
@@ -154,12 +148,7 @@ def generate_launch_description():
                 name="waypoint_speaker_node",
                 output="screen",
                 condition=IfCondition(enable_waypoint_speaker),
-                parameters=[
-                    {
-                        "use_sim_time": use_sim_time,
-                        "db_path": waypoint_db_path,
-                    }
-                ],
+                parameters=[{"use_sim_time": use_sim_time}],
             ),
         ]
     )

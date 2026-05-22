@@ -3,12 +3,12 @@ CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosid
  /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_introspection_c.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/message_type_support_struct.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/visibility_control.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_interface/include/rosidl_typesupport_interface/macros.h \
  /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_typesupport_introspection_c/social_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
- /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/field_types.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/service_type_support_struct.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_introspection_c/include/rosidl_typesupport_introspection_c/field_types.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -24,11 +24,11 @@ CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosid
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/identifier.h \
- /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/visibility_control.h \
- /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/message_introspection.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_introspection_c/include/rosidl_typesupport_introspection_c/identifier.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_introspection_c/include/rosidl_typesupport_introspection_c/visibility_control.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_introspection_c/include/rosidl_typesupport_introspection_c/message_introspection.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/message_initialization.h \
  /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.h \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -58,18 +58,18 @@ CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosid
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_generator_c/social_robot_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_generator_c/social_robot_interfaces/srv/detail/tours__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.h \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__functions.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_c__visibility_control.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__rosidl_typesupport_introspection_c.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h \
- /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/detail/pose_stamped__struct.h \
+ /home/karan/ros2_humble/install/std_msgs/include/std_msgs/std_msgs/msg/detail/header__struct.h \
+ /home/karan/ros2_humble/build/builtin_interfaces/rosidl_generator_c/builtin_interfaces/msg/detail/time__struct.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/string.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/primitives_sequence.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/detail/pose__struct.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/detail/point__struct.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/detail/quaternion__struct.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/pose_stamped.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/detail/pose_stamped__functions.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/rosidl_generator_c__visibility_control.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_c/geometry_msgs/msg/detail/pose_stamped__type_support.h \
+ /home/karan/ros2_humble/install/geometry_msgs/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__rosidl_typesupport_introspection_c.h \
+ /home/karan/ros2_humble/install/geometry_msgs/include/geometry_msgs/geometry_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_introspection_c/include/rosidl_typesupport_introspection_c/service_introspection.h

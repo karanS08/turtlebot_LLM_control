@@ -2,7 +2,26 @@
   "permissions": {
     "allow": [
       "Bash(grep -E \"\\\\.py$\")",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(grep -r \"current_waypoint\\\\|waypoint.*index\\\\|waypoint.*number\" /home/karan/Development/robot_gpt/turtlebot_social_guide/src --include=\"*.cpp\" --include=\"*.hpp\" -B 2 -A 2)",
+      "Read(//home/karan/Development/robot_gpt/turtlebot_social_guide/src/**)",
+      "Bash(xargs cat)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 add README.md SETUP.md)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 status --short -- README.md SETUP.md)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 commit -m ' *)",
+      "Bash(sort -t: -k3)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 add src/social_robot_interfaces/ src/turtlebot_LLM_control/package.xml)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 status --short -- src/)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 add src/turtlebot_LLM_control/turtlebot_llm_control/bt_orchestrator_node.py src/turtlebot_LLM_control/turtlebot_llm_control/models.py src/turtlebot_LLM_control/launch/bringup.launch.py src/turtlebot_LLM_control/setup.py src/turtlebot_LLM_control/package.xml)",
+      "Bash(git -C /home/karan/Development/robot_gpt/llm_ws_1 rm src/turtlebot_LLM_control/turtlebot_llm_control/follow_me_node.py src/turtlebot_LLM_control/turtlebot_llm_control/color_tracking.py)",
+      "Bash(gh api *)",
+      "Bash(gh repo *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git stash *)",
+      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --env-filter ' *)"
+    ],
+    "additionalDirectories": [
+      "/home/karan/Development/robot_gpt/turtlebot_social_guide/src/speech_locomotion_interface/speech_locomotion_interface"
     ]
   }
 }

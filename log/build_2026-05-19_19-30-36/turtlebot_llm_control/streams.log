@@ -1,0 +1,110 @@
+[0.574s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build
+[0.805s] running develop
+[0.981s] Removing /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot-llm-control.egg-link (link to .)
+[1.002s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build
+[1.003s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_llm_control build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log --single-version-externally-managed install_data --force
+[1.216s] running egg_info
+[1.216s] writing ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/PKG-INFO
+[1.216s] writing dependency_links to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/dependency_links.txt
+[1.216s] writing entry points to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/entry_points.txt
+[1.216s] writing requirements to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/requires.txt
+[1.217s] writing top-level names to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/top_level.txt
+[1.218s] reading manifest file '../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.219s] writing manifest file '../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.219s] running build
+[1.219s] running build_py
+[1.219s] creating /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build
+[1.219s] creating /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib
+[1.220s] creating /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/color_tracking.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/audio_utils.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/models.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/llm_dialogue.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/behavior_tree.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/llm_intent_test.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/tour_teleop_session.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/speech_response_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/speech_parser.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/bt_orchestrator_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/wake_word.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.220s] copying turtlebot_llm_control/speech_to_text_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/predefined_commands.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/tour_intent_bridge_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/speech_command_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/follow_me_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/speech_debug_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/tour_recording_manager.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/__init__.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] copying turtlebot_llm_control/sim_initial_pose_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control
+[1.221s] running install
+[1.222s] running install_lib
+[1.222s] creating /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.222s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/color_tracking.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.222s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/audio_utils.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.222s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/models.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.222s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/llm_dialogue.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/behavior_tree.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/llm_intent_test.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/tour_teleop_session.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/speech_response_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/speech_parser.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/bt_orchestrator_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/wake_word.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/speech_to_text_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/predefined_commands.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/tour_intent_bridge_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/speech_command_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.223s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/follow_me_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.224s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/speech_debug_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.224s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/tour_recording_manager.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.224s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/__init__.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.224s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build/lib/turtlebot_llm_control/sim_initial_pose_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control
+[1.224s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/color_tracking.py to color_tracking.cpython-310.pyc
+[1.225s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/audio_utils.py to audio_utils.cpython-310.pyc
+[1.226s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/models.py to models.cpython-310.pyc
+[1.226s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/llm_dialogue.py to llm_dialogue.cpython-310.pyc
+[1.227s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/behavior_tree.py to behavior_tree.cpython-310.pyc
+[1.228s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/llm_intent_test.py to llm_intent_test.cpython-310.pyc
+[1.229s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/tour_teleop_session.py to tour_teleop_session.cpython-310.pyc
+[1.229s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/speech_response_node.py to speech_response_node.cpython-310.pyc
+[1.229s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/speech_parser.py to speech_parser.cpython-310.pyc
+[1.230s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/bt_orchestrator_node.py to bt_orchestrator_node.cpython-310.pyc
+[1.232s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/wake_word.py to wake_word.cpython-310.pyc
+[1.233s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/speech_to_text_node.py to speech_to_text_node.cpython-310.pyc
+[1.234s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/predefined_commands.py to predefined_commands.cpython-310.pyc
+[1.234s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/tour_intent_bridge_node.py to tour_intent_bridge_node.cpython-310.pyc
+[1.234s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/speech_command_node.py to speech_command_node.cpython-310.pyc
+[1.235s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/follow_me_node.py to follow_me_node.cpython-310.pyc
+[1.236s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/speech_debug_node.py to speech_debug_node.cpython-310.pyc
+[1.236s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/tour_recording_manager.py to tour_recording_manager.cpython-310.pyc
+[1.237s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/__init__.py to __init__.cpython-310.pyc
+[1.237s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control/sim_initial_pose_node.py to sim_initial_pose_node.cpython-310.pyc
+[1.237s] running install_data
+[1.237s] copying resource/turtlebot_llm_control -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/ament_index/resource_index/packages
+[1.238s] copying package.xml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.238s] copying GUIDE.md -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.238s] copying launch/bringup.launch.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.238s] copying launch/intent_only.launch.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.238s] copying launch/sim_pillar_nav_demo.launch.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/launch
+[1.238s] copying config/demo_nav2/burger.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.238s] copying config/demo_nav2/waffle.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.238s] copying config/demo_nav2/waffle_pi.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/config/demo_nav2
+[1.238s] copying maps/demo/map.yaml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.239s] copying maps/demo/map.pgm -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/maps/demo
+[1.239s] copying rviz/tb3_navigation2.rviz -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/rviz
+[1.239s] running install_egg_info
+[1.240s] Copying ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control-0.1.0-py3.10.egg-info
+[1.241s] running install_scripts
+[1.257s] Installing bt_orchestrator_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.257s] Installing follow_me_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.257s] Installing llm_intent_test script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.257s] Installing sim_initial_pose_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.257s] Installing speech_command_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.258s] Installing speech_debug_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.258s] Installing speech_response_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.258s] Installing speech_to_text_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.258s] Installing tour_intent_bridge_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.258s] Installing tour_recording_manager script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.258s] Installing tour_teleop_session script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.259s] writing list of installed files to '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log'
+[1.277s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_llm_control build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log --single-version-externally-managed install_data --force

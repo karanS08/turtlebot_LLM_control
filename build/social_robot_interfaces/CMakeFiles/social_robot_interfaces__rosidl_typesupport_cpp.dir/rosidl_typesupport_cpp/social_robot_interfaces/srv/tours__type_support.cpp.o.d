@@ -12,9 +12,9 @@ CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesuppor
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/message_type_support_struct.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/visibility_control.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_typesupport_interface/include/rosidl_typesupport_interface/macros.h \
  /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/rosidl_generator_cpp/social_robot_interfaces/srv/detail/tours__struct.hpp \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
@@ -156,21 +156,21 @@ CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesuppor
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_cpp/include/rosidl_runtime_cpp/bounded_vector.hpp \
  /usr/include/c++/11/stdexcept \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
- /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/identifier.hpp \
- /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/visibility_control.h \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \
- /opt/ros/humble/include/rosidl_typesupport_c/rosidl_typesupport_c/type_support_map.h \
- /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/message_type_support_dispatch.hpp \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
- /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/service_type_support_dispatch.hpp
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_cpp/include/rosidl_runtime_cpp/message_initialization.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/message_initialization.h \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_cpp/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
+ /home/karan/ros2_humble/install/std_msgs/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
+ /home/karan/ros2_humble/build/builtin_interfaces/rosidl_generator_cpp/builtin_interfaces/msg/detail/time__struct.hpp \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_cpp/geometry_msgs/msg/detail/pose__struct.hpp \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_cpp/geometry_msgs/msg/detail/point__struct.hpp \
+ /home/karan/ros2_humble/build/geometry_msgs/rosidl_generator_cpp/geometry_msgs/msg/detail/quaternion__struct.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl_typesupport/rosidl_typesupport_cpp/include/rosidl_typesupport_cpp/identifier.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl_typesupport/rosidl_typesupport_cpp/include/rosidl_typesupport_cpp/visibility_control.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_cpp/include/rosidl_typesupport_cpp/message_type_support.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl_typesupport/rosidl_typesupport_c/include/rosidl_typesupport_c/type_support_map.h \
+ /home/karan/ros2_humble/src/ros2/rosidl_typesupport/rosidl_typesupport_cpp/include/rosidl_typesupport_cpp/message_type_support_dispatch.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_c/include/rosidl_runtime_c/service_type_support_struct.h \
+ /home/karan/ros2_humble/src/ros2/rosidl/rosidl_runtime_cpp/include/rosidl_typesupport_cpp/service_type_support.hpp \
+ /home/karan/ros2_humble/src/ros2/rosidl_typesupport/rosidl_typesupport_cpp/include/rosidl_typesupport_cpp/service_type_support_dispatch.hpp

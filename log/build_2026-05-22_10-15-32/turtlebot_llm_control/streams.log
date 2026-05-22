@@ -1,0 +1,35 @@
+[1.223s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_llm_control build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log --single-version-externally-managed install_data
+[1.689s] running egg_info
+[1.690s] writing ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/PKG-INFO
+[1.690s] writing dependency_links to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/dependency_links.txt
+[1.690s] writing entry points to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/entry_points.txt
+[1.691s] writing requirements to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/requires.txt
+[1.691s] writing top-level names to ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/top_level.txt
+[1.693s] reading manifest file '../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.694s] writing manifest file '../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info/SOURCES.txt'
+[1.694s] running build
+[1.694s] running build_py
+[1.695s] running install
+[1.696s] running install_lib
+[1.699s] running install_data
+[1.699s] copying package.xml -> /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control
+[1.699s] running install_egg_info
+[1.703s] removing '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control-0.1.0-py3.10.egg-info' (and everything under it)
+[1.703s] Copying ../../build/turtlebot_llm_control/turtlebot_llm_control.egg-info to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages/turtlebot_llm_control-0.1.0-py3.10.egg-info
+[1.704s] running install_scripts
+[1.736s] Installing bt_orchestrator_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.736s] Installing emotion_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.736s] Installing follow_me_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.736s] Installing llm_intent_test script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing sim_initial_pose_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing speech_command_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing speech_debug_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing speech_response_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing speech_to_text_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing tour_intent_bridge_node script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing tour_recording_manager script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.737s] Installing tour_teleop_session script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.738s] Installing tsp_gui script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.738s] Installing waypoint_speaker script to /home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/turtlebot_llm_control
+[1.738s] writing list of installed files to '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log'
+[1.759s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_llm_control build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log --single-version-externally-managed install_data

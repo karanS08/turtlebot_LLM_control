@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-4983297828ee66011b5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "social_robot_interfaces__py",
+					"jsonFile" : "directory-social_robot_interfaces__py-dad9752cdfb9e5086a64.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/social_robot_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "social_robot_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_social_robot_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_social_robot_interfaces_egg-42b1a5e7d5e73757977e.json",
+					"name" : "ament_cmake_python_build_social_robot_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_social_robot_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_social_robot_interfaces-72669085b8a7c14df171.json",
+					"name" : "ament_cmake_python_copy_social_robot_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces-7ec8af92cbfea0174690.json",
+					"name" : "social_robot_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__cpp-1747acd1f899fdb8dd05.json",
+					"name" : "social_robot_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "social_robot_interfaces__py::@82a31fed592a05e0d862",
+					"jsonFile" : "target-social_robot_interfaces__py-b72ddffd75f9f3de333b.json",
+					"name" : "social_robot_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_generator_c-23e7593cbde6c7182882.json",
+					"name" : "social_robot_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_generator_py-9072b8ea5b46d46d8780.json",
+					"name" : "social_robot_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_c-a18676210fdcf7bb443b.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_c__pyext-ddcc2fb77bbcdf2bfc29.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_cpp-838d15e8c42caed05484.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_fastrtps_c-d9ef5917a552622de70a.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext-a92f5e5096ac26a9d763.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_fastrtps_cpp-680faf81f0702fcf3a1f.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_introspection_c-a7571ea7eb928bafaca6.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_introspection_c__pyext-56286b6e92e3bf3057a4.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces__rosidl_typesupport_introspection_cpp-50d319042963334de67b.json",
+					"name" : "social_robot_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "social_robot_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-social_robot_interfaces_uninstall-24b9e493c6c65a90b062.json",
+					"name" : "social_robot_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-4842cf5d1f3ee5b70c78.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces",
+		"source" : "/home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

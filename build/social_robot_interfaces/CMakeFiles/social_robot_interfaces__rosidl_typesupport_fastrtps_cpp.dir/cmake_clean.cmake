@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.cpp.o"
+  "CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.cpp.o.d"
   "CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.cpp.o"
   "CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.cpp.o.d"
   "libsocial_robot_interfaces__rosidl_typesupport_fastrtps_cpp.pdb"
   "libsocial_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so"
+  "rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/tsp_command__rosidl_typesupport_fastrtps_cpp.hpp"
   "rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_fastrtps_cpp.hpp"
 )

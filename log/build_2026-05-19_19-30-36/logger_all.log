@@ -1,0 +1,439 @@
+[0.095s] colcon DEBUG Command line arguments: ['/usr/bin/colcon', 'build']
+[0.096s] colcon DEBUG Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x76323d24d510>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x76323d3ceec0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x76323d3ceec0>>, mixin_verb=('build',))
+[0.255s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) check parameters
+[0.255s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) check parameters
+[0.255s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) check parameters
+[0.255s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) check parameters
+[0.255s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) discover
+[0.255s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) discover
+[0.255s] colcon.colcon_core.package_discovery INFO Crawling recursively for packages in '/home/karan/Development/robot_gpt/llm_ws_1'
+[0.255s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.255s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'ignore'
+[0.255s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'ignore_ament_install'
+[0.255s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['colcon_pkg']
+[0.256s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'colcon_pkg'
+[0.256s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['colcon_meta']
+[0.256s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'colcon_meta'
+[0.256s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['ros']
+[0.256s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'ros'
+[0.286s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['cmake', 'python']
+[0.286s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'cmake'
+[0.286s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'python'
+[0.286s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['python_setup_py']
+[0.286s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'python_setup_py'
+[0.286s] colcon.colcon_core.package_identification Level 1 _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(build) by extension 'ignore'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(build) ignored
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(install) by extension 'ignore'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(install) ignored
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(log) by extension 'ignore'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(log) ignored
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'ignore'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'ignore_ament_install'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extensions ['colcon_pkg']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'colcon_pkg'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extensions ['colcon_meta']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'colcon_meta'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extensions ['ros']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'ros'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extensions ['cmake', 'python']
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'cmake'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'python'
+[0.287s] colcon.colcon_core.package_identification Level 1 _identify(src) by extensions ['python_setup_py']
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src) by extension 'python_setup_py'
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extensions ['ignore', 'ignore_ament_install']
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extension 'ignore'
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extension 'ignore_ament_install'
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extensions ['colcon_pkg']
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extension 'colcon_pkg'
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extensions ['colcon_meta']
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extension 'colcon_meta'
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extensions ['ros']
+[0.288s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_LLM_control) by extension 'ros'
+[0.291s] colcon.colcon_core.package_identification DEBUG Package 'src/turtlebot_LLM_control' with type 'ros.ament_python' and name 'turtlebot_llm_control'
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'ignore'
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'ignore_ament_install'
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extensions ['colcon_pkg']
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'colcon_pkg'
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extensions ['colcon_meta']
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'colcon_meta'
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extensions ['ros']
+[0.291s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'ros'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extensions ['cmake', 'python']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'cmake'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'python'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extensions ['python_setup_py']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide) by extension 'python_setup_py'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extensions ['ignore', 'ignore_ament_install']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'ignore'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'ignore_ament_install'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extensions ['colcon_pkg']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'colcon_pkg'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extensions ['colcon_meta']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'colcon_meta'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extensions ['ros']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'ros'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extensions ['cmake', 'python']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'cmake'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'python'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extensions ['python_setup_py']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src) by extension 'python_setup_py'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'ignore'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'ignore_ament_install'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['colcon_pkg']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'colcon_pkg'
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['colcon_meta']
+[0.292s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'colcon_meta'
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extensions ['ros']
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide/src/speech_locomotion_interface) by extension 'ros'
+[0.293s] colcon.colcon_core.package_identification DEBUG Package 'src/turtlebot_social_guide/src/speech_locomotion_interface' with type 'ros.ament_python' and name 'speech_locomotion_interface'
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['ignore', 'ignore_ament_install']
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'ignore'
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'ignore_ament_install'
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['colcon_pkg']
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'colcon_pkg'
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['colcon_meta']
+[0.293s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'colcon_meta'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['ros']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'ros'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['cmake', 'python']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'cmake'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'python'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extensions ['python_setup_py']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower) by extension 'python_setup_py'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['ignore', 'ignore_ament_install']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'ignore'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'ignore_ament_install'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['colcon_pkg']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'colcon_pkg'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['colcon_meta']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'colcon_meta'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['ros']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'ros'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['cmake', 'python']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'cmake'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'python'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extensions ['python_setup_py']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src) by extension 'python_setup_py'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['ignore', 'ignore_ament_install']
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'ignore'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'ignore_ament_install'
+[0.294s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['colcon_pkg']
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'colcon_pkg'
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['colcon_meta']
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'colcon_meta'
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extensions ['ros']
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour) by extension 'ros'
+[0.295s] colcon.colcon_core.package_identification DEBUG Package 'src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour' with type 'ros.ament_cmake' and name 'robot_tour'
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'ignore'
+[0.295s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'ignore_ament_install'
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['colcon_pkg']
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'colcon_pkg'
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['colcon_meta']
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'colcon_meta'
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extensions ['ros']
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces) by extension 'ros'
+[0.296s] colcon.colcon_core.package_identification DEBUG Package 'src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces' with type 'ros.ament_cmake' and name 'social_robot_interfaces'
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/speech_locomotion_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/speech_locomotion_interface) by extension 'ignore'
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/speech_locomotion_interface) ignored
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['ignore', 'ignore_ament_install']
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'ignore'
+[0.296s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'ignore_ament_install'
+[0.297s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['colcon_pkg']
+[0.297s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'colcon_pkg'
+[0.297s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['colcon_meta']
+[0.297s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'colcon_meta'
+[0.297s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extensions ['ros']
+[0.297s] colcon.colcon_core.package_identification Level 1 _identify(src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager) by extension 'ros'
+[0.297s] colcon.colcon_core.package_identification DEBUG Package 'src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager' with type 'ros.ament_python' and name 'tour_manager'
+[0.297s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) using defaults
+[0.297s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) discover
+[0.297s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) using defaults
+[0.297s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) discover
+[0.297s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) using defaults
+[0.310s] colcon.colcon_core.package_discovery Level 1 discover_packages(prefix_path) check parameters
+[0.310s] colcon.colcon_core.package_discovery Level 1 discover_packages(prefix_path) discover
+[0.313s] colcon.colcon_installed_package_information.package_discovery DEBUG Found 392 installed packages in /opt/ros/humble
+[0.314s] colcon.colcon_core.package_discovery Level 1 discover_packages(prefix_path) using defaults
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.348s] colcon.colcon_core.verb Level 5 set package 'social_robot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.348s] colcon.colcon_core.verb DEBUG Building package 'social_robot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces', 'merge_install': False, 'path': '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'cmake_target' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'speech_locomotion_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.349s] colcon.colcon_core.verb DEBUG Building package 'speech_locomotion_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface', 'merge_install': False, 'path': '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface', 'symlink_install': False, 'test_result_base': None}
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'cmake_target' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'cmake_clean_cache' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'cmake_clean_first' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'cmake_force_configure' from command line to 'False'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'ament_cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'catkin_cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'tour_manager' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.349s] colcon.colcon_core.verb DEBUG Building package 'tour_manager' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager', 'merge_install': False, 'path': '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager', 'symlink_install': False, 'test_result_base': None}
+[0.349s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'cmake_args' from command line to 'None'
+[0.349s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'cmake_target' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'cmake_clean_cache' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'cmake_clean_first' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'cmake_force_configure' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'ament_cmake_args' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'catkin_cmake_args' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'robot_tour' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.350s] colcon.colcon_core.verb DEBUG Building package 'robot_tour' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour', 'merge_install': False, 'path': '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour', 'symlink_install': False, 'test_result_base': None}
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'cmake_args' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'cmake_target' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.350s] colcon.colcon_core.verb Level 5 set package 'turtlebot_llm_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.350s] colcon.colcon_core.verb DEBUG Building package 'turtlebot_llm_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control', 'merge_install': False, 'path': '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control', 'symlink_install': False, 'test_result_base': None}
+[0.350s] colcon.colcon_core.executor INFO Executing jobs using 'parallel' executor
+[0.351s] colcon.colcon_parallel_executor.executor.parallel DEBUG run_until_complete
+[0.351s] colcon.colcon_ros.task.ament_cmake.build INFO Building ROS package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces' with build type 'ament_cmake'
+[0.351s] colcon.colcon_cmake.task.cmake.build INFO Building CMake package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces'
+[0.353s] colcon.colcon_core.plugin_system INFO Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.353s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.353s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[0.356s] colcon.colcon_ros.task.ament_python.build INFO Building ROS package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface' with build type 'ament_python'
+[0.356s] colcon.colcon_core.shell Level 1 create_environment_hook('speech_locomotion_interface', 'ament_prefix_path')
+[0.356s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/ament_prefix_path.ps1'
+[0.357s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/ament_prefix_path.dsv'
+[0.357s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/ament_prefix_path.sh'
+[0.358s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.358s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[0.360s] colcon.colcon_ros.task.ament_python.build INFO Building ROS package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager' with build type 'ament_python'
+[0.360s] colcon.colcon_core.shell Level 1 create_environment_hook('tour_manager', 'ament_prefix_path')
+[0.360s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/hook/ament_prefix_path.ps1'
+[0.360s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/hook/ament_prefix_path.dsv'
+[0.361s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/hook/ament_prefix_path.sh'
+[0.361s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.361s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[0.366s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces -DCMAKE_INSTALL_PREFIX=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces
+[0.610s] colcon.colcon_core.task.python.build INFO Building Python package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface'
+[0.611s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.611s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[0.845s] colcon.colcon_core.task.python.build INFO Building Python package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager'
+[0.846s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.846s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[1.198s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/build
+[1.199s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build
+[1.406s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces -DCMAKE_INSTALL_PREFIX=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces
+[1.408s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces -- -j12 -l12
+[1.674s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager' returned '0': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/build
+[1.675s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/tour_manager build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/install.log --single-version-externally-managed install_data --force
+[1.684s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface' returned '0': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build
+[1.684s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/speech_locomotion_interface build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/install.log --single-version-externally-managed install_data --force
+[1.763s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces -- -j12 -l12
+[1.773s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
+[1.837s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(social_robot_interfaces)
+[1.838s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
+[1.840s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces' for CMake module files
+[1.840s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces' for CMake config files
+[1.841s] colcon.colcon_core.shell Level 1 create_environment_hook('social_robot_interfaces', 'cmake_prefix_path')
+[1.841s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.ps1'
+[1.841s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.dsv'
+[1.842s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.sh'
+[1.842s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib'
+[1.842s] colcon.colcon_core.shell Level 1 create_environment_hook('social_robot_interfaces', 'ld_library_path_lib')
+[1.843s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.ps1'
+[1.843s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.dsv'
+[1.843s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.sh'
+[1.844s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/bin'
+[1.844s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/pkgconfig/social_robot_interfaces.pc'
+[1.844s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/python3.10/site-packages'
+[1.844s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/bin'
+[1.844s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.ps1'
+[1.845s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.dsv'
+[1.845s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.sh'
+[1.846s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.bash'
+[1.847s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.zsh'
+[1.847s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/colcon-core/packages/social_robot_interfaces)
+[1.847s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(social_robot_interfaces)
+[1.848s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces' for CMake module files
+[1.848s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces' for CMake config files
+[1.849s] colcon.colcon_core.shell Level 1 create_environment_hook('social_robot_interfaces', 'cmake_prefix_path')
+[1.849s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.ps1'
+[1.849s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.dsv'
+[1.850s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/cmake_prefix_path.sh'
+[1.850s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib'
+[1.850s] colcon.colcon_core.shell Level 1 create_environment_hook('social_robot_interfaces', 'ld_library_path_lib')
+[1.850s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.ps1'
+[1.851s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.dsv'
+[1.851s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/hook/ld_library_path_lib.sh'
+[1.851s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/bin'
+[1.851s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/pkgconfig/social_robot_interfaces.pc'
+[1.851s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/python3.10/site-packages'
+[1.852s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/bin'
+[1.852s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.ps1'
+[1.852s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.dsv'
+[1.853s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.sh'
+[1.853s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.bash'
+[1.854s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.zsh'
+[1.854s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/colcon-core/packages/social_robot_interfaces)
+[1.854s] colcon.colcon_ros.task.ament_cmake.build INFO Building ROS package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour' with build type 'ament_cmake'
+[1.854s] colcon.colcon_cmake.task.cmake.build INFO Building CMake package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour'
+[1.854s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.854s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[1.862s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour -DCMAKE_INSTALL_PREFIX=/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour
+[1.944s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager' for CMake module files
+[1.945s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/tour_manager' returned '0': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/tour_manager build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/tour_manager/install.log --single-version-externally-managed install_data --force
+[1.945s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager' for CMake config files
+[1.946s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib'
+[1.946s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/bin'
+[1.946s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib/pkgconfig/tour_manager.pc'
+[1.946s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/lib/python3.10/site-packages'
+[1.946s] colcon.colcon_core.shell Level 1 create_environment_hook('tour_manager', 'pythonpath')
+[1.946s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/hook/pythonpath.ps1'
+[1.947s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/hook/pythonpath.dsv'
+[1.947s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/hook/pythonpath.sh'
+[1.948s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/bin'
+[1.948s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(tour_manager)
+[1.948s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/package.ps1'
+[1.948s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/package.dsv'
+[1.949s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/package.sh'
+[1.949s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/package.bash'
+[1.949s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/tour_manager/package.zsh'
+[1.950s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/tour_manager/share/colcon-core/packages/tour_manager)
+[1.957s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface' for CMake module files
+[1.957s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface' returned '0': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/speech_locomotion_interface build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/install.log --single-version-externally-managed install_data --force
+[1.957s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface' for CMake config files
+[1.958s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib'
+[1.958s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/bin'
+[1.958s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/pkgconfig/speech_locomotion_interface.pc'
+[1.958s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages'
+[1.958s] colcon.colcon_core.shell Level 1 create_environment_hook('speech_locomotion_interface', 'pythonpath')
+[1.958s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath.ps1'
+[1.959s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath.dsv'
+[1.959s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/hook/pythonpath.sh'
+[1.959s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/bin'
+[1.960s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(speech_locomotion_interface)
+[1.960s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/package.ps1'
+[1.960s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/package.dsv'
+[1.960s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/package.sh'
+[1.961s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/package.bash'
+[1.961s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/speech_locomotion_interface/package.zsh'
+[1.961s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/share/colcon-core/packages/speech_locomotion_interface)
+[1.962s] colcon.colcon_ros.task.ament_python.build INFO Building ROS package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control' with build type 'ament_python'
+[1.962s] colcon.colcon_core.shell Level 1 create_environment_hook('turtlebot_llm_control', 'ament_prefix_path')
+[1.962s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/ament_prefix_path.ps1'
+[1.963s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/ament_prefix_path.dsv'
+[1.963s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/ament_prefix_path.sh'
+[1.963s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.963s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[2.198s] colcon.colcon_core.task.python.build INFO Building Python package in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control'
+[2.198s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.198s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[2.377s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/robot_tour -DCMAKE_INSTALL_PREFIX=/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour
+[2.378s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour -- -j12 -l12
+[2.443s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour -- -j12 -l12
+[2.445s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour
+[2.464s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(robot_tour)
+[2.465s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour' for CMake module files
+[2.465s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour
+[2.465s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour' for CMake config files
+[2.466s] colcon.colcon_core.shell Level 1 create_environment_hook('robot_tour', 'cmake_prefix_path')
+[2.466s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.ps1'
+[2.466s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.dsv'
+[2.467s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.sh'
+[2.467s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/lib'
+[2.467s] colcon.colcon_core.shell Level 1 create_environment_hook('robot_tour', 'ld_library_path_lib')
+[2.467s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.ps1'
+[2.468s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.dsv'
+[2.468s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.sh'
+[2.468s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/bin'
+[2.468s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/lib/pkgconfig/robot_tour.pc'
+[2.468s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/lib/python3.10/site-packages'
+[2.469s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/bin'
+[2.469s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.ps1'
+[2.469s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.dsv'
+[2.470s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.sh'
+[2.470s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.bash'
+[2.470s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.zsh'
+[2.471s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/colcon-core/packages/robot_tour)
+[2.471s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(robot_tour)
+[2.471s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour' for CMake module files
+[2.472s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour' for CMake config files
+[2.472s] colcon.colcon_core.shell Level 1 create_environment_hook('robot_tour', 'cmake_prefix_path')
+[2.472s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.ps1'
+[2.472s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.dsv'
+[2.473s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/cmake_prefix_path.sh'
+[2.473s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/lib'
+[2.473s] colcon.colcon_core.shell Level 1 create_environment_hook('robot_tour', 'ld_library_path_lib')
+[2.473s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.ps1'
+[2.473s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.dsv'
+[2.474s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/hook/ld_library_path_lib.sh'
+[2.474s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/bin'
+[2.474s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/lib/pkgconfig/robot_tour.pc'
+[2.475s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/lib/python3.10/site-packages'
+[2.475s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/bin'
+[2.475s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.ps1'
+[2.475s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.dsv'
+[2.476s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.sh'
+[2.476s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.bash'
+[2.476s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/robot_tour/package.zsh'
+[2.477s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/robot_tour/share/colcon-core/packages/robot_tour)
+[2.537s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build
+[2.965s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build
+[2.966s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_llm_control build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log --single-version-externally-managed install_data --force
+[3.240s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control' for CMake module files
+[3.240s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control' returned '0': AMENT_PREFIX_PATH=/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface:${AMENT_PREFIX_PATH} PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtlebot_llm_control build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/turtlebot_llm_control/install.log --single-version-externally-managed install_data --force
+[3.240s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control' for CMake config files
+[3.241s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib'
+[3.241s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/bin'
+[3.241s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/pkgconfig/turtlebot_llm_control.pc'
+[3.241s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/lib/python3.10/site-packages'
+[3.241s] colcon.colcon_core.shell Level 1 create_environment_hook('turtlebot_llm_control', 'pythonpath')
+[3.242s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath.ps1'
+[3.242s] colcon.colcon_core.shell INFO Creating environment descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath.dsv'
+[3.242s] colcon.colcon_core.shell INFO Creating environment hook '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/hook/pythonpath.sh'
+[3.243s] colcon.colcon_core.environment Level 1 checking '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/bin'
+[3.243s] colcon.colcon_core.environment Level 1 create_environment_scripts_only(turtlebot_llm_control)
+[3.243s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/package.ps1'
+[3.243s] colcon.colcon_core.shell INFO Creating package descriptor '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/package.dsv'
+[3.244s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/package.sh'
+[3.244s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/package.bash'
+[3.244s] colcon.colcon_core.shell INFO Creating package script '/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/turtlebot_llm_control/package.zsh'
+[3.245s] colcon.colcon_core.environment Level 1 create_file_with_runtime_dependencies(/home/karan/Development/robot_gpt/llm_ws_1/install/turtlebot_llm_control/share/colcon-core/packages/turtlebot_llm_control)
+[3.245s] colcon.colcon_parallel_executor.executor.parallel DEBUG closing loop
+[3.245s] colcon.colcon_parallel_executor.executor.parallel DEBUG loop closed
+[3.245s] colcon.colcon_parallel_executor.executor.parallel DEBUG run_until_complete finished with '0'
+[3.245s] colcon.colcon_core.event_reactor DEBUG joining thread
+[3.249s] colcon.colcon_core.plugin_system INFO Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.249s] colcon.colcon_core.plugin_system INFO Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.249s] colcon.colcon_notification.desktop_notification INFO Sending desktop notification using 'notify2'
+[3.258s] colcon.colcon_core.event_reactor DEBUG joined thread
+[3.258s] colcon.colcon_core.shell INFO Creating prefix script '/home/karan/Development/robot_gpt/llm_ws_1/install/local_setup.ps1'
+[3.259s] colcon.colcon_core.shell INFO Creating prefix util module '/home/karan/Development/robot_gpt/llm_ws_1/install/_local_setup_util_ps1.py'
+[3.260s] colcon.colcon_core.shell INFO Creating prefix chain script '/home/karan/Development/robot_gpt/llm_ws_1/install/setup.ps1'
+[3.260s] colcon.colcon_core.shell INFO Creating prefix script '/home/karan/Development/robot_gpt/llm_ws_1/install/local_setup.sh'
+[3.261s] colcon.colcon_core.shell INFO Creating prefix util module '/home/karan/Development/robot_gpt/llm_ws_1/install/_local_setup_util_sh.py'
+[3.261s] colcon.colcon_core.shell INFO Creating prefix chain script '/home/karan/Development/robot_gpt/llm_ws_1/install/setup.sh'
+[3.262s] colcon.colcon_core.shell INFO Creating prefix script '/home/karan/Development/robot_gpt/llm_ws_1/install/local_setup.bash'
+[3.262s] colcon.colcon_core.shell INFO Creating prefix chain script '/home/karan/Development/robot_gpt/llm_ws_1/install/setup.bash'
+[3.263s] colcon.colcon_core.shell INFO Creating prefix script '/home/karan/Development/robot_gpt/llm_ws_1/install/local_setup.zsh'
+[3.263s] colcon.colcon_core.shell INFO Creating prefix chain script '/home/karan/Development/robot_gpt/llm_ws_1/install/setup.zsh'

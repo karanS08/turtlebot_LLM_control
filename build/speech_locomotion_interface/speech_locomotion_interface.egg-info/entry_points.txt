@@ -1,3 +1,0 @@
-[console_scripts]
-listening = speech_locomotion_interface.speech_listener:main
-

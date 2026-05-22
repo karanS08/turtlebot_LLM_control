@@ -1,1 +1,0 @@
-/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_LLM_control/setup.py

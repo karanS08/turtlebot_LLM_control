@@ -1,0 +1,122 @@
+[0.010s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces': /usr/bin/cmake --build /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces -- -j12 -l12
+[0.209s] [  3%] Built target social_robot_interfaces__cpp
+[0.209s] [ 12%] Built target social_robot_interfaces__rosidl_generator_c
+[0.209s] [ 12%] Built target ament_cmake_python_symlink_social_robot_interfaces
+[0.210s] [ 22%] Built target social_robot_interfaces__rosidl_typesupport_fastrtps_c
+[0.210s] [ 32%] Built target social_robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.210s] [ 41%] Built target social_robot_interfaces__rosidl_typesupport_cpp
+[0.210s] [ 51%] Built target social_robot_interfaces__rosidl_typesupport_introspection_cpp
+[0.210s] [ 70%] Built target social_robot_interfaces__rosidl_typesupport_c
+[0.210s] [ 70%] Built target social_robot_interfaces__rosidl_typesupport_introspection_c
+[0.210s] [ 70%] Built target social_robot_interfaces
+[0.210s] [ 74%] Built target social_robot_interfaces__py
+[0.210s] [ 80%] Built target social_robot_interfaces__rosidl_generator_py
+[0.210s] [100%] Built target social_robot_interfaces__rosidl_typesupport_introspection_c__pyext
+[0.210s] [100%] Built target social_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[0.210s] [100%] Built target social_robot_interfaces__rosidl_typesupport_c__pyext
+[0.243s] running egg_info
+[0.244s] writing social_robot_interfaces.egg-info/PKG-INFO
+[0.244s] writing dependency_links to social_robot_interfaces.egg-info/dependency_links.txt
+[0.244s] writing top-level names to social_robot_interfaces.egg-info/top_level.txt
+[0.246s] reading manifest file 'social_robot_interfaces.egg-info/SOURCES.txt'
+[0.246s] writing manifest file 'social_robot_interfaces.egg-info/SOURCES.txt'
+[0.268s] [100%] Built target ament_cmake_python_build_social_robot_interfaces_egg
+[0.409s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces' returned '0': /usr/bin/cmake --build /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces -- -j12 -l12
+[0.419s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces': /usr/bin/cmake --install /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
+[0.429s] -- Install configuration: ""
+[0.429s] -- Execute custom install script
+[0.429s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/social_robot_interfaces
+[0.430s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[0.430s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__functions.h
+[0.430s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__struct.h
+[0.430s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__type_support.h
+[0.430s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/tours.h
+[0.431s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/library_path.sh
+[0.431s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/library_path.dsv
+[0.431s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.431s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_fastrtps_c.h
+[0.432s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.432s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__builder.hpp
+[0.432s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__struct.hpp
+[0.432s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__traits.hpp
+[0.432s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__type_support.hpp
+[0.432s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/tours.hpp
+[0.433s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.433s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_fastrtps_cpp.hpp
+[0.433s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.433s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_introspection_c.h
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/include/social_robot_interfaces/social_robot_interfaces/srv/detail/tours__rosidl_typesupport_introspection_cpp.hpp
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/pythonpath.sh
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/pythonpath.dsv
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.434s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[0.435s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/__init__.py
+[0.435s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/_social_robot_interfaces_s.ep.rosidl_typesupport_c.c
+[0.435s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/_social_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.435s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/_social_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[0.435s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/libsocial_robot_interfaces__rosidl_generator_py.so
+[0.435s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/social_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.436s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/social_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.436s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/social_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.436s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/srv/__init__.py
+[0.436s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/srv/_tours.py
+[0.436s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/srv/_tours_s.c
+[0.436s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/social_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.437s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/social_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.437s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/social_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.437s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/srv/Tours.idl
+[0.437s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/srv/Tours.srv
+[0.438s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/srv/Tours_Request.msg
+[0.438s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/srv/Tours_Response.msg
+[0.438s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/ament_index/resource_index/package_run_dependencies/social_robot_interfaces
+[0.438s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/ament_index/resource_index/parent_prefix_path/social_robot_interfaces
+[0.438s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/ament_prefix_path.sh
+[0.438s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/ament_prefix_path.dsv
+[0.439s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/path.sh
+[0.439s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/environment/path.dsv
+[0.439s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/local_setup.bash
+[0.439s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/local_setup.sh
+[0.439s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/local_setup.zsh
+[0.439s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/local_setup.dsv
+[0.439s] -- Symlinking: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.dsv
+[0.449s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/ament_index/resource_index/packages/social_robot_interfaces
+[0.449s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/rosidl_cmake-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfacesConfig.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfacesConfig-version.cmake
+[0.450s] -- Up-to-date symlink: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/package.xml
+[0.451s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_generator_c.so
+[0.451s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_typesupport_fastrtps_c.so
+[0.451s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[0.451s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_typesupport_introspection_c.so
+[0.452s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_typesupport_c.so
+[0.452s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_typesupport_introspection_cpp.so
+[0.452s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_typesupport_cpp.so
+[0.478s] Listing '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces'...
+[0.478s] Listing '/home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/local/lib/python3.10/dist-packages/social_robot_interfaces/srv'...
+[0.482s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/lib/libsocial_robot_interfaces__rosidl_generator_py.so
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_generator_cExport.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_generator_cppExport.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.483s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_cExport.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_cppExport.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/social_robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_generator_pyExport.cmake
+[0.484s] -- Up-to-date: /home/karan/Development/robot_gpt/llm_ws_1/install/social_robot_interfaces/share/social_robot_interfaces/cmake/export_social_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[0.486s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces' returned '0': /usr/bin/cmake --install /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces

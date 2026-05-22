@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "social_robot_interfaces")
-set(social_robot_interfaces_VERSION "0.0.0")
-set(social_robot_interfaces_MAINTAINER "tom <a.liver.f.let.cha@gmail.com>")
+set(social_robot_interfaces_VERSION "0.1.0")
+set(social_robot_interfaces_MAINTAINER "karan <karan@example.com>")
 set(social_robot_interfaces_BUILD_DEPENDS "geometry_msgs" "rosidl_default_generators")
 set(social_robot_interfaces_BUILDTOOL_DEPENDS "ament_cmake")
 set(social_robot_interfaces_BUILD_EXPORT_DEPENDS "geometry_msgs" "rosidl_default_generators")

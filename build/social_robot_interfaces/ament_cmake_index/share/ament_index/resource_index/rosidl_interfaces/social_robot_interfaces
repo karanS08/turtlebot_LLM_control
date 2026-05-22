@@ -1,3 +1,5 @@
+msg/TspCommand.idl
+msg/TspCommand.msg
 srv/Tours.idl
 srv/Tours.srv
 srv/Tours_Request.msg

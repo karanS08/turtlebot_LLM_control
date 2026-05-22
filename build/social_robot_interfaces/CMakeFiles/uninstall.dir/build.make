@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces
+CMAKE_SOURCE_DIR = /home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

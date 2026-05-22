@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.c.o"
+  "CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.c.o.d"
   "CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/srv/_tours_s.c.o"
   "CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/srv/_tours_s.c.o.d"
   "rosidl_generator_py/social_robot_interfaces/libsocial_robot_interfaces__rosidl_generator_py.pdb"

@@ -1,0 +1,25 @@
+[1.250s] Invoking command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/speech_locomotion_interface build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/install.log --single-version-externally-managed install_data
+[1.720s] running egg_info
+[1.721s] writing ../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/PKG-INFO
+[1.722s] writing dependency_links to ../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/dependency_links.txt
+[1.722s] writing entry points to ../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/entry_points.txt
+[1.722s] writing requirements to ../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/requires.txt
+[1.722s] writing top-level names to ../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/top_level.txt
+[1.724s] reading manifest file '../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.725s] writing manifest file '../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info/SOURCES.txt'
+[1.725s] running build
+[1.725s] running build_py
+[1.725s] copying speech_locomotion_interface/tsp_gui_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build/lib/speech_locomotion_interface
+[1.726s] running install
+[1.726s] running install_lib
+[1.727s] copying /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build/lib/speech_locomotion_interface/tsp_gui_node.py -> /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages/speech_locomotion_interface
+[1.729s] byte-compiling /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages/speech_locomotion_interface/tsp_gui_node.py to tsp_gui_node.cpython-310.pyc
+[1.732s] running install_data
+[1.732s] running install_egg_info
+[1.736s] removing '/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages/speech_locomotion_interface-0.1.0-py3.10.egg-info' (and everything under it)
+[1.736s] Copying ../../../../build/speech_locomotion_interface/speech_locomotion_interface.egg-info to /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages/speech_locomotion_interface-0.1.0-py3.10.egg-info
+[1.737s] running install_scripts
+[1.772s] Installing listening script to /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/speech_locomotion_interface
+[1.772s] Installing tsp_gui script to /home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/speech_locomotion_interface
+[1.773s] writing list of installed files to '/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/install.log'
+[1.794s] Invoked command in '/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide/src/speech_locomotion_interface' returned '0': PYTHONPATH=/home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karan/Development/robot_gpt/llm_ws_1/install/speech_locomotion_interface/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/speech_locomotion_interface build --build-base /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/build install --record /home/karan/Development/robot_gpt/llm_ws_1/build/speech_locomotion_interface/install.log --single-version-externally-managed install_data

@@ -5,7 +5,6 @@ from typing import Dict, List, Optional
 
 class TaskState(str, Enum):
     IDLE = "idle"
-    FOLLOWING = "following"
     NAVIGATING = "navigating"
     EXPLORING = "exploring"
     TOURING = "touring"

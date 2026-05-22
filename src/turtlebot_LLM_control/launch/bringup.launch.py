@@ -68,13 +68,6 @@ def generate_launch_description():
             ),
             Node(
                 package="turtlebot_llm_control",
-                executable="follow_me_node",
-                name="follow_me_node",
-                output="screen",
-                parameters=[{"use_sim_time": use_sim_time}],
-            ),
-            Node(
-                package="turtlebot_llm_control",
                 executable="speech_response_node",
                 name="speech_response_node",
                 output="screen",

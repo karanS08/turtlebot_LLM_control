@@ -49,7 +49,6 @@ class BehaviorTreeOrchestrator(Node):
         self.route_replay_publisher = self.create_publisher(String, "/route/replay", 10)
         self.reactive_nav_control_publisher = self.create_publisher(String, "/reactive_nav/control", 10)
         self.manual_override_publisher = self.create_publisher(String, "/manual_override/control", 10)
-        self.follow_control_publisher = self.create_publisher(String, "/follow_me/control", 10)
 
         self.nav_client = ActionClient(self, NavigateToPose, "/navigate_to_pose")
         self.timer = self.create_timer(1.0, self.tick_tree)
@@ -83,12 +82,6 @@ class BehaviorTreeOrchestrator(Node):
                 ),
                 SequenceNode(
                     [
-                        ConditionNode(lambda: self.status.task_state == TaskState.FOLLOWING),
-                        ActionNode(self.follow_user_stub),
-                    ]
-                ),
-                SequenceNode(
-                    [
                         ConditionNode(lambda: self.status.task_state == TaskState.NAVIGATING),
                         ActionNode(self.navigate_to_pending_goal),
                     ]
@@ -118,20 +111,12 @@ class BehaviorTreeOrchestrator(Node):
             self.say(token.response)
             return
 
-        if token.intent == "follow":
-            self.status.task_state = TaskState.FOLLOWING
-            self.publish_reactive_nav_control("stop")
-            self.publish_follow_control("start")
-            self.say(token.response)
-            return
-
         if token.intent == "stop":
             self.memory.paused_task = self.status.task_state
             self.status.task_state = TaskState.IDLE
             self.status.is_paused = False
             self.status.current_target = ""
             self.cancel_navigation_goal()
-            self.publish_follow_control("stop")
             self.publish_reactive_nav_control("stop")
             self.say(token.response)
             return
@@ -147,7 +132,6 @@ class BehaviorTreeOrchestrator(Node):
             self.memory.paused_task = self.status.task_state
             self.status.task_state = TaskState.PAUSED
             self.status.is_paused = True
-            self.publish_follow_control("stop")
             self.publish_reactive_nav_control("stop")
             self.say(token.response)
             return
@@ -156,8 +140,6 @@ class BehaviorTreeOrchestrator(Node):
             paused = self.memory.paused_task or TaskState.IDLE
             self.status.task_state = paused
             self.status.is_paused = False
-            if paused == TaskState.FOLLOWING:
-                self.publish_follow_control("start")
             self.say(token.response)
             return
 
@@ -171,7 +153,6 @@ class BehaviorTreeOrchestrator(Node):
 
         if token.intent == "manual_override_on":
             self.status.task_state = TaskState.PAUSED
-            self.publish_follow_control("stop")
             self.publish_manual_override("on")
             self.say(token.response)
             return
@@ -185,7 +166,6 @@ class BehaviorTreeOrchestrator(Node):
         if token.intent == "start_recording":
             self.memory.paused_task = self.status.task_state
             self.cancel_navigation_goal()
-            self.publish_follow_control("stop")
             self.publish_reactive_nav_control("stop")
             self.status.task_state = TaskState.RECORDING
             self.status.is_recording = True
@@ -199,7 +179,6 @@ class BehaviorTreeOrchestrator(Node):
         if token.intent == "stop_recording":
             self.status.is_recording = False
             self.status.task_state = TaskState.IDLE
-            self.publish_follow_control("stop")
             self.publish_reactive_nav_control("stop")
             stop_msg = String()
             stop_msg.data = "stop"
@@ -306,10 +285,6 @@ class BehaviorTreeOrchestrator(Node):
     def sync_gesture_stub(self) -> NodeStatus:
         self.get_logger().debug("Gesture sync placeholder triggered.")
         return NodeStatus.SUCCESS
-
-    def follow_user_stub(self) -> NodeStatus:
-        self.get_logger().debug("Follow mode active. Connect person tracking here.")
-        return NodeStatus.RUNNING
 
     def navigate_to_pending_goal(self) -> NodeStatus:
         if self.nav_in_progress:
@@ -435,11 +410,6 @@ class BehaviorTreeOrchestrator(Node):
         self.pending_goal_pose = None
         self.nav_in_progress = False
         self.nav_result_future = None
-
-    def publish_follow_control(self, command: str) -> None:
-        msg = String()
-        msg.data = command
-        self.follow_control_publisher.publish(msg)
 
     def publish_reactive_nav_control(self, command: str) -> None:
         msg = String()

@@ -1,1 +1,1 @@
-
+/home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces/ament_cmake_python/social_robot_interfaces/social_robot_interfaces.egg-info/dependency_links.txt

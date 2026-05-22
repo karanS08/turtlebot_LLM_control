@@ -1,11 +1,14 @@
 file(REMOVE_RECURSE
   "CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.cpp.o"
   "CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.cpp.o.d"
+  "CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.o"
+  "CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.o.d"
   "CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.cpp.o"
   "CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.cpp.o.d"
   "libsocial_robot_interfaces__rosidl_typesupport_cpp.pdb"
   "libsocial_robot_interfaces__rosidl_typesupport_cpp.so"
   "rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.cpp"
+  "rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp"
   "rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.cpp"
 )
 

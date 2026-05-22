@@ -1,7 +1,8 @@
 {
   "package_name": "social_robot_interfaces",
   "non_idl_tuples": [
-    "/home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces:msg/TspCommand.msg",
-    "/home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces:srv/Tours.srv"
+    "/home/tom/llm_ws/turtlebot_LLM_control/src/social_robot_interfaces:msg/TspCommand.msg",
+    "/home/tom/llm_ws/turtlebot_LLM_control/src/social_robot_interfaces:srv/Tours.srv",
+    "/home/tom/llm_ws/turtlebot_LLM_control/src/social_robot_interfaces:srv/Description.srv"
   ]
 }

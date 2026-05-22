@@ -1,1 +1,1 @@
-/home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/ament_cmake_core/social_robot_interfacesConfig-version.cmake
+/home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces/ament_cmake_core/social_robot_interfacesConfig-version.cmake

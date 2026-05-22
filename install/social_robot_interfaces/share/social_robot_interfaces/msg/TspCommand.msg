@@ -1,1 +1,1 @@
-int64[] waypoints
+/home/tom/llm_ws/turtlebot_LLM_control/src/social_robot_interfaces/msg/TspCommand.msg

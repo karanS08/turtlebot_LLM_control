@@ -1,7 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000223] (-) JobUnselected: {'identifier': 'robot_tour'}
-[0.000302] (-) JobUnselected: {'identifier': 'social_robot_interfaces'}
-[0.000338] (-) JobUnselected: {'identifier': 'speech_locomotion_interface'}
-[0.000478] (-) JobUnselected: {'identifier': 'tour_manager'}
-[0.000589] (-) JobUnselected: {'identifier': 'turtlebot_llm_control'}
-[0.000622] (-) EventReactorShutdown: {}

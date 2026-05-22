@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/social_robot_interfaces/msg/_tsp_command.py"
   "../rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.c"
   "../rosidl_generator_py/social_robot_interfaces/srv/__init__.py"
+  "../rosidl_generator_py/social_robot_interfaces/srv/_description.py"
+  "../rosidl_generator_py/social_robot_interfaces/srv/_description_s.c"
   "../rosidl_generator_py/social_robot_interfaces/srv/_tours.py"
   "../rosidl_generator_py/social_robot_interfaces/srv/_tours_s.c"
   "CMakeFiles/social_robot_interfaces__py"

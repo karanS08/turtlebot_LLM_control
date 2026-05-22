@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/karan/Development/robot_gpt/llm_ws_1/src/social_robot_interfaces
+CMAKE_SOURCE_DIR = /home/tom/llm_ws/turtlebot_LLM_control/src/social_robot_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces
+CMAKE_BINARY_DIR = /home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces/CMakeFiles /home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karan/Development/robot_gpt/llm_ws_1/build/social_robot_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -315,17 +315,17 @@ social_robot_interfaces__rosidl_typesupport_cpp/fast:
 .PHONY : social_robot_interfaces__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_social_robot_interfaces
+# Target rules for targets named ament_cmake_python_symlink_social_robot_interfaces
 
 # Build rule for target.
-ament_cmake_python_copy_social_robot_interfaces: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_social_robot_interfaces
-.PHONY : ament_cmake_python_copy_social_robot_interfaces
+ament_cmake_python_symlink_social_robot_interfaces: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_social_robot_interfaces
+.PHONY : ament_cmake_python_symlink_social_robot_interfaces
 
 # fast build rule for target.
-ament_cmake_python_copy_social_robot_interfaces/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_social_robot_interfaces.dir/build.make CMakeFiles/ament_cmake_python_copy_social_robot_interfaces.dir/build
-.PHONY : ament_cmake_python_copy_social_robot_interfaces/fast
+ament_cmake_python_symlink_social_robot_interfaces/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_social_robot_interfaces.dir/build.make CMakeFiles/ament_cmake_python_symlink_social_robot_interfaces.dir/build
+.PHONY : ament_cmake_python_symlink_social_robot_interfaces/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_social_robot_interfaces_egg
@@ -405,6 +405,19 @@ social_robot_interfaces__py/fast:
 	$(MAKE) $(MAKESILENT) -f social_robot_interfaces__py/CMakeFiles/social_robot_interfaces__py.dir/build.make social_robot_interfaces__py/CMakeFiles/social_robot_interfaces__py.dir/build
 .PHONY : social_robot_interfaces__py/fast
 
+#=============================================================================
+# Target rules for targets named social_robot_interfaces__rs
+
+# Build rule for target.
+social_robot_interfaces__rs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 social_robot_interfaces__rs
+.PHONY : social_robot_interfaces__rs
+
+# fast build rule for target.
+social_robot_interfaces__rs/fast:
+	$(MAKE) $(MAKESILENT) -f social_robot_interfaces__rs/CMakeFiles/social_robot_interfaces__rs.dir/build.make social_robot_interfaces__rs/CMakeFiles/social_robot_interfaces__rs.dir/build
+.PHONY : social_robot_interfaces__rs/fast
+
 rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.o: rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.c.o
 .PHONY : rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.o
 
@@ -428,6 +441,30 @@ rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.s: 
 rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.c.s
 .PHONY : rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.c.s
+
+rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.o: rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.o
+.PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.o
+
+# target to build an object file
+rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.o
+.PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.o
+
+rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.i: rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.i
+.PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.i
+.PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.i
+
+rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.s: rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.s
+.PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.s
+.PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.c.s
 
 rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.o: rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.c.o
 .PHONY : rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.o
@@ -549,6 +586,30 @@ rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.c.s
 .PHONY : rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.c.s
 
+rosidl_generator_py/social_robot_interfaces/srv/_description_s.o: rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.o
+.PHONY : rosidl_generator_py/social_robot_interfaces/srv/_description_s.o
+
+# target to build an object file
+rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.o
+.PHONY : rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.o
+
+rosidl_generator_py/social_robot_interfaces/srv/_description_s.i: rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.i
+.PHONY : rosidl_generator_py/social_robot_interfaces/srv/_description_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.i
+.PHONY : rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.i
+
+rosidl_generator_py/social_robot_interfaces/srv/_description_s.s: rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.s
+.PHONY : rosidl_generator_py/social_robot_interfaces/srv/_description_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.s
+.PHONY : rosidl_generator_py/social_robot_interfaces/srv/_description_s.c.s
+
 rosidl_generator_py/social_robot_interfaces/srv/_tours_s.o: rosidl_generator_py/social_robot_interfaces/srv/_tours_s.c.o
 .PHONY : rosidl_generator_py/social_robot_interfaces/srv/_tours_s.o
 
@@ -596,6 +657,30 @@ rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.s: ro
 rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.cpp.s
 .PHONY : rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.cpp.s
+
+rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.o: rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.o
+
+rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.i: rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.i
+
+rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.s: rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.cpp.s
 
 rosidl_typesupport_c/social_robot_interfaces/srv/tours__type_support.o: rosidl_typesupport_c/social_robot_interfaces/srv/tours__type_support.cpp.o
 .PHONY : rosidl_typesupport_c/social_robot_interfaces/srv/tours__type_support.o
@@ -645,6 +730,30 @@ rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.cpp
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.cpp.s
 .PHONY : rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.cpp.s
 
+rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.o: rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.o
+
+rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.i: rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.i
+
+rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.s: rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.cpp.s
+
 rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.o: rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.cpp.o
 .PHONY : rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.o
 
@@ -692,6 +801,30 @@ rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__ty
 rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__type_support_c.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__type_support_c.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__type_support_c.cpp.s
+
+rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.o: rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.i: rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.s: rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.cpp.s
 
 rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/tours__type_support_c.o: rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/tours__type_support_c.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/tours__type_support_c.o
@@ -741,6 +874,30 @@ rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.cpp.s
 .PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.cpp.s
 
+rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.o: rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.i: rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.s: rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.cpp.s
+
 rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.o: rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.cpp.o
 .PHONY : rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.o
 
@@ -788,6 +945,30 @@ rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_comman
 rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_command__type_support.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_command__type_support.c.s
 .PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_command__type_support.c.s
+
+rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.o: rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.o
+
+rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.i: rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.i
+
+rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.s: rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.c.s
 
 rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.o: rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.c.o
 .PHONY : rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.o
@@ -837,6 +1018,30 @@ rosidl_typesupport_introspection_cpp/social_robot_interfaces/msg/detail/tsp_comm
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/social_robot_interfaces/msg/detail/tsp_command__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/msg/detail/tsp_command__type_support.cpp.s
 
+rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.o: rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.i: rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.s: rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/social_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.cpp.s
+
 rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__type_support.o: rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__type_support.cpp.o
 .PHONY : rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__type_support.o
 
@@ -875,10 +1080,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_social_robot_interfaces_egg"
-	@echo "... ament_cmake_python_copy_social_robot_interfaces"
+	@echo "... ament_cmake_python_symlink_social_robot_interfaces"
 	@echo "... social_robot_interfaces"
 	@echo "... social_robot_interfaces__cpp"
 	@echo "... social_robot_interfaces__py"
+	@echo "... social_robot_interfaces__rs"
 	@echo "... social_robot_interfaces_uninstall"
 	@echo "... uninstall"
 	@echo "... social_robot_interfaces__rosidl_generator_c"
@@ -895,6 +1101,9 @@ help:
 	@echo "... rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.o"
 	@echo "... rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.i"
 	@echo "... rosidl_generator_c/social_robot_interfaces/msg/detail/tsp_command__functions.s"
+	@echo "... rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.o"
+	@echo "... rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.i"
+	@echo "... rosidl_generator_c/social_robot_interfaces/srv/detail/description__functions.s"
 	@echo "... rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.o"
 	@echo "... rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.i"
 	@echo "... rosidl_generator_c/social_robot_interfaces/srv/detail/tours__functions.s"
@@ -910,42 +1119,63 @@ help:
 	@echo "... rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.o"
 	@echo "... rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.i"
 	@echo "... rosidl_generator_py/social_robot_interfaces/msg/_tsp_command_s.s"
+	@echo "... rosidl_generator_py/social_robot_interfaces/srv/_description_s.o"
+	@echo "... rosidl_generator_py/social_robot_interfaces/srv/_description_s.i"
+	@echo "... rosidl_generator_py/social_robot_interfaces/srv/_description_s.s"
 	@echo "... rosidl_generator_py/social_robot_interfaces/srv/_tours_s.o"
 	@echo "... rosidl_generator_py/social_robot_interfaces/srv/_tours_s.i"
 	@echo "... rosidl_generator_py/social_robot_interfaces/srv/_tours_s.s"
 	@echo "... rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.o"
 	@echo "... rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.i"
 	@echo "... rosidl_typesupport_c/social_robot_interfaces/msg/tsp_command__type_support.s"
+	@echo "... rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.o"
+	@echo "... rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.i"
+	@echo "... rosidl_typesupport_c/social_robot_interfaces/srv/description__type_support.s"
 	@echo "... rosidl_typesupport_c/social_robot_interfaces/srv/tours__type_support.o"
 	@echo "... rosidl_typesupport_c/social_robot_interfaces/srv/tours__type_support.i"
 	@echo "... rosidl_typesupport_c/social_robot_interfaces/srv/tours__type_support.s"
 	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.o"
 	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.i"
 	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/msg/tsp_command__type_support.s"
+	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.o"
+	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.i"
+	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/srv/description__type_support.s"
 	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.o"
 	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.i"
 	@echo "... rosidl_typesupport_cpp/social_robot_interfaces/srv/tours__type_support.s"
 	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/msg/detail/tsp_command__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/description__type_support_c.s"
 	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/tours__type_support_c.o"
 	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/tours__type_support_c.i"
 	@echo "... rosidl_typesupport_fastrtps_c/social_robot_interfaces/srv/detail/tours__type_support_c.s"
 	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/msg/detail/dds_fastrtps/tsp_command__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/description__type_support.s"
 	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.o"
 	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.i"
 	@echo "... rosidl_typesupport_fastrtps_cpp/social_robot_interfaces/srv/detail/dds_fastrtps/tours__type_support.s"
 	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_command__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_command__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/msg/detail/tsp_command__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/description__type_support.s"
 	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.o"
 	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.i"
 	@echo "... rosidl_typesupport_introspection_c/social_robot_interfaces/srv/detail/tours__type_support.s"
 	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/msg/detail/tsp_command__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/msg/detail/tsp_command__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/msg/detail/tsp_command__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/description__type_support.s"
 	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/social_robot_interfaces/srv/detail/tours__type_support.s"

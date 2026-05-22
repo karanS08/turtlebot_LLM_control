@@ -1,1 +1,0 @@
-/home/karan/Development/robot_gpt/llm_ws_1/build/robot_tour/ament_cmake_core/robot_tourConfig-version.cmake

@@ -1,3 +1,0 @@
-CMake Error: The source directory "/home/karan/Development/robot_gpt/llm_ws_1/src/turtlebot_social_guide-dev-landmark_follower/src/social_robot_interfaces" does not exist.
-Specify --help for usage, or press the help button on the CMake GUI.
-gmake: *** [Makefile:747: cmake_check_build_system] Error 1

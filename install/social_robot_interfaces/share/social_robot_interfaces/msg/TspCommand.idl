@@ -1,12 +1,1 @@
-// generated from rosidl_adapter/resource/msg.idl.em
-// with input from social_robot_interfaces/msg/TspCommand.msg
-// generated code does not contain a copyright notice
-
-
-module social_robot_interfaces {
-  module msg {
-    struct TspCommand {
-      sequence<int64> waypoints;
-    };
-  };
-};
+/home/tom/llm_ws/turtlebot_LLM_control/build/social_robot_interfaces/rosidl_adapter/social_robot_interfaces/msg/TspCommand.idl

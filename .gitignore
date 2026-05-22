@@ -1,0 +1,63 @@
+# ROS2 colcon build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+.eggs/
+dist/
+*.so
+
+# SQLite databases (waypoint/tour data — keep out of repo)
+*.db
+*.sqlite
+*.sqlite3
+
+# Whisper / faster-whisper model cache
+*.pt
+*.bin
+*.onnx
+models/
+
+# Audio files
+*.wav
+*.mp3
+*.ogg
+*.flac
+
+# Maps generated at runtime
+*.pgm
+*.yaml.bak
+
+# ROS bag files
+*.bag
+*.db3
+*.mcap
+
+# Environment / secrets
+.env
+*.key
+api_key*
+*_api_key*
+
+# Editor and OS
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Colcon internal
+colcon.meta

@@ -23,6 +23,7 @@ from PyQt5.QtWidgets import (
     QWidget,
 )
 from rclpy.node import Node
+from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
 from social_robot_interfaces.msg import TspCommand
 from social_robot_interfaces.srv import Tours
 from std_msgs.msg import String
@@ -132,7 +133,19 @@ class TspGuiNode(Node):
         self._window = None
         self._pending_utterance = ""
 
-        self.map_sub = self.create_subscription(OccupancyGrid, "/map", self._map_cb, 1)
+        live_map_qos = QoSProfile(depth=1)
+        live_map_qos.reliability = ReliabilityPolicy.RELIABLE
+
+        latched_map_qos = QoSProfile(depth=1)
+        latched_map_qos.reliability = ReliabilityPolicy.RELIABLE
+        latched_map_qos.durability = DurabilityPolicy.TRANSIENT_LOCAL
+
+        self.map_sub = self.create_subscription(
+            OccupancyGrid, "/map", self._map_cb, live_map_qos
+        )
+        self.latched_map_sub = self.create_subscription(
+            OccupancyGrid, "/map", self._map_cb, latched_map_qos
+        )
         self.tsp_pub = self.create_publisher(TspCommand, "/tsp_command", 10)
         self.cli = self.create_client(Tours, "tour_retrieve")
         # Subscription to trigger window display — set up after window is created
@@ -140,6 +153,8 @@ class TspGuiNode(Node):
 
     def _map_cb(self, msg):
         self.map_msg = msg
+        if self._window is not None:
+            self._window.request_map_refresh()
 
     def fetch_waypoints(self, db_fallback=None):
         if self.cli.wait_for_service(timeout_sec=5.0):
@@ -341,6 +356,7 @@ class MapWidget(QLabel):
 class TspWindow(QWidget):
     # Signal emitted from ROS thread; connected to slot on Qt main thread
     _show_requested = pyqtSignal()
+    _map_refresh_requested = pyqtSignal()
 
     def __init__(self, node: TspGuiNode, map_msg: OccupancyGrid, waypoints):
         super().__init__()
@@ -348,6 +364,7 @@ class TspWindow(QWidget):
         self.setWindowTitle("TSP Waypoint Selector")
 
         self._show_requested.connect(self._on_show_requested)
+        self._map_refresh_requested.connect(self._on_map_refresh_requested)
 
         self._map_msg = map_msg
         self._waypoints = waypoints
@@ -386,6 +403,9 @@ class TspWindow(QWidget):
         """(Re)build the map widget from current node data."""
         map_msg = self.node.map_msg or self._map_msg
         waypoints = self.node.waypoints or self._waypoints
+        previous_selection = []
+        if self.map_widget is not None:
+            previous_selection = self.map_widget.selected_indices()
 
         _, win_w, win_h = self._screen_geometry()
         map_area_w = win_w - 40
@@ -400,9 +420,13 @@ class TspWindow(QWidget):
         )
 
         self.map_widget = MapWidget(base_pixmap, waypoints, map_msg.info, scale)
+        self.map_widget._selected = [
+            index for index in previous_selection if index < len(waypoints)
+        ]
         self.map_widget.set_change_callback(self._update_label)
         self.scroll.setMinimumSize(map_area_w, map_area_h)
         self.scroll.setWidget(self.map_widget)
+        self.map_widget._render()
 
         n = len(waypoints)
         self.label.setText(
@@ -412,6 +436,10 @@ class TspWindow(QWidget):
     def request_show(self):
         """Thread-safe: called from ROS thread."""
         self._show_requested.emit()
+
+    def request_map_refresh(self):
+        """Thread-safe: called from ROS thread when /map updates."""
+        self._map_refresh_requested.emit()
 
     def _on_show_requested(self):
         """Runs on Qt main thread — rebuild widget so latest data is shown."""
@@ -423,6 +451,10 @@ class TspWindow(QWidget):
         self.move(screen.x() + screen.width() // 4, screen.y() + screen.height() // 4)
         self.raise_()
         self.activateWindow()
+
+    def _on_map_refresh_requested(self):
+        """Runs on Qt main thread — redraw with the latest /map message."""
+        self._build_map_widget()
 
     def _update_label(self):
         sel = self.map_widget.selected_indices()

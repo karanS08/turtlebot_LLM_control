@@ -39,3 +39,10 @@ turtlebot_llm_control/tour_teleop_session.py
 turtlebot_llm_control/tsp_gui_node.py
 turtlebot_llm_control/wake_word.py
 turtlebot_llm_control/waypoint_speaker_node.py
+turtlebot_llm_control.egg-info/PKG-INFO
+turtlebot_llm_control.egg-info/SOURCES.txt
+turtlebot_llm_control.egg-info/dependency_links.txt
+turtlebot_llm_control.egg-info/entry_points.txt
+turtlebot_llm_control.egg-info/requires.txt
+turtlebot_llm_control.egg-info/top_level.txt
+turtlebot_llm_control.egg-info/zip-safe

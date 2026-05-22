@@ -14,7 +14,7 @@ dist/
 *.so
 
 # SQLite databases (waypoint/tour data — keep out of repo)
-*.db
+
 *.sqlite
 *.sqlite3
 

@@ -220,17 +220,24 @@ Keyboard teleop session run inside an auto-launched terminal during route record
 
 ---
 
-### `follow_me_node`
-Colour-tracking person follower using OpenCV. Subscribes to the camera topic and publishes `Twist` commands.
+### `waypoint_speaker_node`
+Reads waypoint descriptions from a SQLite database and speaks them aloud when the robot arrives at a stop. Includes a pose-based failsafe that overrides the published index if the robot is actually closer to a different waypoint.
 
 | Direction | Topic | Type |
 |---|---|---|
-| sub | `/camera/image_raw` (or compressed) | `Image` / `CompressedImage` |
-| sub | `/follow_me/control` | `String` (`start` / `stop`) |
-| pub | `/cmd_vel` | `Twist` |
-| pub | `/follow_me/debug` | `Image` |
+| sub | `/talk_command` | `String` (contains waypoint index, e.g. `"reached at waypoint 2"`) |
+| sub | `/amcl_pose` | `PoseWithCovarianceStamped` |
+| pub | `/done_talking` | `String` (`"done_speaking"`) |
+| pub | `/done_speaking` | `String` (`"done_speaking"`) |
+| pub | `/robot/emotion` | `String` (JSON: `{emotion, context, intensity}`) |
 
-Parameters: `default_target_color` (default `"yellow"`), `forward_chase_speed`, `angular_chase_multiplier`, `search_angular_speed`, `max_size_thresh`
+Parameters:
+
+| Parameter | Default | Description |
+|---|---|---|
+| `db_path` | `tours.db` | Path to SQLite database with `tours` table (`px`, `py`, `description`) |
+
+The node extracts the last integer from the `/talk_command` message as the waypoint index. If the robot is >0.5 m closer to a different waypoint than the published index, it silently corrects to the nearest one. TTS uses `spd-say` → `espeak` → `say` (first available).
 
 ---
 
@@ -313,6 +320,8 @@ All arguments:
 | `mute` | `false` | Disable TTS output |
 | `enable_tsp_gui` | `true` | Launch TSP waypoint GUI |
 | `enable_emotion` | `true` | Launch emotion publisher |
+| `enable_waypoint_speaker` | `true` | Launch waypoint description speaker |
+| `waypoint_db_path` | `tours.db` | Path to SQLite waypoint database |
 | `use_sim_time` | `false` | Use simulation clock |
 
 ---

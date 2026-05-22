@@ -6,10 +6,10 @@ import rclpy
 from rclpy.node import Node
 
 # Emotions the robot can express
-THINKING = "thinking"
+THINKING = "listen"
 SPEAKING = "speaking"
-EXPLAINING = "explaining"
-GREETING = "greeting"
+EXPLAINING = "explain"
+GREETING = "wave_hello"
 IDLE = "idle"
 
 _GREETING_WORDS = {
@@ -54,7 +54,7 @@ class EmotionNode(Node):
         super().__init__("emotion_node")
         self.idle_timeout = float(self.declare_parameter("idle_timeout_seconds", 15.0).value)
 
-        self._emotion_pub = self.create_publisher(String, "/emotions", 10)
+        self._emotion_pub = self.create_publisher(String, "/pepper/gesture_command", 10)
         self._speech_text_sub = self.create_subscription(
             String, "/speech/text", self._on_speech_text, 10
         )
@@ -66,7 +66,7 @@ class EmotionNode(Node):
         self._current_emotion = IDLE
 
         self._publish(IDLE)
-        self.get_logger().info("Emotion node ready. Publishing on /emotions.")
+        self.get_logger().info("Emotion node ready. Publishing on /pepper/gesture_command.")
 
     def _on_speech_text(self, msg: String) -> None:
         """User spoke — robot starts thinking immediately."""

@@ -18,7 +18,16 @@
       "Bash(gh repo *)",
       "Bash(git commit -m ' *)",
       "Bash(git stash *)",
-      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --env-filter ' *)"
+      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch -f --env-filter ' *)",
+      "Bash(python3 -c \"import graphviz; print\\('graphviz ok'\\)\")",
+      "Bash(python3 -c \"import matplotlib; print\\('matplotlib ok'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python3 scripts/generate_architecture_diagram.py)",
+      "mcp__claude_ai_Canva__generate-design",
+      "Bash(curl -s \"https://design.canva.ai/vgPbg7iH08szTEr\" -o /tmp/canva_1.png)",
+      "Bash(curl -s \"https://design.canva.ai/jxLw2oGRWMds8Ra\" -o /tmp/canva_2.png)",
+      "Bash(curl -s \"https://design.canva.ai/y31KHCoARQXXpDy\" -o /tmp/canva_3.png)",
+      "Bash(curl -s \"https://design.canva.ai/A1u8-w6LgFcfKkB\" -o /tmp/canva_4.png)"
     ],
     "additionalDirectories": [
       "/home/karan/Development/robot_gpt/turtlebot_social_guide/src/speech_locomotion_interface/speech_locomotion_interface"

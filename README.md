@@ -17,7 +17,7 @@ Developed by **Karan Sharma** — University of Technology Sydney, Robotics Stud
 - **TSP waypoint GUI** — PyQt5 map overlay for selecting a custom tour order; publishes directly to `/tsp_command`
 - **Route recording** — teleop-driven waypoint capture with automatic teleop terminal launch
 - **Follow-me** — colour-tracking person follower via camera
-- **Emotion engine** — classifies each conversation turn into one of five robot states; publishes to `/emotions`
+- **Emotion engine** — classifies each conversation turn into a Pepper gesture command; publishes to `/pepper/gesture_command`
 - **Text-to-speech** — spoken replies via `spd-say` / `espeak`
 - **Mock mode** — full pipeline testable without a microphone
 
@@ -34,7 +34,7 @@ Microphone / /speech/mock_text
         ▼                                                                  ▼
  speech_command_node ──► /speech/intent ──► bt_orchestrator_node    emotion_node
         │            ──► /speech/response                │                │
-        │            ──► /tsp_gui/show                   │           /emotions
+        │            ──► /tsp_gui/show                   │           /pepper/gesture_command
         │                     │                          │
         │              tsp_gui_node                      ▼
         │                     │              NavigateToPose (Nav2)
@@ -46,7 +46,7 @@ Microphone / /speech/mock_text
         ▼                                  tour_teleop_session (xterm)
  speech_response_node (TTS)
  speech_debug_node     ──► /speech/debug
- emotion_node          ──► /emotions
+ emotion_node          ──► /pepper/gesture_command
 ```
 
 ---
@@ -179,21 +179,30 @@ ros2 topic echo /tsp_command
 ---
 
 ### `emotion_node`
-Classifies each conversation turn into one of five robot emotion states and publishes to `/emotions`.
+Classifies each conversation turn into a gesture command and publishes it to `/pepper/gesture_command` for the Pepper robot gesture subsystem to consume.
 
 | Direction | Topic | Type |
 |---|---|---|
 | sub | `/speech/text` | `String` |
 | sub | `/speech/response` | `String` |
-| pub | `/emotions` | `String` |
+| pub | `/pepper/gesture_command` | `String` |
 
-| Emotion | Trigger |
-|---|---|
-| `thinking` | STT fires — robot is processing before LLM replies |
-| `greeting` | Response contains hello / welcome / hi phrases |
-| `explaining` | Response ≥ 60 words or contains narration phrases |
-| `speaking` | Short conversational reply (default) |
-| `idle` | No activity for `idle_timeout_seconds` (default 15 s) |
+#### Gesture command mapping
+
+| Value published | Pepper gesture | Triggered when |
+|---|---|---|
+| `listen` | Attentive listening pose | `/speech/text` fires — user has spoken, LLM is processing |
+| `wave_hello` | Wave hello | Response starts with or contains a greeting word (hello, hi, welcome, good morning, etc.) and is under 30 words |
+| `explain` | Explanatory gesture | Response is ≥ 60 words **or** contains narration phrases (e.g. "this is", "was built", "known for", "history", "dates back") |
+| `speaking` | Neutral talking pose | Short conversational reply that is not a greeting (default fallback) |
+| `idle` | Idle / resting pose | No speech activity for `idle_timeout_seconds` (default 15 s) |
+
+#### Classification logic (in priority order)
+1. **`listen`** — published immediately when STT text arrives, before the LLM responds
+2. **`wave_hello`** — response text starts with a greeting word, or contains one within the first 30 words
+3. **`explain`** — response is ≥ 60 words, or contains any of the narration trigger phrases
+4. **`speaking`** — everything else (short, non-greeting reply)
+5. **`idle`** — timer fires after `idle_timeout_seconds` of no activity
 
 Parameters: `idle_timeout_seconds` (float, default `15.0`)
 
@@ -370,7 +379,7 @@ Launches all speech nodes: STT, command, response, debug, BT orchestrator, tour 
 | `/speech/tts_active` | `Bool` | `speech_response_node` | `speech_to_text_node` |
 | `/tsp_gui/show` | `String` | `speech_command_node` | `tsp_gui_node` |
 | `/tsp_command` | `TspCommand` | `tsp_gui_node` | navigation layer |
-| `/emotions` | `String` | `emotion_node` | (external / display) |
+| `/pepper/gesture_command` | `String` | `emotion_node` | (external / display) |
 | `/tour/status` | `String` (JSON) | `bt_orchestrator_node`, `tour_recording_manager` | (monitor) |
 | `/route/record` | `String` | `bt_orchestrator_node`, `tour_intent_bridge_node` | `tour_recording_manager` |
 | `/route/data` | `String` (JSON) | `tour_recording_manager` | `bt_orchestrator_node` |
@@ -471,7 +480,7 @@ ros2 topic echo /speech/debug
 ros2 topic echo /speech/intent
 
 # Monitor emotion state
-ros2 topic echo /emotions
+ros2 topic echo /pepper/gesture_command
 
 # Trigger TSP GUI
 ros2 topic pub --once /tsp_gui/show std_msgs/msg/String "{data: show}"
